@@ -13,7 +13,7 @@
  *
  */
 
-define('APP_DB_USER', 'root');
-define('APP_DB_PWD', 'Banana16011996!');
-define('APP_DB_HOST', 'localhost');
-define('APP_DB_NAME', 'simplemvc');
+define('APP_DB_USER', '');
+define('APP_DB_PWD', '');
+define('APP_DB_HOST', '');
+define('APP_DB_NAME', '');
