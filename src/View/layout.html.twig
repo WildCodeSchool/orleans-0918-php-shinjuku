@@ -9,7 +9,7 @@
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
     <!--===============================================================================================-->
@@ -20,10 +20,22 @@
     <link rel="stylesheet" type="text/css" href="assets/css/slick.css">
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="assets/css/perfect-scrollbar.css">
+
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="assets/fonts/iconic/css/material-design-iconic-font.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="assets/fonts/linearicons-v1.0.0/icon-font.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="assets/css/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="assets/css/daterangepicker.css">
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="assets/css/util.css">
     <link rel="stylesheet" type="text/css" href="assets/css/main.css">
     <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="assets/css/magnific-popup.css">
+
+
 
     <title>{% block title %}{% endblock %}</title>
 
@@ -34,13 +46,19 @@
 
 <body>
     <header>
+    {% include 'header.html.twig' %}
+        {% include 'banner.html.twig' %}
+
     </header>
 
     <main>
-        {% block content %}{% endblock %}
+        {% include 'home.html.twig' %}
+
+
     </main>
 
     <footer>
+        {% include 'footer.html.twig' %}
     </footer>
 
 </body>
@@ -126,6 +144,12 @@
         });
     </script>
     <!--===============================================================================================-->
+    <script src="assets/js/daterangepicker.js"></script>
+    <!--===============================================================================================-->
+    <script src="assets/js/isotope.pkgd.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+<!--===============================================================================================-->
     <script src="assets/js/main.js"></script>
 {% block javascript %}{% endblock %}
 </body>
