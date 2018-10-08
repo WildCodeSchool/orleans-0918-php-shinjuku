@@ -141,6 +141,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 [ Header Desktop ]*/
 
 .container-menu-desktop {
+  font-family: Quando;
   height: auto;
   width: 100%;
   position: relative;
@@ -2702,7 +2703,8 @@ input.num-product::-webkit-inner-spin-button {
 
 .hov-cl0:hover {color: #fff;}
 .hov-bg0:hover {background-color: #fff;}
-.hov-cl1:hover {color: red;}
+.hov-cl1:hover {color: red; font-family: Quando;}
+.hov-cl1 {font-family: Quando;}
 .hov-bg1:hover {background-color: #717fe0;}
 
 /*---------------------------------------------*/
@@ -3003,4 +3005,10 @@ main
  */
 main {
   background: linear-gradient(180deg, rgba(0,0,0,1), rgba(255,255,255,0) 15vh);
+}
+h3{
+  font-family: Quando;
+}
+body{
+  font-size: 20px;
 }
