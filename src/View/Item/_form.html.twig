@@ -1,5 +1,51 @@
-<form method="post">
-    <input type="hidden" value="{{ item.id }}" name="id">
-    <input type="text" value="{{ item.title }}" name="title">
-    <input type="submit" value="Valider">
-</form>
+<div class="container">
+
+    <h1>Ajouter un article :</h1>
+    <form>
+        <div class="row">
+            <div class="col-6">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="productName" placeholder="Nom du produit" required>
+                </div>
+                <div class="form-group">
+                    <select class="form-control" id="categoryName" required>
+                        <option value="manga">Manga</option>
+                        <option value="dvd">DVD</option>
+                        <option value="goodies">Goodies</option>
+                    </select>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <input type="number" class="form-control" id="productPrice" placeholder="Prix" required>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <input type="file" class="form-control-file" id="productPicture">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" id="productDescription" rows="3" placeholder="Description du produit" required></textarea>
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" id="productCommentary" rows="3" placeholder="Avis de la boutique (optionnel)" ></textarea>
+                </div>
+            </div>
+            <div class="col-6">
+                <img src="https://via.placeholder.com/600x300" alt="productPreview">
+                <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" id="hightlight">
+                    <label class="form-check-label" for="highlight">Je souhaite que cet article soit mis en avant dans l'onglet nouveautés.</label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary">Valider</button>
+            </div>
+        </div>
+    </form>
+
+</div>
