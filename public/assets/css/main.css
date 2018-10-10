@@ -612,7 +612,7 @@ header{
 .logo-mobile {
   display: block;
   position: relative;
-  height: 80%;
+  height:100%;
   padding-right: 25px;
   -webkit-flex-grow: 1;
   -moz-flex-grow: 1;
@@ -679,7 +679,7 @@ header{
 }
 
 .main-menu-m > li > a {
-  font-size: 14px;
+  font-size: 17px;
   color: white;
   line-height: 2.8;
   padding: 8px 20px 8px 20px;
@@ -2703,8 +2703,8 @@ input.num-product::-webkit-inner-spin-button {
 
 .hov-cl0:hover {color: #fff;}
 .hov-bg0:hover {background-color: #fff;}
-.hov-cl1:hover {color: red; font-family: Quando;}
-.hov-cl1 {font-family: Quando;}
+.hov-cl1:hover {color: red;}
+
 .hov-bg1:hover {background-color: #717fe0;}
 
 /*---------------------------------------------*/
@@ -3011,4 +3011,13 @@ h3{
 }
 body{
   font-size: 20px;
+}
+.f_quando{
+  font-family: Quando;
+}
+.fa_size{
+  font-size: 1.5em;
+}
+.bold{
+    font-weight: bold;
 }
