@@ -3015,11 +3015,15 @@ body{
 lien
  */
 .lien{
-  color: #666666;
+  color: #FEFEFE;
 }
 /*//////////////////////////
 icon FB
  */
 .fa_size{
-  font-size: 1.5em;
+  font-size: 2em;
+}
+
+footer{
+  background: linear-gradient(360deg, rgba(0,0,0,.8), rgba(0,0,0,0.1) 100%);
 }
