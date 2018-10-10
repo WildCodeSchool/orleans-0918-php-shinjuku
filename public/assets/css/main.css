@@ -2997,8 +2997,9 @@ banner
 h1{
   position: absolute;
   left: 20vw;
-  top: 50vh;
+  top: 60vh;
   color: white;
+  font-size: 1.5em;
 
 }
 
