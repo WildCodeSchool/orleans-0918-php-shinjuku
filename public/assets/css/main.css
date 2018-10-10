@@ -3012,3 +3012,21 @@ h3{
 body{
   font-size: 20px;
 }
+
+/*////////////////////////
+page ajout produit
+*/
+form .btn
+{
+	background-color:red;
+	border:0px;
+}
+form .btn:hover
+{
+	background-color:#cc0000;
+}
+#uploader
+{
+	font-size:12px;
+	overflow:auto;
+}
