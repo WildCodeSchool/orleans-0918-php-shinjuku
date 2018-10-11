@@ -35,9 +35,14 @@ class ItemManager extends AbstractManager
     public function insert(Item $item): int
     {
         // prepared request
-        $statement = $this->pdo->prepare("INSERT INTO $this->table (`title`) VALUES (:title)");
-        $statement->bindValue('title', $item->getTitle(), \PDO::PARAM_STR);
-
+        $statement = $this->pdo->prepare("INSERT INTO $this->table (name, category, price, picture, description, review, highlight) VALUES (:name, :category, :price, :picture, :description, :review, :highlight )");
+        $statement->bindValue('name', $item->getName(), \PDO::PARAM_STR);
+        $statement->bindValue('category', $item->getCategory(), \PDO::PARAM_STR);
+        $statement->bindValue('price', $item->getPrice(), \PDO::PARAM_STR);
+        $statement->bindValue('picture', $item->getPicture(), \PDO::PARAM_STR);
+        $statement->bindValue('description', $item->getDescription(), \PDO::PARAM_STR);
+        $statement->bindValue('review', $item->getReview(), \PDO::PARAM_STR);
+        $statement->bindValue('highlight', $item->getHighlight(), \PDO::PARAM_STR);
 
         if ($statement->execute()) {
             return $this->pdo->lastInsertId();

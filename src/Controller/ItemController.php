@@ -91,8 +91,27 @@ class ItemController extends AbstractController
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $itemManager = new ItemManager($this->getPdo());
+
             $item = new Item();
-            $item->setTitle($_POST['title']);
+            $item->setName($_POST['name']);
+            $item->setCategory($_POST['category']);
+            $item->setPrice($_POST['price']);
+
+            $uploadDir = __DIR__ . '/../../public/assets/images/upload/';
+            $uploadFile = $uploadDir . basename($_FILES['picture']['name']);
+            move_uploaded_file($_FILES['picture']['tmp_name'], $uploadFile);
+            $item->setPicture($uploadFile);
+
+            $item->setDescription($_POST['description']);
+            $item->setReview($_POST['review']);
+
+            $item->setHighlight($_POST['highlight']);
+            if (!empty($_POST['highlight'])) {
+                $item->setHighlight(1);
+            } else {
+                $item->setHighlight(0);
+            }
+
             $id = $itemManager->insert($item);
             header('Location:/item/' . $id);
         }
