@@ -3013,6 +3013,27 @@ body{
   font-size: 20px;
 }
 
+/*////////////////////////
+add product
+*/
+form .btn
+{
+	background-color:red;
+	border:0px;
+}
+form .btn:hover
+{
+	background-color:#cc0000;
+}
+#uploader
+{
+	font-size:12px;
+	overflow:auto;
+
+  
+/*////////////////////////
+API Facebook
+*/
 .facebook_api {
   overflow:hidden;
   border: 0;
