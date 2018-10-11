@@ -3011,13 +3011,12 @@ h3{
 body{
   font-size: 20px;
 }
-/*//////////////////////////
+
 lien
  */
 .lien{
   color: #FEFEFE;
 }
-/*//////////////////////////
 icon FB
  */
 .fa_size{
@@ -3026,4 +3025,13 @@ icon FB
 
 footer{
   background: linear-gradient(360deg, rgba(0,0,0,.8), rgba(0,0,0,0.1) 100%);
+
+.facebook_api {
+  overflow:hidden;
+  border: 0;
+  background-color: transparent;
+  border:none;
+  margin:0;
+  height:70vh;
+  width:70vw;
 }
