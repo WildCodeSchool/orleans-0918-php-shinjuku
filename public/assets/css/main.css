@@ -3032,6 +3032,22 @@ body{
   font-size: 20px;
 }
 
+
+lien
+ */
+.lien{
+  color: #FEFEFE;
+}
+icon FB
+ */
+.fa_size{
+  font-size: 2em;
+}
+
+footer{
+  background: linear-gradient(360deg, rgba(0,0,0,.8), rgba(0,0,0,0.1) 100%);
+
+=======
 .f_quando{
   font-family: Quando;
 }
@@ -3083,12 +3099,15 @@ body{
 
 
 
+
 /*icon FB*/
 
 .fa_size{
   font-size: 2em;
 }
-/** API facebook **/
+
+  /** API facebook **/
+
 
 .facebook_api {
   overflow:hidden;
