@@ -2994,7 +2994,7 @@ input.num-product::-webkit-inner-spin-button {
 banner
  */
 .banner{
-  background-image: url("../images/alex-knight-329595-unsplash.jpg");
+  background-image: url("../images/banner_home.jpg");
   opacity: 0.8;
   filter: blur(3px);
   min-width: 100vw;
