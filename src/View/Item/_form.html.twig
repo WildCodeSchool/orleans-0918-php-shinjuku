@@ -6,7 +6,10 @@
             <div class="col-6">
                 <div class="form-group">
                     <label for="name">Nom du produit :</label>
-                    <input type="text" name="name" class="form-control" id="productName" required>
+                    {% if errors.name is defined %}
+                        <h5 class="formErrors">{{ errors.name }}</h5>
+                    {% endif %}
+                    <input type="text" name="name" class="form-control" id="productName" placeholder="{{ placeholders.name }}" required>
                 </div>
                 <div class="form-group">
                     <label for="category">Catégorie :</label>
@@ -15,28 +18,43 @@
                         <option value="dvd">DVD</option>
                         <option value="goodies">Goodies</option>
                     </select>
+                    {% if errors.category is defined %}
+                        <h5 class="formErrors">{{ errors.category }}</h5>
+                    {% endif %}
                 </div>
                 <div class="row">
                     <div class="col-6">
                         <div class="form-group">
                             <label for="price">Prix :</label>
-                            <input type="number" name="price" class="form-control" id="productPrice" required>
+                            <input type="number" name="price" class="form-control" id="productPrice" placeholder="{{ placeholders.price }}" required>
+                            {% if errors.price is defined %}
+                                <h5 class="formErrors">{{ errors.price }}</h5>
+                            {% endif %}
                         </div>
                     </div>
                     <div class="col-6" id="uploader">
                         <div class="form-group">
                             <label for="picture">Image</label>
-                            <input type="file" class="form-control-file" id="productPicture" name="picture">
+                            <input type="file" class="form-control-file" id="productPicture" name="picture" onchange="readURL(this);">
+                            {% if errors.picture is defined %}
+                                <h5 class="formErrors">{{ errors.picture }}</h5>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="description">Description :</label>
-                    <textarea class="form-control" id="productDescription" name="description" rows="3" required></textarea>
+                    <textarea class="form-control" id="productDescription" name="description" rows="3" placeholder="{{ placeholders.description }}" required></textarea>
+                    {% if errors.description is defined %}
+                        <h5 class="formErrors">{{ errors.description }}</h5>
+                    {% endif %}
                 </div>
                 <div class="form-group">
                     <label for="review">Avis de la boutique (optionnel) :</label>
-                    <textarea class="form-control" id="productCommentary" name="review" rows="3" ></textarea>
+                    <textarea class="form-control" id="productCommentary" name="review" rows="3" placeholder="{{ placeholders.review }}"></textarea>
+                    {% if errors.review is defined %}
+                        <h5 class="formErrors">{{ errors.review }}</h5>
+                    {% endif %}
                 </div>
             </div>
             <div class="col-6">
@@ -44,6 +62,9 @@
                 <div class="form-group form-check">
                     <input type="checkbox" class="form-check-input" id="highlight" name="highlight">
                     <label class="form-check-label" for="highlight">Je souhaite que cet article soit mis en avant dans l'onglet nouveautés.</label>
+                    {% if errors.review is defined %}
+                        <h5 class="formErrors">{{ errors.review }}</h5>
+                    {% endif %}
                 </div>
             </div>
         </div>

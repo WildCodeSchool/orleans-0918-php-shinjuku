@@ -3032,3 +3032,11 @@ class btn-shinjuku is supposed to be used for the buttons in the whole site ( as
 	font-size:12px;
 	overflow:auto;
 }
+.formErrors
+{
+	color:red;
+}
+#preview
+{
+  max-width:600px;
+}
