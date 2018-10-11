@@ -3014,7 +3014,7 @@ body{
 }
 
 /*////////////////////////
-page ajout produit
+add product
 */
 form .btn
 {
@@ -3029,4 +3029,17 @@ form .btn:hover
 {
 	font-size:12px;
 	overflow:auto;
+
+  
+/*////////////////////////
+API Facebook
+*/
+.facebook_api {
+  overflow:hidden;
+  border: 0;
+  background-color: transparent;
+  border:none;
+  margin:0;
+  height:70vh;
+  width:70vw;
 }
