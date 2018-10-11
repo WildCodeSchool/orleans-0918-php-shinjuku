@@ -1,0 +1,12 @@
+/** API facebook **/
+.facebook_api {
+    overflow:hidden;
+    border: 0;
+    background-color: transparent;
+    border:none;
+    margin:0;
+    height:75vh;
+    width:70vw;
+    padding-top: 12vh;
+    padding-bottom: 9vh;
+}
