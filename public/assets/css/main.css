@@ -3028,6 +3028,7 @@ h3{
 body{
   font-size: 20px;
 }
+
 .f_quando{
   font-family: Quando;
 }
@@ -3076,4 +3077,15 @@ body{
 }
 .fa_search_desk{
   text-shadow: 1px 1px 2px black, 0 0 2em black, 0 0 0.5em black;
+
+  /** API facebook **/
+  
+.facebook_api {
+  overflow:hidden;
+  border: 0;
+  background-color: transparent;
+  border:none;
+  margin:0;
+  height:70vh;
+  width:70vw;
 }
