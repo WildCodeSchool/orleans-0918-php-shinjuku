@@ -7,9 +7,9 @@
                 <div class="form-group">
                     <label for="name">Nom du produit :</label>
                     {% if errors.name is defined %}
-                        <h5 class="formErrors">{{ errors.name }}</h5>
+                        <div class="formErrors">{{ errors.name }}</div>
                     {% endif %}
-                    <input type="text" name="name" class="form-control" id="productName" placeholder="{{ placeholders.name }}" required>
+                    <input type="text" name="name" class="form-control" id="productName" value="{{ values.name }}" required>
                 </div>
                 <div class="form-group">
                     <label for="category">Catégorie :</label>
@@ -19,16 +19,16 @@
                         <option value="goodies">Goodies</option>
                     </select>
                     {% if errors.category is defined %}
-                        <h5 class="formErrors">{{ errors.category }}</h5>
+                        <div class="formErrors">{{ errors.category }}</div>
                     {% endif %}
                 </div>
                 <div class="row">
                     <div class="col-6">
                         <div class="form-group">
                             <label for="price">Prix :</label>
-                            <input type="number" name="price" class="form-control" id="productPrice" placeholder="{{ placeholders.price }}" required>
+                            <input type="number" name="price" class="form-control" id="productPrice" value="{{ values.price }}" required>
                             {% if errors.price is defined %}
-                                <h5 class="formErrors">{{ errors.price }}</h5>
+                                <div class="formErrors">{{ errors.price }}</div>
                             {% endif %}
                         </div>
                     </div>
@@ -37,33 +37,33 @@
                             <label for="picture">Image</label>
                             <input type="file" class="form-control-file" id="productPicture" name="picture" onchange="readURL(this);">
                             {% if errors.picture is defined %}
-                                <h5 class="formErrors">{{ errors.picture }}</h5>
+                                <div class="formErrors">{{ errors.picture }}</div>
                             {% endif %}
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="description">Description :</label>
-                    <textarea class="form-control" id="productDescription" name="description" rows="3" placeholder="{{ placeholders.description }}" required></textarea>
+                    <textarea class="form-control" id="productDescription" name="description" rows="3" required>{{ values.description }}</textarea>
                     {% if errors.description is defined %}
-                        <h5 class="formErrors">{{ errors.description }}</h5>
+                        <div class="formErrors">{{ errors.description }}</div>
                     {% endif %}
                 </div>
                 <div class="form-group">
                     <label for="review">Avis de la boutique (optionnel) :</label>
-                    <textarea class="form-control" id="productCommentary" name="review" rows="3" placeholder="{{ placeholders.review }}"></textarea>
+                    <textarea class="form-control" id="productCommentary" name="review" rows="3">{{ values.review }}</textarea>
                     {% if errors.review is defined %}
-                        <h5 class="formErrors">{{ errors.review }}</h5>
+                        <div class="formErrors">{{ errors.review }}</div>
                     {% endif %}
                 </div>
             </div>
             <div class="col-6">
                 <img src="https://via.placeholder.com/600x300" border='0' id="preview" alt="product preview">
                 <div class="form-group form-check">
-                    <input type="checkbox" class="form-check-input" id="highlight" name="highlight">
+                    <input type="checkbox" class="form-check-input" id="highlight" name="highlight" value="1" {% if errors is not empty and values.highlight == 1 %}checked{% endif %}>
                     <label class="form-check-label" for="highlight">Je souhaite que cet article soit mis en avant dans l'onglet nouveautés.</label>
                     {% if errors.review is defined %}
-                        <h5 class="formErrors">{{ errors.review }}</h5>
+                        <div class="formErrors">{{ errors.review }}</div>
                     {% endif %}
                 </div>
             </div>

@@ -9,16 +9,17 @@
 
 namespace Controller;
 
-use Model\Item;
-use Model\ItemManager;
+use Model\Article;
+use Model\ArticleManager;
 
 /**
- * Class ItemController
+ * Class ArticleController
  *
  */
-class ItemController extends AbstractController
+class ArticleController extends AbstractController
 {
 
+    const ALLOWED_EXTENSIONS=['png', 'jpg', 'jpeg'];
 
     /**
      * Display item listing
@@ -30,10 +31,10 @@ class ItemController extends AbstractController
      */
     public function index()
     {
-        $itemManager = new ItemManager($this->getPdo());
+        $itemManager = new ArticleManager($this->getPdo());
         $items = $itemManager->selectAll();
 
-        return $this->twig->render('Item/index.html.twig', ['items' => $items]);
+        return $this->twig->render('Article/index.html.twig', ['items' => $items]);
     }
 
 
@@ -48,10 +49,10 @@ class ItemController extends AbstractController
      */
     public function show(int $id)
     {
-        $itemManager = new ItemManager($this->getPdo());
+        $itemManager = new ArticleManager($this->getPdo());
         $item = $itemManager->selectOneById($id);
 
-        return $this->twig->render('Item/show.html.twig', ['item' => $item]);
+        return $this->twig->render('Article/show.html.twig', ['item' => $item]);
     }
 
 
@@ -66,7 +67,7 @@ class ItemController extends AbstractController
      */
     public function edit(int $id): string
     {
-        $itemManager = new ItemManager($this->getPdo());
+        $itemManager = new ArticleManager($this->getPdo());
         $item = $itemManager->selectOneById($id);
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -74,7 +75,7 @@ class ItemController extends AbstractController
             $itemManager->update($item);
         }
 
-        return $this->twig->render('Item/edit.html.twig', ['item' => $item]);
+        return $this->twig->render('Article/edit.html.twig', ['item' => $item]);
     }
 
 
@@ -92,11 +93,11 @@ class ItemController extends AbstractController
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-            if($_POST){
+            foreach ($_POST as $key => $value) {
+                $_POST[$key]=trim($value);
+            }
 
-                if (empty($_POST['highlight'])) {
-                    $_POST['highlight']="off";
-                }
+            if($_POST){
 
                 if(empty($_POST['name'])) {
                     $errors['name'] = 'Veuillez remplir le champ "Nom';
@@ -114,18 +115,9 @@ class ItemController extends AbstractController
                 if (!preg_match("/^[a-zA-Z0-9 ]+$/", $_POST['name'])){
                     $errors['name'] = 'Veuillez remplir le champ "Nom" uniquement avec des caractères alphanumériques';
                 }
-                if (!preg_match("/^[a-zA-Z0-9 \.\(\)]+$/", $_POST['description'])){
-                    $errors['description'] = 'Veuillez remplir le champ "Description" uniquement avec des caractères alphanumériques et les caractères suivants : " ", ".", "(", ")"';
-                }
-                if ( (!preg_match("/^[a-zA-Z0-9 \.\(\)]+$/", $_POST['review'])) &&  (!empty($_POST['review']))) {
-                    $errors['review'] = 'Veuillez remplir le champ "Avis de la boutique" uniquement avec des caractères alphanumériques et les caractères suivants : " ", ".", "(", ")"';
-                }
 
                 if (!preg_match("/^[a-z]+$/", $_POST['category'])){
                     $errors['category'] = 'Veuillez remplir le champ "Catégorie" uniquement avec des caractères alphabétiques';
-                }
-                if (!preg_match("/^[a-z]+$/", $_POST['highlight'])){
-                    $errors['highlight'] = 'Veuillez remplir le champ "Mise en avant" uniquement avec des caractères alphabétiques';
                 }
 
                 if (!preg_match("/^[0-9]+$/", $_POST['price'])){
@@ -141,9 +133,6 @@ class ItemController extends AbstractController
                 if (strlen(strval($_POST['price']))>11){
                     $errors['price'] = 'Veuillez remplir le champ "Prix" avec 11 caractères maximum';
                 }
-                if (strlen($_POST['highlight'])>3){
-                    $errors['highlight'] = 'Veuillez remplir le champ "Mise en avant" avec 3 caractères maximum';
-                }
                 if (strlen($_POST['description'])>5000){
                     $errors['description'] = 'Veuillez remplir le champ "Description" avec 5000 caractères maximum';
                 }
@@ -153,15 +142,15 @@ class ItemController extends AbstractController
 
                 if (!empty($_FILES['picture']['name'])) {
                     $extension = pathinfo($_FILES['picture']['name'], PATHINFO_EXTENSION);
-                    if (($extension != "png") && ($extension != "jpg")) {
+                    if (!in_array($extension, self::ALLOWED_EXTENSIONS)) {
                         $errors['picture'] = 'Veuillez télécharger une image au format jpg ou png uniquement';
                     }
                 }
 
                 if(0==count($errors)) {
-                    $itemManager = new ItemManager($this->getPdo());
+                    $itemManager = new ArticleManager($this->getPdo());
 
-                    $item = new Item();
+                    $item = new Article();
                     $item->setName($_POST['name']);
                     $item->setCategory($_POST['category']);
                     $item->setPrice($_POST['price']);
@@ -178,20 +167,18 @@ class ItemController extends AbstractController
                     $item->setDescription($_POST['description']);
                     $item->setReview($_POST['review']);
 
-                    $item->setHighlight($_POST['highlight']);
                     if (!empty($_POST['highlight'])) {
-                        $item->setHighlight(1);
-                    } else {
-                        $item->setHighlight(0);
+                        $item->setHighlight($_POST['highlight']);
                     }
 
                     $id = $itemManager->insert($item);
-                    header('Location:/item/' . $id);
+                    header('Location:/article/' . $id);
+                    exit();
                 }
             }
         }
 
-        return $this->twig->render('Item/add.html.twig', ['errors' => $errors, 'placeholders' => $_POST
+        return $this->twig->render('Article/add.html.twig', ['errors' => $errors, 'values' => $_POST
         ]);
     }
 
@@ -203,7 +190,7 @@ class ItemController extends AbstractController
      */
     public function delete(int $id)
     {
-        $itemManager = new ItemManager($this->getPdo());
+        $itemManager = new ArticleManager($this->getPdo());
         $itemManager->delete($id);
         header('Location:/');
     }

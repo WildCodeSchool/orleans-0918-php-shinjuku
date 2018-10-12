@@ -12,12 +12,12 @@ namespace Model;
 /**
  *
  */
-class ItemManager extends AbstractManager
+class ArticleManager extends AbstractManager
 {
     /**
      *
      */
-    const TABLE = 'item';
+    const TABLE = 'article';
 
     /**
      *  Initializes this class.
@@ -29,20 +29,20 @@ class ItemManager extends AbstractManager
 
 
     /**
-     * @param Item $item
+     * @param Article $article
      * @return int
      */
-    public function insert(Item $item): int
+    public function insert(Article $article): int
     {
         // prepared request
         $statement = $this->pdo->prepare("INSERT INTO $this->table (name, category, price, picture, description, review, highlight) VALUES (:name, :category, :price, :picture, :description, :review, :highlight )");
-        $statement->bindValue('name', $item->getName(), \PDO::PARAM_STR);
-        $statement->bindValue('category', $item->getCategory(), \PDO::PARAM_STR);
-        $statement->bindValue('price', $item->getPrice(), \PDO::PARAM_STR);
-        $statement->bindValue('picture', $item->getPicture(), \PDO::PARAM_STR);
-        $statement->bindValue('description', $item->getDescription(), \PDO::PARAM_STR);
-        $statement->bindValue('review', $item->getReview(), \PDO::PARAM_STR);
-        $statement->bindValue('highlight', $item->getHighlight(), \PDO::PARAM_STR);
+        $statement->bindValue('name', $article->getName(), \PDO::PARAM_STR);
+        $statement->bindValue('category', $article->getCategory(), \PDO::PARAM_STR);
+        $statement->bindValue('price', $article->getPrice(), \PDO::PARAM_INT);
+        $statement->bindValue('picture', $article->getPicture(), \PDO::PARAM_STR);
+        $statement->bindValue('description', $article->getDescription(), \PDO::PARAM_STR);
+        $statement->bindValue('review', $article->getReview(), \PDO::PARAM_STR);
+        $statement->bindValue('highlight', $article->getHighlight(), \PDO::PARAM_BOOL);
 
         if ($statement->execute()) {
             return $this->pdo->lastInsertId();
@@ -63,10 +63,10 @@ class ItemManager extends AbstractManager
 
 
     /**
-     * @param Item $item
+     * @param Article $item
      * @return int
      */
-    public function update(Item $item):int
+    public function update(Article $item):int
     {
 
         // prepared request
