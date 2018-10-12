@@ -2989,7 +2989,10 @@ input.num-product::-webkit-inner-spin-button {
 
 }
 
-
+/*////////////////////////////////////*/
+footer{
+  background: linear-gradient(360deg, rgba(0, 0, 0, .8), rgba(0, 0, 0, 0.1) 100%);
+}
 /*///////////////////////////////////////
 banner
  */
@@ -3094,7 +3097,17 @@ footer{
 .fa_search_desk{
   text-shadow: 1px 1px 2px black, 0 0 2em black, 0 0 0.5em black;
 
+
+
+
+/*icon FB*/
+
+.fa_size{
+  font-size: 2em;
+}
+
   /** API facebook **/
+
 
 .facebook_api {
   overflow:hidden;
