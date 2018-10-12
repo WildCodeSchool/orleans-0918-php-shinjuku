@@ -29,18 +29,19 @@
 
 
 
-    <title>{% block title %}{% endblock %}</title>
+    <title>{% block title %}Shinjuku-World{% endblock %}</title>
 
     <link rel="stylesheet" href="/assets/css/styles.css">
     {% block stylesheet %}{% endblock %}
+
     <link rel="icon" href="/assets/images/icons/favicon.png">
 </head>
 
 <body>
     <header>
     {% include 'header.html.twig' %}
-        {% include 'banner_home.html.twig' %}
 
+        {% include 'banner.html.twig' %}
     </header>
 
     <main>
