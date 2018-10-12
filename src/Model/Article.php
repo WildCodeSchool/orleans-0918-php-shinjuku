@@ -75,7 +75,7 @@ class Article
     /**
      * @return mixed
      */
-    public function getPrice():int
+    public function getPrice():float
     {
         return $this->price;
     }
@@ -83,7 +83,7 @@ class Article
     /**
      * @param mixed $price
      */
-    public function setPrice(int $price): void
+    public function setPrice(float $price): void
     {
         $this->price = $price;
     }
@@ -91,7 +91,7 @@ class Article
     /**
      * @return mixed
      */
-    public function getPicture():string
+    public function getPicture()
     {
         return $this->picture;
     }

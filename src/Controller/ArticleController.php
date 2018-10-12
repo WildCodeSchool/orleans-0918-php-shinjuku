@@ -22,65 +22,7 @@ class ArticleController extends AbstractController
     const ALLOWED_EXTENSIONS=['png', 'jpg', 'jpeg'];
 
     /**
-     * Display item listing
-     *
-     * @return string
-     * @throws \Twig_Error_Loader
-     * @throws \Twig_Error_Runtime
-     * @throws \Twig_Error_Syntax
-     */
-    public function index()
-    {
-        $itemManager = new ArticleManager($this->getPdo());
-        $items = $itemManager->selectAll();
-
-        return $this->twig->render('Article/index.html.twig', ['items' => $items]);
-    }
-
-
-    /**
-     * Display item informations specified by $id
-     *
-     * @param int $id
-     * @return string
-     * @throws \Twig_Error_Loader
-     * @throws \Twig_Error_Runtime
-     * @throws \Twig_Error_Syntax
-     */
-    public function show(int $id)
-    {
-        $itemManager = new ArticleManager($this->getPdo());
-        $item = $itemManager->selectOneById($id);
-
-        return $this->twig->render('Article/show.html.twig', ['item' => $item]);
-    }
-
-
-    /**
-     * Display item edition page specified by $id
-     *
-     * @param int $id
-     * @return string
-     * @throws \Twig_Error_Loader
-     * @throws \Twig_Error_Runtime
-     * @throws \Twig_Error_Syntax
-     */
-    public function edit(int $id): string
-    {
-        $itemManager = new ArticleManager($this->getPdo());
-        $item = $itemManager->selectOneById($id);
-
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $item->setTitle($_POST['title']);
-            $itemManager->update($item);
-        }
-
-        return $this->twig->render('Article/edit.html.twig', ['item' => $item]);
-    }
-
-
-    /**
-     * Display item creation page
+     * Display article creation page
      *
      * @return string
      * @throws \Twig_Error_Loader
@@ -148,12 +90,12 @@ class ArticleController extends AbstractController
                 }
 
                 if(0==count($errors)) {
-                    $itemManager = new ArticleManager($this->getPdo());
+                    $articleManager = new ArticleManager($this->getPdo());
 
-                    $item = new Article();
-                    $item->setName($_POST['name']);
-                    $item->setCategory($_POST['category']);
-                    $item->setPrice($_POST['price']);
+                    $article = new Article();
+                    $article->setName($_POST['name']);
+                    $article->setCategory($_POST['category']);
+                    $article->setPrice($_POST['price']);
 
                     if (!empty($_FILES['picture']['name'])) {
                         $extension = pathinfo($_FILES['picture']['name'], PATHINFO_EXTENSION);
@@ -161,17 +103,17 @@ class ArticleController extends AbstractController
                         $uploadDir = __DIR__ . '/../../public/assets/images/upload/';
                         $uploadFile = $uploadDir . $filename;
                         move_uploaded_file($_FILES['picture']['tmp_name'], $uploadFile);
-                        $item->setPicture($uploadFile);
+                        $article->setPicture($uploadFile);
                     }
 
-                    $item->setDescription($_POST['description']);
-                    $item->setReview($_POST['review']);
+                    $article->setDescription($_POST['description']);
+                    $article->setReview($_POST['review']);
 
                     if (!empty($_POST['highlight'])) {
-                        $item->setHighlight($_POST['highlight']);
+                        $article->setHighlight($_POST['highlight']);
                     }
 
-                    $id = $itemManager->insert($item);
+                    $id = $articleManager->insert($article);
                     header('Location:/article/' . $id);
                     exit();
                 }
@@ -180,18 +122,5 @@ class ArticleController extends AbstractController
 
         return $this->twig->render('Article/add.html.twig', ['errors' => $errors, 'values' => $_POST
         ]);
-    }
-
-
-    /**
-     * Handle item deletion
-     *
-     * @param int $id
-     */
-    public function delete(int $id)
-    {
-        $itemManager = new ArticleManager($this->getPdo());
-        $itemManager->delete($id);
-        header('Location:/');
     }
 }
