@@ -39,6 +39,10 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 /*//////////////////////////////////////////////////////////////////
 [ FONT ]*/
 
+@font-face {
+  font-family: "Shojumaru";
+  src: url('../fonts/shojumara/Shojumaru-Regular.otf');
+}
 
 /*//////////////////////////////////////////////////////////////////
 [ RS PLUGIN ]*/
@@ -227,7 +231,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 }
 
 .header-v2 .wrap-menu-desktop {
-  background: linear-gradient(180deg, rgba(0,0,0,.8), rgba(0,0,0,0.05) 100%);
+  background: linear-gradient(180deg, rgba(0,0,0,.8), rgba(0,0,0,0.4) 100%);
   top: 0;
 }
 
@@ -310,6 +314,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 
 .main-menu > li > a {
 
+  text-shadow: 2px 2px 3px black, 0 0 2em black, 0 0 0.5em black;
   font-size: 20px;
   color: white;
   padding: 5px 0px;
@@ -555,7 +560,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 
 .fix-menu-desktop .wrap-menu-desktop {
   height: 70px;
-  background: linear-gradient(180deg, rgba(0,0,0,.8), rgba(0,0,0,0.05) 100%);
+  background: linear-gradient(180deg, rgba(0,0,0,.8), rgba(0,0,0,0) 100%);
   box-shadow: 0 0px 3px 0px rgba(0,0,0,0.2);
   -moz-box-shadow: 0 0px 3px 0px rgba(0,0,0,0.2);
   -webkit-box-shadow: 0 0px 3px 0px rgba(0,0,0,0.2);
@@ -586,7 +591,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 [ Header Mobile ]*/
 header{
-  background-color: #666666;
+  background-color: grey;
 }
 .wrap-header-mobile {
   display: -webkit-box;
@@ -612,7 +617,7 @@ header{
 .logo-mobile {
   display: block;
   position: relative;
-  height: 80%;
+  height:100%;
   padding-right: 25px;
   -webkit-flex-grow: 1;
   -moz-flex-grow: 1;
@@ -679,7 +684,7 @@ header{
 }
 
 .main-menu-m > li > a {
-  font-size: 14px;
+  font-size: 17px;
   color: white;
   line-height: 2.8;
   padding: 8px 20px 8px 20px;
@@ -2703,8 +2708,8 @@ input.num-product::-webkit-inner-spin-button {
 
 .hov-cl0:hover {color: #fff;}
 .hov-bg0:hover {background-color: #fff;}
-.hov-cl1:hover {color: red; font-family: Quando;}
-.hov-cl1 {font-family: Quando;}
+.hov-cl1:hover {color: red;}
+
 .hov-bg1:hover {background-color: #717fe0;}
 
 /*---------------------------------------------*/
@@ -2989,13 +2994,27 @@ input.num-product::-webkit-inner-spin-button {
 banner
  */
 .banner{
-  background-image: linear-gradient(360deg, rgba(0,0,0,1), rgba(255,255,255,0) 15vh), url("../images/banner.jpg");
+  background-image: url("../images/banner_home.jpg");
+  opacity: 0.8;
+  filter: blur(3px);
   min-width: 100vw;
   min-height: 100vh;
   background-size: cover;
 }
+h1{
+  position: absolute;
+  left: 20vw;
+  top: 60vh;
+  color: white;
+  font-size: 200%;
+
+  text-shadow: 1px 1px 2px black, 0 0 2em black, 0 0 0.8em black;
+
+}
+
+
 .banner2{
-  background-image: linear-gradient(360deg, rgba(0,0,0,1), rgba(255,255,255,0) 15vh), url("../images/banner2.jpg");
+  background-image: url("../images/banner2.jpg");
   min-width: 50vw;
   min-height: 50vh;
   background-size: cover;
@@ -3003,9 +3022,6 @@ banner
 /*//////////////////////////
 main
  */
-main {
-  background: linear-gradient(180deg, rgba(0,0,0,1), rgba(255,255,255,0) 15vh);
-}
 h3{
   font-family: Quando;
 }
@@ -3040,3 +3056,66 @@ class btn-shinjuku is supposed to be used for the buttons in the whole site ( as
 {
   max-width:600px;
 }
+
+lien
+ */
+.lien{
+  color: #FEFEFE;
+}
+icon FB
+ */
+.fa_size{
+  font-size: 2em;
+}
+
+footer{
+  background: linear-gradient(360deg, rgba(0,0,0,.8), rgba(0,0,0,0.1) 100%);
+}
+
+.f_quando{
+  font-family: Quando;
+}
+
+.fa_size{
+  font-size: 1.5em;
+}
+.bold{
+    font-weight: bold;
+}
+
+
+.logo{
+  font-family: Shojumaru;
+  color: red;
+  text-shadow: 1px 1px 2px white, 0 0 1em black, 0 0 0.2em white;
+  font-size: 2vw;
+}
+.logo:hover{
+  font-family: Shojumaru;
+  color: white;
+  text-shadow: 1px 1px 2px white, 0 0 1em red, 0 0 0.2em white;
+  font-size: 2vw;
+}
+
+.logo_mobile{
+  font-family: Shojumaru;
+  color: red;
+  text-shadow: 1px 1px 2px white, 0 0 1em red, 0 0 0.2em white;
+  font-size: 5vw;
+
+}
+.logo_mobile:hover{
+  font-family: Shojumaru;
+  color: white;
+  text-shadow: 1px 1px 2px white, 0 0 1em red, 0 0 0.2em white;
+  font-size: 5vw;
+
+}
+
+ .fa_search_mobile{
+  font-size: 5vw;
+}
+.fa_search_desk{
+  text-shadow: 1px 1px 2px black, 0 0 2em black, 0 0 0.5em black;
+}
+  
