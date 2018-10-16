@@ -66,26 +66,30 @@ class ArticleController extends AbstractController
                     $errors['price'] = 'Veuillez remplir le champ "Prix" uniquement avec des caractères numériques';
                 }
 
-                if (strlen($cleanPost['name'])>255){
+                if ($cleanPost['price']<=0) {
+                    $errors['price'] = 'Veuillez remplir le champ "Prix" avec une valeur supérieur à 0';
+                }
+
+                if (strlen($cleanPost['name'])>255) {
                     $errors['name'] = 'Veuillez remplir le champ "Nom" avec 255 caractères maximum';
                 }
-                if (strlen($cleanPost['category'])>255){
+                if (strlen($cleanPost['category'])>255) {
                     $errors['category'] = 'Veuillez remplir le champ "Catégorie" avec 255 caractères maximum';
                 }
-                if (strlen(strval($cleanPost['price']))>11){
+                if (strlen(strval($cleanPost['price']))>11) {
                     $errors['price'] = 'Veuillez remplir le champ "Prix" avec 11 caractères maximum';
                 }
-                if (strlen($cleanPost['description'])>5000){
+                if (strlen($cleanPost['description'])>5000) {
                     $errors['description'] = 'Veuillez remplir le champ "Description" avec 5000 caractères maximum';
                 }
-                if ((strlen($cleanPost['review'])>5000) && (!empty($cleanPost['review']))){
+                if ((strlen($cleanPost['review'])>5000) && (!empty($cleanPost['review']))) {
                     $errors['review'] = 'Veuillez remplir le champ "Avis de la boutique" avec 5000 caractères maximum';
                 }
 
                 if (!empty($_FILES['picture']['name'])) {
                     $extension = pathinfo($_FILES['picture']['name'], PATHINFO_EXTENSION);
                     if (!in_array($extension, self::ALLOWED_EXTENSIONS)) {
-                        $errors['picture'] = 'Veuillez télécharger une image au format jpg ou png uniquement';
+                        $errors['picture'] = 'Veuillez télécharger une image au format ' . implode (', ', self::ALLOWED_EXTENSIONS). ' uniquement';
                     }
                 }
 
