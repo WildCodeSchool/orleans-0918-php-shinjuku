@@ -3060,6 +3060,24 @@ class btn-shinjuku is supposed to be used for the buttons in the whole site ( as
   max-width:600px;
 }
 
+/*//////////////////////////
+contact form
+ */
+
+#contactFormTitle
+{
+  text-align:center;
+  padding-bottom:50px;
+}
+
+#sendContactFormButton
+{
+  padding-top:50px;
+  text-align:center;
+}
+
+/*/////////////////////////
+
 lien
  */
 .lien{
