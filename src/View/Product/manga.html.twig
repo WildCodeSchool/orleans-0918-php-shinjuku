@@ -13,23 +13,23 @@
             <!--Category-->
             <div class="row d-flex flex-row p-b-70 p-t-30">
                 <div class="m-lr-auto ">
-                    <a href="#" class="hov-cl1 cl10 bold">Manga</a>
+                    <a href="/manga" class="hov-cl1 cl10 bold">Manga</a>
                 </div>
                 <div class="m-lr-auto">
-                    <a href="#" class="hov-cl1 cl10 bold">DVD / Blu-Ray</a>
+                    <a href="/dvd" class="hov-cl1 cl10 bold">DVD / Blu-Ray</a>
                 </div>
                 <div class="m-lr-auto">
-                    <a href="#" class="hov-cl1 cl10 bold">Goodies</a>
+                    <a href="/goodies" class="hov-cl1 cl10 bold">Goodies</a>
                 </div>
 
             </div>
             <!--Search bar-->
-            <div class="row d-flex justify-content-center bd-highlight mb-3"" id="search_product_bar">
+            <div class="row d-flex justify-content-center bd-highlight mb-3" id="search_product_bar">
             <nav class="m-b-100 search_bar col-md-8 col-lg-5  navbar navbar-light">
-                <form class="search_bar form-inline">
+                <form class="search_bar form-inline" method="get"  action="/manga">
 
-                    <input class="search_bar form-control mr-sm-2" type="search" placeholder="🔍 " aria-label="Search">
-
+                    <input class="search_bar form-control mr-sm-2" type="search" name="search" placeholder="🔍 " aria-label="Search">
+                    <input type="hidden" name="category" value="Manga">
                 </form>
             </nav>
         </div>

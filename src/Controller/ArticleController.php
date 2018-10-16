@@ -38,25 +38,47 @@ class ArticleController extends AbstractController
 
     public function showMeMAnga()
     {
-        $articleManager=new ArticleManager($this->getPdo());
-        $articles = $articleManager->selectArticlesByCategory('Manga');
-
-        return $this->twig->render('Product/manga.html.twig', ['article' => $articles]);
+        if($_GET){
+            $articleManager=new ArticleManager($this->getPdo());
+            $articles = $articleManager->selectArticlesByName($_GET['search'],'Manga');
+            return $this->twig->render('Product/manga.html.twig', ['article' => $articles]);
+        }
+        elseif (!$_GET) {
+            $articleManager = new ArticleManager($this->getPdo());
+            $articles = $articleManager->selectArticlesByCategory('Manga');
+            return $this->twig->render('Product/manga.html.twig', ['article' => $articles]);
+        }
     }
 
     public function showMeDvd()
     {
-        $articleManager=new ArticleManager($this->getPdo());
-        $articles = $articleManager->selectArticlesByCategory('DVD');
-
-        return $this->twig->render('Product/dvd.html.twig', ['article' => $articles]);
+        if($_GET){
+            $articleManager=new ArticleManager($this->getPdo());
+            $articles = $articleManager->selectArticlesByName($_GET['search'],'DVD');
+            return $this->twig->render('Product/dvd.html.twig', ['article' => $articles]);
+        }
+        elseif (!$_GET) {
+            $articleManager = new ArticleManager($this->getPdo());
+            $articles = $articleManager->selectArticlesByCategory('DVD');
+            return $this->twig->render('Product/dvd.html.twig', ['article' => $articles]);
+        }
     }
 
     public function showMeGoodies()
     {
-        $articleManager=new ArticleManager($this->getPdo());
-        $articles = $articleManager->selectArticlesByCategory('Goodies');
+        if($_GET){
+            $articleManager=new ArticleManager($this->getPdo());
+            $articles = $articleManager->selectArticlesByName($_GET['search'],'Goodies');
+            return $this->twig->render('Product/goodies.html.twig', ['article' => $articles]);
+        }
 
-        return $this->twig->render('Product/goodies.html.twig', ['article' => $articles]);
+        elseif (!$_GET) {
+            $articleManager = new ArticleManager($this->getPdo());
+            $articles = $articleManager->selectArticlesByCategory('Goodies');
+            return $this->twig->render('Product/goodies.html.twig', ['article' => $articles]);
+        }
     }
+
+
 }
+
