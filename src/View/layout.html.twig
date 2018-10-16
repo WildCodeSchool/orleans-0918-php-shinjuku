@@ -38,11 +38,19 @@
 <body>
     <header>
     {% include 'header.html.twig' %}
-        {% include 'banner_home.html.twig' %}
+        {% block banner%}<div class="banner"></div>
+            <div class="container d-none d-md-block">
+                <div class="row h1">
+                    <div class="col align-self-start f_quando bold slogan">La <span class="slogan-couleur">Mangatek</span> d'Orléans</div>
+                        <div  class="col align-self-center f_quando bold slogan2 m-t-75">pour <span class="slogan-couleur">tout</span></div>
+                        <div class="col align-self-end f_quando bold slogan3 m-t-250">les <span class="slogan-couleur">Otakus</span></div>
+                </div>
+            </div>{% endblock %}
 
     </header>
 
     <main>
+        {% block content %}{% endblock %}
 
     </main>
 
