@@ -34,51 +34,51 @@ class ArticleController extends AbstractController
         $errors=array();
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
+            $cleanPost=[];
             foreach ($_POST as $key => $value) {
-                $_POST[$key]=trim($value);
+                $cleanPost[$key]=trim($value);
             }
 
             if($_POST){
 
-                if(empty($_POST['name'])) {
+                if(empty($cleanPost['name'])) {
                     $errors['name'] = 'Veuillez remplir le champ "Nom';
                 }
-                if(empty($_POST['category'])) {
+                if(empty($cleanPost['category'])) {
                     $errors['category'] = 'Veuillez remplir le champ "Catégorie"';
                 }
-                if(empty($_POST['price'])) {
+                if(empty($cleanPost['price'])) {
                     $errors['price'] = 'Veuillez remplir le champ "Prix"';
                 }
-                if(empty($_POST['description'])) {
+                if(empty($cleanPost['description'])) {
                     $errors['description'] = 'Veuillez remplir le champ "Description"';
                 }
 
-                if (!preg_match("/^[a-zA-Z0-9 ]+$/", $_POST['name'])){
+                if (!preg_match("/^[a-zA-Z0-9 ]+$/", $cleanPost['name'])){
                     $errors['name'] = 'Veuillez remplir le champ "Nom" uniquement avec des caractères alphanumériques';
                 }
 
-                if (!preg_match("/^[a-z]+$/", $_POST['category'])){
+                if (!preg_match("/^[a-z]+$/", $cleanPost['category'])){
                     $errors['category'] = 'Veuillez remplir le champ "Catégorie" uniquement avec des caractères alphabétiques';
                 }
 
-                if (!preg_match("/^[0-9]+$/", $_POST['price'])){
+                if (!preg_match("/^[0-9]+$/", $cleanPost['price'])){
                     $errors['price'] = 'Veuillez remplir le champ "Prix" uniquement avec des caractères numériques';
                 }
 
-                if (strlen($_POST['name'])>255){
+                if (strlen($cleanPost['name'])>255){
                     $errors['name'] = 'Veuillez remplir le champ "Nom" avec 255 caractères maximum';
                 }
-                if (strlen($_POST['category'])>255){
+                if (strlen($cleanPost['category'])>255){
                     $errors['category'] = 'Veuillez remplir le champ "Catégorie" avec 255 caractères maximum';
                 }
-                if (strlen(strval($_POST['price']))>11){
+                if (strlen(strval($cleanPost['price']))>11){
                     $errors['price'] = 'Veuillez remplir le champ "Prix" avec 11 caractères maximum';
                 }
-                if (strlen($_POST['description'])>5000){
+                if (strlen($cleanPost['description'])>5000){
                     $errors['description'] = 'Veuillez remplir le champ "Description" avec 5000 caractères maximum';
                 }
-                if ((strlen($_POST['review'])>5000) && (!empty($_POST['review']))){
+                if ((strlen($cleanPost['review'])>5000) && (!empty($cleanPost['review']))){
                     $errors['review'] = 'Veuillez remplir le champ "Avis de la boutique" avec 5000 caractères maximum';
                 }
 
@@ -93,9 +93,9 @@ class ArticleController extends AbstractController
                     $articleManager = new ArticleManager($this->getPdo());
 
                     $article = new Article();
-                    $article->setName($_POST['name']);
-                    $article->setCategory($_POST['category']);
-                    $article->setPrice($_POST['price']);
+                    $article->setName($cleanPost['name']);
+                    $article->setCategory($cleanPost['category']);
+                    $article->setPrice($cleanPost['price']);
 
                     if (!empty($_FILES['picture']['name'])) {
                         $extension = pathinfo($_FILES['picture']['name'], PATHINFO_EXTENSION);
@@ -106,11 +106,11 @@ class ArticleController extends AbstractController
                         $article->setPicture($uploadFile);
                     }
 
-                    $article->setDescription($_POST['description']);
-                    $article->setReview($_POST['review']);
+                    $article->setDescription($cleanPost['description']);
+                    $article->setReview($cleanPost['review']);
 
-                    if (!empty($_POST['highlight'])) {
-                        $article->setHighlight($_POST['highlight']);
+                    if (!empty($cleanPost['highlight'])) {
+                        $article->setHighlight($cleanPost['highlight']);
                     }
 
                     $id = $articleManager->insert($article);
