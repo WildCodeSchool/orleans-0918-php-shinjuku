@@ -40,28 +40,14 @@ class ArticleController extends AbstractController
         return $this->twig->render('Product/product.html.twig', ['article' => $articles]);
     }
 
-    public function showMeMAnga()
+      public function listByCategory($category)
     {
         $articleManager=new ArticleManager($this->getPdo());
-        $articles = $articleManager->selectArticlesByCategory('Manga');
+        $articles = $articleManager->searchArticle($category);
 
-        return $this->twig->render('Product/manga.html.twig', ['article' => $articles]);
+        return $this->twig->render('Product/article.html.twig', ['article' => $articles, 'category'=> $category]);
     }
 
-    public function showMeDvd()
-    {
-        $articleManager=new ArticleManager($this->getPdo());
-        $articles = $articleManager->selectArticlesByCategory('DVD');
-
-        return $this->twig->render('Product/dvd.html.twig', ['article' => $articles]);
-    }
-
-    public function showMeGoodies()
-    {
-        $articleManager=new ArticleManager($this->getPdo());
-        $articles = $articleManager->selectArticlesByCategory('Goodies');
-
-        return $this->twig->render('Product/goodies.html.twig', ['article' => $articles]);
 
     public function add()
     {
