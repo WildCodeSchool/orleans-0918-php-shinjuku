@@ -27,5 +27,9 @@ class ArticleManager extends AbstractManager
         parent::__construct(self::TABLE, $pdo);
     }
 
+    public function selectArticleByHighlight($category,$highlight)
+    {
+
+    }
 
 }

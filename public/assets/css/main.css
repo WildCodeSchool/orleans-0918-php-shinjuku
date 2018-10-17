@@ -273,10 +273,14 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   margin-right: 55px;
 }
 
-.logo img {
-  max-width: 100%;
-  max-height: 100%;
+.logo-home{
+  font-family: Shojumaru;
+  font-size: 3em;
+  color: red;
+  text-shadow: 1px 1px 2px white, 0 0 1em white, 0 0 0.2em white;
+
 }
+
 
 
 
@@ -3143,8 +3147,15 @@ body{
 
 }
 .api-container{
-  background-image: url("../images/test-api3.png");
+  background-image: url("../images/test-api32.png");
   background-size: 96vw 1100px ;
   background-repeat: no-repeat;
   padding-top: 451px;
+}
+
+
+@media (max-width: 991.98px) {
+  .api-container {
+    background-image: url("");
+  }
 }
