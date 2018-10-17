@@ -17,6 +17,6 @@ $routes = [
         ['index', '/home', 'GET'], // action, url, method
     ],
     'Contact' => [ // Controller
-        ['send', '/contact', 'GET'], // action, url, method
+        ['send', '/contact', ['GET', 'POST']], // action, url, method
     ],
 ];

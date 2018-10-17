@@ -6,7 +6,10 @@
             <div class="col-sm-6 col-12">
                 <div class="form-group">
                     <label for="lastName">Nom :</label>
-                    <input type="text" name="lastName" class="form-control" id="lastName" required>
+                    {% if errors.lastName is defined %}
+                        <div class="formErrors">{{ errors.lastName }}</div>
+                    {% endif %}
+                    <input type="text" name="lastName" class="form-control" id="lastName" value="{{ values.lastName }}" required>
                 </div>
             </div>
         </div>
@@ -14,7 +17,10 @@
             <div class="col-sm-6 col-12">
                 <div class="form-group">
                     <label for="firstName">Prénom :</label>
-                    <input type="text" name="firstName" class="form-control" id="firstName" required>
+                    {% if errors.firstName is defined %}
+                        <div class="formErrors">{{ errors.firstName }}</div>
+                    {% endif %}
+                    <input type="text" name="firstName" class="form-control" id="firstName" value="{{ values.firstName }}" required>
                 </div>
             </div>
         </div>
@@ -22,7 +28,10 @@
             <div class="col-sm-6 col-12">
                 <div class="form-group">
                     <label for="email">E-mail :</label>
-                    <input type="email" name="email" class="form-control" id="email" required>
+                    {% if errors.email is defined %}
+                        <div class="formErrors">{{ errors.email }}</div>
+                    {% endif %}
+                    <input type="email" name="email" class="form-control" id="email" value="{{ values.email }}" required>
                 </div>
             </div>
         </div>
@@ -30,7 +39,10 @@
             <div class="col-sm-6 col-12">
                 <div class="form-group">
                     <label for="message">Message :</label>
-                    <textarea class="form-control" id="message" name="message" rows="10" required></textarea>
+                    {% if errors.message is defined %}
+                        <div class="formErrors">{{ errors.message }}</div>
+                    {% endif %}
+                    <textarea class="form-control" id="message" name="message" rows="10" value="{{ values.message }}" required></textarea>
                 </div>
             </div>
         </div>
