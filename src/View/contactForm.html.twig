@@ -1,5 +1,7 @@
 <div class="container p-tb-150 p-b-150">
-
+    {% if mailSent is not empty %}
+        <div id="mailSent">{{ mailSent }}</div>
+    {% endif %}
     <h2 id="contactFormTitle" class="f_quando justify-content-center">Envoyez un message :</h2>
     <form method="post" action="">
         <div class="row justify-content-center">
@@ -42,7 +44,7 @@
                     {% if errors.message is defined %}
                         <div class="formErrors">{{ errors.message }}</div>
                     {% endif %}
-                    <textarea class="form-control" id="message" name="message" rows="10" value="{{ values.message }}" required></textarea>
+                    <textarea class="form-control" id="message" name="message" rows="10" required>{{ values.message }}</textarea>
                 </div>
             </div>
         </div>

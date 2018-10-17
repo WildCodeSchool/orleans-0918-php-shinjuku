@@ -8,12 +8,23 @@
 
 namespace Controller;
 
+use \Swift_SmtpTransport;
+use \Swift_Mailer;
+use \Swift_Message;
+
 class ContactController extends AbstractController
 {
     public function send()
     {
+        session_start();
         $errors=array();
         $cleanPost=[];
+        $mailSent="";
+
+        if (isset($_SESSION['mailSent']) && !empty($_SESSION['mailSent'])) {
+            $mailSent=$_SESSION['mailSent'];
+            unset($_SESSION['mailSent']);
+        }
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
@@ -44,7 +55,7 @@ class ContactController extends AbstractController
                     $errors['firstName'] = 'Veuillez remplir le champ "Prénom" uniquement avec des caractères alphabétiques';
                 }
 
-                if (!preg_match("/^[a-zA-Z0-9]+\@[a-zA-Z0-9]+\.[a-zA-Z]+/", $cleanPost['email'])){
+                if (!preg_match("/^[a-zA-Z0-9.]+\@[a-zA-Z0-9]+\.[a-zA-Z]+/", $cleanPost['email'])){
                     $errors['email'] = 'Veuillez remplir le champ "E-mail" avec une adresse électronique valide';
                 }
 
@@ -64,12 +75,30 @@ class ContactController extends AbstractController
                 }
 
                 if(0==count($errors)) {
+
+                    try {
+                        $transport = (new Swift_SmtpTransport('smtp.gmail.com', 465))
+                            ->setUsername('shinjuku.projet@gmail.com')
+                            ->setPassword('Projet2shinjuku')
+                            ->setEncryption('ssl');
+                        $mailer = new Swift_Mailer($transport);
+                        $message = new Swift_Message();
+                        $message->setSubject(uniqid());
+                        $message->setFrom([$cleanPost['email'] => 'sender name']);
+                        $message->addTo('shinjuku.projet@gmail.com','recipient name');
+                        $message->setBody("Nouveau message de ".$cleanPost['lastName']." ".$cleanPost['firstName']." : ".$cleanPost['message']);
+                        $result = $mailer->send($message);
+                        $_SESSION['mailSent'] = 'Message envoyé';
+                        } catch (Exception $e) {
+                        echo $e->getMessage();
+                        }
+
                     header('Location:/contact');
                     exit();
                 }
             }
         }
-        return $this->twig->render('contact.html.twig', ['errors' => $errors, 'values' => $cleanPost
+        return $this->twig->render('contact.html.twig', ['errors' => $errors, 'values' => $cleanPost, 'mailSent' => $mailSent
         ]);
     }
 }
