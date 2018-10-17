@@ -13,9 +13,7 @@ $routes = [
 
     'Article' =>[
     ['index', '/products', 'GET'], // action, url, method
-    ['showMeMAnga', '/manga', 'GET'], // action, url, method
-    ['showMeDvd', '/dvd', 'GET'], // action, url, method
-    ['showMeGoodies', '/goodies', 'GET'], // action, url, method
+     ['listByCategory', '/article/{category}', 'GET'], // action, url, method
     ['add', '/article/add', ['GET', 'POST']], // action, url, method
       
     ],
