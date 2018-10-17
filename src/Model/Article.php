@@ -18,7 +18,7 @@ class Article
 
     /**
      * @return mixed
-=======
+
     private $id;
     private $name;
     private $category;
