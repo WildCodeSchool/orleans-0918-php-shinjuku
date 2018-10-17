@@ -50,16 +50,16 @@ abstract class AbstractManager
     {
         return $this->pdo->query('SELECT * FROM ' . $this->table, \PDO::FETCH_CLASS, $this->className)->fetchAll();
     }
+   
     /**
      * Get all row from database by category.
      *
      * @return array
      */
-    public function selectArticlesByCategory($category): array
+    public function searchArticle($category): array
     {
-        return $this->pdo->query('SELECT * FROM ' . $this->table . " WHERE category = '$category'", \PDO::FETCH_CLASS, $this->className)->fetchAll();
+        return $this->pdo->query('SELECT * FROM ' . $this->table . " WHERE   category ='$category'", \PDO::FETCH_CLASS, $this->className)->fetchAll();
     }
-
     /**
      * Get one row from database by ID.
      *
