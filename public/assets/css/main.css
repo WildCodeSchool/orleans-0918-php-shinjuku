@@ -3046,7 +3046,7 @@ class btn-shinjuku is supposed to be used for the buttons in the whole site ( as
 {
 	background-color:#cc0000;
 }
-#uploader
+.uploader
 {
 	font-size:12px;
 	overflow:auto;
@@ -3055,7 +3055,7 @@ class btn-shinjuku is supposed to be used for the buttons in the whole site ( as
 {
 	color:red;
 }
-#preview
+.preview
 {
   max-width:600px;
 }
@@ -3064,19 +3064,19 @@ class btn-shinjuku is supposed to be used for the buttons in the whole site ( as
 contact form
  */
 
-#contactFormTitle
+.contactFormTitle
 {
   text-align:center;
   padding-bottom:50px;
 }
 
-#sendContactFormButton
+.sendContactFormButton
 {
   padding-top:50px;
   text-align:center;
 }
 
-#mailSent
+.mailSent
 {
     font-family: Quando;
     color:green;
