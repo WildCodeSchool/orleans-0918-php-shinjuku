@@ -27,6 +27,6 @@ $routes = [
     ],
 
     'ProductDetails' => [ // Controller
-        ['index', '/details', 'GET'], // action, url, method
+        ['index', '/article/{id:\d+}', 'GET'], // action, url, method
     ],
 ];

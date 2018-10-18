@@ -15,6 +15,6 @@ class ProductDetailsController extends AbstractController
 {
     public function index()
     {
-        return $this->twig->render('Home/product_details.html.twig');
+        return $this->twig->render('Article/article_details.html.twig');
     }
 }
