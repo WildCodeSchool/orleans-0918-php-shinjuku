@@ -1,14 +1,24 @@
 <?php
 /**
  * Created by PhpStorm.
+<<<<<<< HEAD
  * User: thomas
  * Date: 17/10/18
  * Time: 11:24
+=======
+ * User: wcs
+ * Date: 23/10/17
+ * Time: 10:57
+ * PHP version 7
+>>>>>>> dev
  */
 
 namespace Model;
 
-
+/**
+ * Class Article
+ *
+ */
 class Article
 {
     private $id;
@@ -21,9 +31,9 @@ class Article
     private $highlight;
 
     /**
-     * @return mixed
+     * @return int
      */
-    public function getId()
+    public function getId():int
     {
         return $this->id;
     }
@@ -31,7 +41,7 @@ class Article
     /**
      * @param mixed $id
      */
-    public function setId($id)
+    public function setId(int $id): void
     {
         $this->id = $id;
     }
@@ -39,7 +49,7 @@ class Article
     /**
      * @return mixed
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->name;
     }
@@ -47,7 +57,7 @@ class Article
     /**
      * @param mixed $name
      */
-    public function setName($name)
+    public function setName(string $name): void
     {
         $this->name = $name;
     }
@@ -55,7 +65,7 @@ class Article
     /**
      * @return mixed
      */
-    public function getCategory()
+    public function getCategory():string
     {
         return $this->category;
     }
@@ -63,7 +73,7 @@ class Article
     /**
      * @param mixed $category
      */
-    public function setCategory($category)
+    public function setCategory(string $category): void
     {
         $this->category = $category;
     }
@@ -71,7 +81,7 @@ class Article
     /**
      * @return mixed
      */
-    public function getPrice()
+    public function getPrice():float
     {
         return $this->price;
     }
@@ -79,7 +89,7 @@ class Article
     /**
      * @param mixed $price
      */
-    public function setPrice($price)
+    public function setPrice(float $price): void
     {
         $this->price = $price;
     }
@@ -95,7 +105,7 @@ class Article
     /**
      * @param mixed $picture
      */
-    public function setPicture($picture)
+    public function setPicture(string $picture): void
     {
         $this->picture = $picture;
     }
@@ -103,7 +113,7 @@ class Article
     /**
      * @return mixed
      */
-    public function getDescription()
+    public function getDescription():string
     {
         return $this->description;
     }
@@ -111,7 +121,7 @@ class Article
     /**
      * @param mixed $description
      */
-    public function setDescription($description)
+    public function setDescription(string $description): void
     {
         $this->description = $description;
     }
@@ -119,7 +129,7 @@ class Article
     /**
      * @return mixed
      */
-    public function getReview()
+    public function getReview():string
     {
         return $this->review;
     }
@@ -127,7 +137,7 @@ class Article
     /**
      * @param mixed $review
      */
-    public function setReview($review)
+    public function setReview(string $review): void
     {
         $this->review = $review;
     }
@@ -143,7 +153,7 @@ class Article
     /**
      * @param mixed $highlight
      */
-    public function setHighlight($highlight)
+    public function setHighlight($highlight): void
     {
         $this->highlight = $highlight;
     }

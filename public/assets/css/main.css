@@ -3015,7 +3015,6 @@ h1{
 
 }
 
-
 .banner2{
   background-image: url("../images/banner2.jpg");
   min-width: 50vw;
@@ -3030,6 +3029,53 @@ h3{
 }
 body{
   font-size: 20px;
+}
+
+/*////////////////////////
+add product in database
+class btn-shinjuku is supposed to be used for the buttons in the whole site ( as the client asked )
+*/
+.btn-shinjuku
+{
+	background-color:red;
+	border:0px;
+	color:white;
+}
+
+.btn-shinjuku:hover
+{
+	background-color:#cc0000;
+}
+
+#uploader
+{
+	font-size:12px;
+	overflow:auto;
+}
+
+.formErrors
+{
+	color:red;
+}
+
+#preview
+{
+  max-width:600px;
+}
+
+lien
+ */
+.lien{
+  color: #FEFEFE;
+}
+icon FB
+ */
+.fa_size{
+  font-size: 2em;
+}
+
+footer{
+  background: linear-gradient(360deg, rgba(0,0,0,.8), rgba(0,0,0,0.1) 100%);
 }
 
 .f_quando{
@@ -3050,25 +3096,22 @@ about
 span{
   color: red;
 }
+
 .icons01{
   width: 15vw;
 }
-
 
 .logo{
   font-family: Shojumaru;
   color: red;
   text-shadow: 1px 1px 2px white, 0 0 1em black, 0 0 0.2em white;
   font-size: 2vw;
-
 }
 .logo:hover{
   font-family: Shojumaru;
   color: white;
   text-shadow: 1px 1px 2px white, 0 0 1em red, 0 0 0.2em white;
   font-size: 2vw;
-
-
 }
 
 .logo_mobile{
@@ -3089,10 +3132,10 @@ span{
 .fa_search_mobile{
   font-size: 5vw;
 }
-.fa_search_desk {
+
+.fa_search_desk{
   text-shadow: 1px 1px 2px black, 0 0 2em black, 0 0 0.5em black;
 }
-
 
 /*icon FB*/
 

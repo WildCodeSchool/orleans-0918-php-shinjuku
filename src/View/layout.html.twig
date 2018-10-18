@@ -21,6 +21,14 @@
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="/assets/css/perfect-scrollbar.css">
     <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/assets/fonts/iconic/css/material-design-iconic-font.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/assets/fonts/linearicons-v1.0.0/icon-font.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/assets/css/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/assets/css/daterangepicker.css">
+    <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="/assets/css/util.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/api.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
@@ -60,7 +68,16 @@
     <!--===============================================================================================-->
     <script src="/assets/js/popper.js"></script>
     <script src="/assets/js/bootstrap.min.js"></script>
-
+    <!--===============================================================================================-->
+    <script src="/assets/js/select2.min.js"></script>
+    <script>
+        $(".js-select2").each(function(){
+            $(this).select2({
+                minimumResultsForSearch: 20,
+                dropdownParent: $(this).next('.dropDownSelect2')
+            });
+        })
+    </script>
     <!--===============================================================================================-->
     <script src="/assets/js/slick.min.js"></script>
     <script src="/assets/js/slick-custom.js"></script>
@@ -124,6 +141,11 @@
                 ps.update();
             })
         });
+    </script>
+    <!--===============================================================================================-->
+    <script src="/assets/js/daterangepicker.js"></script>
+    <!--===============================================================================================-->
+    <script src="/assets/js/uploadPreview.js"></script>
     <!--===============================================================================================-->
     <script src="/assets/js/isotope.pkgd.min.js"></script>
     <!--===============================================================================================-->
