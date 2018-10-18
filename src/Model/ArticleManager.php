@@ -27,7 +27,6 @@ class ArticleManager extends AbstractManager
         parent::__construct(self::TABLE, $pdo);
     }
 
-
     /**
      * @param Article $article
      * @return int
@@ -47,5 +46,14 @@ class ArticleManager extends AbstractManager
         if ($statement->execute()) {
             return $this->pdo->lastInsertId();
         }
+    }
+    /**
+     * Get all row from database by category.
+     *
+     * @return array
+     */
+    public function searchArticle(string $category): array
+    {
+        return $this->pdo->query('SELECT * FROM ' . $this->table . " WHERE   category ='$category'", \PDO::FETCH_CLASS, $this->className)->fetchAll();
     }
 }

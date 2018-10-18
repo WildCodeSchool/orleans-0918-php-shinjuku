@@ -10,13 +10,18 @@
  */
 
 $routes = [
-    'Article' => [ // Controller
-        ['add', '/article/add', ['GET', 'POST']], // action, url, method
+
+    'Article' =>[
+    ['index', '/products', 'GET'], // action, url, method
+     ['listByCategory', '/article/{category}', 'GET'], // action, url, method
+    ['add', '/article/add', ['GET', 'POST']], // action, url, method
+      
     ],
 
     'About' => [
         ['index', '/about', 'GET'], //rajout du lien
     ],
+
 
     'Home' => [ // Controller
         ['index', '/home', 'GET'], // action, url, method
