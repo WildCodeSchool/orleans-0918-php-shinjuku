@@ -12,23 +12,40 @@ namespace Controller;
 use Model\Article;
 use Model\ArticleManager;
 
-/**
+
  * Class ArticleController
  *
  */
 class ArticleController extends AbstractController
 {
 
+
     const ALLOWED_EXTENSIONS=['png', 'jpg', 'jpeg'];
 
     /**
-     * Display article creation page
+     * Display article creation page and Display product listing
      *
      * @return string
      * @throws \Twig_Error_Loader
      * @throws \Twig_Error_Runtime
      * @throws \Twig_Error_Syntax
      */
+
+   
+     public function listByCategory($category)
+    {
+        $errors=[];
+        $articleManager=new ArticleManager($this->getPdo());
+        $articles = $articleManager->searchArticle($category);
+        if(!in_array($category,self::ALLOWED_CATEGORY)){
+            $errors['category']= "Catégorie inexistante!";
+        }
+            return $this->twig->render('Product/article.html.twig', ['article' => $articles, 'category'=> $category, 'error'=>$errors]);
+
+       }
+    }
+
+
     public function add()
     {
         $errors=array();
@@ -126,6 +143,7 @@ class ArticleController extends AbstractController
 
         return $this->twig->render('Article/add.html.twig', ['errors' => $errors, 'values' => $_POST
         ]);
+
     }
 
     public function show(int $id)

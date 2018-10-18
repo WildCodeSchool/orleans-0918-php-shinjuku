@@ -328,6 +328,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   color: #fff;
 }
 
+
 /*---------------------------------------------*/
 .sub-menu {
   list-style-type: none;
@@ -388,6 +389,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 .main-menu > li:hover > a {
   text-decoration: none;
   color: red;
+  text-shadow: 2px 2px 3px white, 0 0 2em white, 0 0 0.5em white;
 }
 
 .main-menu > li:hover > .sub-menu {
@@ -601,7 +603,7 @@ header{
   display: flex;
   align-items: center;
   height: 70px;
-  background: linear-gradient(180deg, rgba(0,0,0,.8), rgba(0,0,0,0.05) 100%);
+  background: linear-gradient(180deg, rgba(0,0,0,.8), rgba(0,0,0,0.7) 100%);
   padding: 15px;
   display: none;
 
@@ -623,17 +625,6 @@ header{
   -moz-flex-grow: 1;
   flex-grow: 1;
 }
-
-.logo-mobile img {
-  max-width: calc(100% - 20px);
-  max-height: 100%;
-  position:absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  margin: auto;
-}
-
 
 
 /*------------------------------------------------------------------
@@ -2859,7 +2850,6 @@ input.num-product::-webkit-inner-spin-button {
   .m-r-0-lg {margin-right: 0;}
   .m-l-15-lg {margin-left: 15px;}
   .m-r-15-lg {margin-right: 15px;}
-
   .p-0-lg {padding: 0;}
   .p-lr-0-lg {padding-left: 0; padding-right: 0;}
   .p-lr-15-lg {padding-left: 15px; padding-right: 15px;}
@@ -2956,13 +2946,9 @@ input.num-product::-webkit-inner-spin-button {
   .respon7 {
     padding-left: 60px;
   }
-
-
 }
 
-
-/*//////////////////////////////////////////////////////////////////
-[ SSM ]*/
+/*[ SSM ]*/
 @media (max-width: 480px) {
   .m-0-ssm {margin: 0;}
   .m-lr-0-ssm {margin-left: 0; margin-right: 0;}
@@ -2971,7 +2957,6 @@ input.num-product::-webkit-inner-spin-button {
   .m-r-0-ssm {margin-right: 0;}
   .m-l-15-ssm {margin-left: 15px;}
   .m-r-15-ssm {margin-right: 15px;}
-
   .p-0-ssm {padding: 0;}
   .p-lr-0-ssm {padding-left: 0; padding-right: 0;}
   .p-lr-15-ssm {padding-left: 15px; padding-right: 15px;}
@@ -2979,40 +2964,48 @@ input.num-product::-webkit-inner-spin-button {
   .p-r-0-ssm{padding-right: 0;}
   .p-l-15-ssm {padding-left: 15px;}
   .p-r-15-ssm {padding-right: 15px;}
-
   .w-full-ssm {width: 100%;}
-
-  /*---------------------------------------------*/
   .respon3 {
     padding: 20px;
   }
 
 }
 
-/*////////////////////////////////////*/
 footer{
-  background: linear-gradient(360deg, rgba(0, 0, 0, .8), rgba(0, 0, 0, 0.1) 100%);
+  background: linear-gradient(360deg, rgba(0, 0, 0, .8), rgba(0, 0, 0, 0.02) 100%);
+    min-height: 5vh;
 }
-/*///////////////////////////////////////
-banner
- */
+
+/* banner */
 .banner{
-  background-image: url("../images/banner_home.jpg");
+  background-image: url("../images/test.jpg");
   opacity: 0.8;
-  filter: blur(3px);
   min-width: 100vw;
   min-height: 100vh;
   background-size: cover;
 }
-h1{
+
+.h1{
   position: absolute;
-  left: 20vw;
-  top: 60vh;
+  left: 10vw;
+  top: 50vh;
+  color: black;
+  font-size: 2.5em;
+  line-height: 1.3em;
+  text-shadow: 10px 10px 10px white, 0 0 10em white, 0 0 1em white;
+}
+
+.slogan{
+  min-width: 38vw;
+}
+
+.slogan2{
+  min-width: 20vw;
+}
+
+.slogan-couleur{
   color: white;
-  font-size: 200%;
-
-  text-shadow: 1px 1px 2px black, 0 0 2em black, 0 0 0.8em black;
-
+  text-shadow: 8px 8px 8px black, 0 0 8em black, 0 0 1em black;
 }
 
 .banner2{
@@ -3021,7 +3014,34 @@ h1{
   min-height: 50vh;
   background-size: cover;
 }
-/*//////////////////////////
+
+/*product page*/
+.search_product_bar .form-inline {
+  width: 100%;
+}
+
+.search_product_bar .form-control {
+  width: 100%;
+  border: 2px solid rgba(255,0,0,0.5);
+  border-radius: .5rem;
+}
+
+.search_product_bar .form-control:hover {
+  width: 100%;
+  border: 2px solid rgba(255, 0, 0, 0.9);
+  border-radius: .5rem;
+
+}
+
+.block-article{
+  padding: 3vh;
+}
+
+.image-article{
+  overflow: hidden;
+  min-height: 450px;
+}
+
 main
  */
 h3{
@@ -3031,8 +3051,7 @@ body{
   font-size: 20px;
 }
 
-/*////////////////////////
-add product in database
+/* add product in database
 class btn-shinjuku is supposed to be used for the buttons in the whole site ( as the client asked )
 */
 .btn-shinjuku
@@ -3090,9 +3109,7 @@ footer{
 
 }
 
-/*/////////////////////////////
-about
- */
+/* about */
 span{
   color: red;
 }
@@ -3104,9 +3121,10 @@ span{
 .logo{
   font-family: Shojumaru;
   color: red;
-  text-shadow: 1px 1px 2px white, 0 0 1em black, 0 0 0.2em white;
+  text-shadow: 3px 3px 3px white, 0 0 1em black, 0 0 0.2em white;
   font-size: 2vw;
 }
+
 .logo:hover{
   font-family: Shojumaru;
   color: white;
@@ -3119,32 +3137,35 @@ span{
   color: red;
   text-shadow: 1px 1px 2px white, 0 0 1em red, 0 0 0.2em white;
   font-size: 5vw;
-
 }
+
 .logo_mobile:hover{
   font-family: Shojumaru;
   color: white;
-  text-shadow: 1px 1px 2px white, 0 0 1em red, 0 0 0.2em white;
   font-size: 5vw;
-
 }
 
 .fa_search_mobile{
   font-size: 5vw;
 }
 
-.fa_search_desk{
+.fa_search_desk {
   text-shadow: 1px 1px 2px black, 0 0 2em black, 0 0 0.5em black;
 }
 
-/*icon FB*/
+.fa_search_desk:hover {
+  text-shadow: 2px 2px 3px white, 0 0 2em white, 0 0 0.5em white;
+}
 
+.hamburger-inner, .hamburger-inner::after, .hamburger-inner::before{
+  background-color: white;
+}
+  /*icon FB*/
 .fa_size {
   font-size: 2em;
 }
 
 /* Artcile review */
-
 .pdtop {
     padding-top: 15vh;
 }
