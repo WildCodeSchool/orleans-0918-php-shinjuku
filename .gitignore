@@ -2,5 +2,6 @@
 /temp/*
 *.cache
 app/db.php
+simple-mvc.sql
 .idea
-/simple-mvc.sql
+
