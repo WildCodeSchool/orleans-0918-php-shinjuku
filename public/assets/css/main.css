@@ -3105,3 +3105,7 @@ span{
 .pdtop {
     padding-top: 15vh;
 }
+
+.pd-right {
+  padding-right: 4vw;
+}
