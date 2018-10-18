@@ -56,7 +56,7 @@ abstract class AbstractManager
      *
      * @return array
      */
-    public function searchArticle($category): array
+    public function searchArticle(string $category): array
     {
         return $this->pdo->query('SELECT * FROM ' . $this->table . " WHERE   category ='$category'", \PDO::FETCH_CLASS, $this->className)->fetchAll();
     }
