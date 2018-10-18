@@ -32,15 +32,8 @@ class ArticleController extends AbstractController
      * @throws \Twig_Error_Syntax
      */
 
-    public function index()
-    {
-        $articleManager = new ArticleManager($this->getPdo());
-        $articles = $articleManager->selectAll();
-
-        return $this->twig->render('Product/product.html.twig', ['article' => $articles]);
-    }
-
-      public function listByCategory($category)
+   
+      public function listByCategory(string $category)
     {
         $articleManager=new ArticleManager($this->getPdo());
         $articles = $articleManager->searchArticle($category);
