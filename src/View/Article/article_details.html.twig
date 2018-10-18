@@ -11,7 +11,7 @@
                         <div class="slick3 gallery-lb">
                             <div class="item-slick3" data-thumb="https://via.placeholder.com/513x634">
                                 <div class="wrap-pic-w pos-relative">
-                                    <img src="https://via.placeholder.com/513x634" alt="image-product">
+                                    <img src="{{ article.description }}" alt="image-product">
                                 </div>
                             </div>
                         </div>
@@ -21,13 +21,13 @@
 
             <div class="col-md-6 col-lg-5 p-b-30">
                 <div class="p-r-50 p-t-5 p-lr-0-lg">
-                    <h4 class="mtext-105 cl2 js-name-detail p-b-14 articleTitle">Lightweight Jacket</h4>
+                    <h4 class="mtext-105 cl2 js-name-detail p-b-14 articleTitle">{{ article.name }}</h4>
 
                     <h2>Synopsis :</h2>
 
-                    <p class="stext-102 cl3 p-t-23 pdgBottom">Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat.</p>
+                    <p class="stext-102 cl3 p-t-23 pdgBottom">{{ article.description }}</p>
 
-                    <span class="mtext-106 cl2">$58.79</span>
+                    <span class="mtext-106 cl2">{{ article.price }} €</span>
                 </div>
             </div>
         </div>
