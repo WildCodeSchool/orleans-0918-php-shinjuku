@@ -9,20 +9,44 @@
 
 namespace Model;
 
-/**
- * Class Product
+/*
+ * Class Article
  *
  */
 class Article
 {
-    private $name;
-    private $price;
-    private $picture;
-    private $category;
-    private $id;
 
     /**
      * @return mixed
+
+    private $id;
+    private $name;
+    private $category;
+    private $price;
+    private $picture;
+    private $description;
+    private $review;
+    private $highlight;
+
+    /**
+     * @return int
+     */
+    public function getId():int
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param mixed $id
+     */
+    public function setId(int $id): void
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return string
+
      */
     public function getName(): string
     {
@@ -32,7 +56,9 @@ class Article
     /**
      * @param mixed $name
      */
-    public function setName(string $name)
+
+    public function setName(string $name): void
+
     {
         $this->name = $name;
     }
@@ -40,39 +66,8 @@ class Article
     /**
      * @return mixed
      */
-    public function getPrice(): int
-    {
-        return $this->price;
-    }
 
-    /**
-     * @param mixed $price
-     */
-    public function setPrice(int $price)
-    {
-        $this->price = $price;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getPicture(): string
-    {
-        return $this->picture;
-    }
-
-    /**
-     * @param mixed $picture
-     */
-    public function setPicture(string $picture)
-    {
-        $this->picture = $picture;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getCategory(): string
+    public function getCategory():string
     {
         return $this->category;
     }
@@ -80,7 +75,7 @@ class Article
     /**
      * @param mixed $category
      */
-    public function setCategory(string $category)
+    public function setCategory(string $category): void
     {
         $this->category = $category;
     }
@@ -88,17 +83,97 @@ class Article
     /**
      * @return mixed
      */
-    public function getId(): int
+    public function getPrice():float
+
     {
-        return $this->id;
+        return $this->price;
     }
 
     /**
-     * @param mixed $id
+     * @param mixed $price
      */
-    public function setId(int $id)
+
+    public function setPrice(float $price): void
+
     {
-        $this->id = $id;
+        $this->price = $price;
+    }
+
+    /**
+     * @return mixed
+     */
+
+    public function getPicture()
+
+    {
+        return $this->picture;
+    }
+
+    /**
+     * @param mixed $picture
+     */
+
+    public function setPicture(string $picture): void
+
+    {
+        $this->picture = $picture;
+    }
+
+    /**
+     * @return mixed
+     */
+
+
+    /**
+     * @param mixed $category
+     */
+ 
+
+    public function getDescription():string
+    {
+        return $this->description;
+    }
+
+    /**
+     * @param mixed $description
+     */
+    public function setDescription(string $description): void
+    {
+        $this->description = $description;
+    }
+
+    /**
+     * @return mixed
+     */
+
+    public function getReview():string
+    {
+        return $this->review;
+    }
+
+    /**
+     * @param mixed $review
+     */
+    public function setReview(string $review): void
+    {
+        $this->review = $review;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getHighlight()
+    {
+        return $this->highlight;
+    }
+
+    /**
+     * @param mixed $highlight
+     */
+    public function setHighlight($highlight): void
+    {
+        $this->highlight = $highlight;
+
     }
 
 

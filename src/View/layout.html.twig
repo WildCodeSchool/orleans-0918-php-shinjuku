@@ -21,32 +21,35 @@
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="/assets/css/perfect-scrollbar.css">
     <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/assets/fonts/iconic/css/material-design-iconic-font.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/assets/fonts/linearicons-v1.0.0/icon-font.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/assets/css/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/assets/css/daterangepicker.css">
+    <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="/assets/css/util.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/api.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
     <!--===============================================================================================-->
     <link href="https://fonts.googleapis.com/css?family=Quando" rel="stylesheet">
 
 
 
-    <title>{% block title %}{% endblock %}</title>
+    <title>{% block title %}Shinjuku-World{% endblock %}</title>
 
     <link rel="stylesheet" href="/assets/css/styles.css">
     {% block stylesheet %}{% endblock %}
+
     <link rel="icon" href="/assets/images/icons/favicon.png">
 </head>
 
 <body>
     <header>
     {% include 'header.html.twig' %}
-        {% block banner%}<div class="banner"></div>
-            <div class="container d-none d-md-block">
-                <div class="row h1">
-                    <div class="col align-self-start f_quando bold slogan">La <span class="slogan-couleur">Mangatek</span> d'Orléans</div>
-                        <div  class="col align-self-center f_quando bold slogan2 m-t-75">pour <span class="slogan-couleur">tout</span></div>
-                        <div class="col align-self-end f_quando bold slogan3 m-t-250">les <span class="slogan-couleur">Otakus</span></div>
-                </div>
-            </div>{% endblock %}
 
+        
     </header>
 
     <main>
@@ -67,7 +70,16 @@
     <!--===============================================================================================-->
     <script src="/assets/js/popper.js"></script>
     <script src="/assets/js/bootstrap.min.js"></script>
-
+    <!--===============================================================================================-->
+    <script src="/assets/js/select2.min.js"></script>
+    <script>
+        $(".js-select2").each(function(){
+            $(this).select2({
+                minimumResultsForSearch: 20,
+                dropdownParent: $(this).next('.dropDownSelect2')
+            });
+        })
+    </script>
     <!--===============================================================================================-->
     <script src="/assets/js/slick.min.js"></script>
     <script src="/assets/js/slick-custom.js"></script>
@@ -131,6 +143,11 @@
                 ps.update();
             })
         });
+    </script>
+    <!--===============================================================================================-->
+    <script src="/assets/js/daterangepicker.js"></script>
+    <!--===============================================================================================-->
+    <script src="/assets/js/uploadPreview.js"></script>
     <!--===============================================================================================-->
     <script src="/assets/js/isotope.pkgd.min.js"></script>
     <!--===============================================================================================-->
