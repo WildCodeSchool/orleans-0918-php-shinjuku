@@ -33,12 +33,20 @@ class ArticleController extends AbstractController
      */
 
    
-      public function listByCategory(string $category)
+     public function listByCategory($category)
     {
+        $errors=[];
         $articleManager=new ArticleManager($this->getPdo());
         $articles = $articleManager->searchArticle($category);
+        if(!in_array($category,self::ALLOWED_CATEGORY)){
+            $errors['category']= "Catégorie inexistante!";
+        }
+        if (count($errors) === 0) {
+            return $this->twig->render('Product/article.html.twig', ['article' => $articles, 'category'=> $category]);
+        } else{
+            return $this->twig->render('Product/article.html.twig', ['article' => $articles, 'category'=> $category, 'error'=>$errors]);
 
-        return $this->twig->render('Product/article.html.twig', ['article' => $articles, 'category'=> $category]);
+       }
     }
 
 
