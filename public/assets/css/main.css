@@ -2066,6 +2066,7 @@ input.num-product::-webkit-inner-spin-button {
 .cl10 {color: #1d1d1d;}
 .cl11 {color: #f9ba48;}
 .cl12 {color: #ccc;}
+.cl13 {color: red;}
 
 /*//////////////////////////////////////////////////////////////////
 [
@@ -3051,13 +3052,20 @@ span{
   color: red;
 }
 .icons01{
-  width: 15vw;
+  width: 150px;
 }
-font-size: 20px;
-
-
+.map {
+  border: 1px solid black;
 }
-
+.card {
+  width: 30rem;
+}
+small {
+  font-size: 12px;
+}
+.card-text {
+  font-size: 16px;
+}
 
 .logo{
   font-family: Shojumaru;
