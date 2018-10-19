@@ -32,7 +32,7 @@
                             {% endif %}
                         </div>
                     </div>
-                    <div class="col-6" id="uploader">
+                    <div class="col-6" class="uploader">
                         <div class="form-group">
                             <label for="picture">Image</label>
                             <input type="file" class="form-control-file" id="productPicture" name="picture" onchange="readURL(this);">
@@ -58,7 +58,7 @@
                 </div>
             </div>
             <div class="col-6">
-                <img src="https://via.placeholder.com/600x300" border='0' id="preview" alt="product preview">
+                <img src="https://via.placeholder.com/600x300" border='0' class="preview" alt="product preview">
                 <div class="form-group form-check">
                     <input type="checkbox" class="form-check-input" id="highlight" name="highlight" value="1" {% if values.highlight is defined and values.highlight == 1 %}checked{% endif %}>
                     <label class="form-check-label" for="highlight">Je souhaite que cet article soit mis en avant dans l'onglet nouveautés.</label>

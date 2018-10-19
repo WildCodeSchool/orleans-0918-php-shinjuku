@@ -12,8 +12,7 @@ namespace Controller;
 use Model\Article;
 use Model\ArticleManager;
 
-/*
- * Class ArticleController
+/** Class ArticleController
  *
  */
 class ArticleController extends AbstractController
@@ -34,8 +33,7 @@ class ArticleController extends AbstractController
             $errors['toomuch'] = "La recherche doit contenir 45 caractères maximum!";
         }
         return $this->twig->render('Product/article.html.twig', ['article' => $articles, 'category'=> $category, 'error'=>$errors]);
-
-   }
+    }
 
     public function add()
     {
@@ -134,7 +132,14 @@ class ArticleController extends AbstractController
 
         return $this->twig->render('Article/add.html.twig', ['errors' => $errors, 'values' => $_POST
         ]);
+    }
 
+    public function show(int $id)
+    {
+        $articleManager = new ArticleManager($this->pdo);
+        $article = $articleManager->selectOneById($id);
+
+        return $this->twig->render('Article/article_details.html.twig', ['Article' => $article]);
     }
 
 }

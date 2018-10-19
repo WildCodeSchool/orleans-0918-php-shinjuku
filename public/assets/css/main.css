@@ -34,7 +34,7 @@ Paragrap        : 18px/1.6 '', Arial, sans-serif;
 Input, textarea : 14px/1.6 '', Arial, sans-serif;
 -------------------------------------------------------------------*/
 
-/*//////////////////////////////////////////////////////////////////
+/*
 [ FONT ]*/
 
 @font-face {
@@ -42,7 +42,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
     src: url('../fonts/shojumara/Shojumaru-Regular.otf');
 }
 
-/*//////////////////////////////////////////////////////////////////
+/*
 [ RS PLUGIN ]*/
 
 /*------------------------------------------------------------------
@@ -63,7 +63,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
     outline: none !important;
 }
 
-/*//////////////////////////////////////////////////////////////////
+/*
 [ LOADDING ]*/
 .animsition-loading-1 {
     position: absolute;
@@ -101,7 +101,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
     }
 }
 
-/*//////////////////////////////////////////////////////////////////
+/*
 [ BUTTON BACK TO TOP ]*/
 .btn-back-to-top {
     display: none;
@@ -140,10 +140,6 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
     }
 }
 
-/*//////////////////////////////////////////////////////////////////
-[ Header ]*/
-
-/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 [ Header Desktop ]*/
 
 .container-menu-desktop {
@@ -169,7 +165,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
     height: 124px;
 }
 
-/*==================================================================
+/*
 [ Top bar ]*/
 .top-bar {
     height: 40px;
@@ -379,14 +375,9 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 
 /*---------------------------------------------*/
 .main-menu > li:hover > a {
-<<<<<<< HEAD
-    text-decoration: none;
-    color: red;
-=======
   text-decoration: none;
   color: red;
   text-shadow: 2px 2px 3px white, 0 0 2em white, 0 0 0.5em white;
->>>>>>> 7a661d34bd25d6b1f1b1b02e9e38faf38241e17a
 }
 
 .main-menu > li:hover > .sub-menu {
@@ -589,24 +580,6 @@ header {
 }
 
 .wrap-header-mobile {
-<<<<<<< HEAD
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: flex;
-    align-items: center;
-    height: 70px;
-    background: linear-gradient(180deg, rgba(0, 0, 0, .8), rgba(0, 0, 0, 0.05) 100%);
-    padding: 15px;
-    display: none;
-
-    box-shadow: 0 0px 3px 0px rgba(0, 0, 0, 0.2);
-    -moz-box-shadow: 0 0px 3px 0px rgba(0, 0, 0, 0.2);
-    -webkit-box-shadow: 0 0px 3px 0px rgba(0, 0, 0, 0.2);
-    -o-box-shadow: 0 0px 3px 0px rgba(0, 0, 0, 0.2);
-    -ms-box-shadow: 0 0px 3px 0px rgba(0, 0, 0, 0.2);
-=======
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -623,7 +596,6 @@ header {
   -webkit-box-shadow: 0 0px 3px 0px rgba(0,0,0,0.2);
   -o-box-shadow: 0 0px 3px 0px rgba(0,0,0,0.2);
   -ms-box-shadow: 0 0px 3px 0px rgba(0,0,0,0.2);
->>>>>>> 7a661d34bd25d6b1f1b1b02e9e38faf38241e17a
 }
 
 /*------------------------------------------------------------------
@@ -637,19 +609,6 @@ header {
     -moz-flex-grow: 1;
     flex-grow: 1;
 }
-
-<<<<<<< HEAD
-.logo-mobile img {
-    max-width: calc(100% - 20px);
-    max-height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    margin: auto;
-}
-=======
->>>>>>> 7a661d34bd25d6b1f1b1b02e9e38faf38241e17a
 
 /*------------------------------------------------------------------
 [ btn show menu ]*/
@@ -772,7 +731,7 @@ header {
     }
 }
 
-/*//////////////////////////////////////////////////////////////////
+/*
 [ Sidebar ]*/
 .wrap-sidebar {
     position: fixed;
@@ -804,7 +763,6 @@ header {
     -o-transition: all 0.4s;
     -moz-transition: all 0.34;
     transition: all 0.4s;
-
     box-shadow: 0 3px 6px 0px rgba(0, 0, 0, 0.18);
     -moz-box-shadow: 0 3px 6px 0px rgba(0, 0, 0, 0.18);
     -webkit-box-shadow: 0 3px 6px 0px rgba(0, 0, 0, 0.18);
@@ -859,7 +817,7 @@ header {
 
     -webkit-transition: all 0.4s;
     -o-transition: all 0.4s;
-    -moz-transition: all 0.34;
+    -moz-transition: all 0.3s;
     transition: all 0.4s;
 }
 
@@ -867,7 +825,7 @@ header {
     opacity: 1;
 }
 
-/*//////////////////////////////////////////////////////////////////
+/*
 [ Header cart ]*/
 .wrap-header-cart {
     position: fixed;
@@ -1019,7 +977,7 @@ header {
     }
 }
 
-/*//////////////////////////////////////////////////////////////////
+/*
 [ Restyle Select2 ]*/
 
 .rs1-select2 .select2-container {
@@ -1159,7 +1117,7 @@ header {
     content: "\f0d7";
 }
 
-/*//////////////////////////////////////////////////////////////////
+/*
 [ Slick1 ]*/
 .wrap-slick1 {
     position: relative;
@@ -1326,7 +1284,7 @@ header {
     }
 }
 
-/*//////////////////////////////////////////////////////////////////
+/*
 [ Slick2 ]*/
 
 .wrap-slick2 {
@@ -1376,7 +1334,7 @@ header {
     }
 }
 
-/*//////////////////////////////////////////////////////////////////
+/*
 [ Slick3 ]*/
 .wrap-slick3 {
     position: relative;
@@ -1461,7 +1419,7 @@ header {
     border-color: #ccc;
 }
 
-/*//////////////////////////////////////////////////////////////////
+/*
 [ RS Magnific-Popup ]*/
 .mfp-bg {
     z-index: 10000;
@@ -1553,7 +1511,7 @@ button.mfp-close {
     opacity: 0;
 }
 
-/*//////////////////////////////////////////////////////////////////
+/*
 [ Tab01 ]*/
 .tab01 .nav-tabs {
     display: -webkit-box;
@@ -1597,7 +1555,7 @@ button.mfp-close {
     border-color: #797979;
 }
 
-/*//////////////////////////////////////////////////////////////////
+/*
 [ RS sweet alert ]*/
 .swal-overlay {
     overflow-y: auto;
@@ -1647,7 +1605,7 @@ button.mfp-close {
     margin-top: 0;
 }
 
-/*//////////////////////////////////////////////////////////////////
+/*
 [ Filter ]*/
 .show-search .icon-search,
 .show-filter .icon-filter {
@@ -1751,7 +1709,7 @@ button.mfp-close {
     }
 }
 
-/*//////////////////////////////////////////////////////////////////
+/*
 [ Num Product ]*/
 .wrap-num-product {
     width: 140px;
@@ -1788,7 +1746,7 @@ input.num-product::-webkit-inner-spin-button {
     margin: 0;
 }
 
-/*//////////////////////////////////////////////////////////////////
+/*
 [ Tolltip100 ]*/
 .tooltip100 {
     position: relative;
@@ -1835,7 +1793,7 @@ input.num-product::-webkit-inner-spin-button {
     opacity: 1;
 }
 
-/*//////////////////////////////////////////////////////////////////
+/*
 [ Modal1 ]*/
 .wrap-modal1 {
     position: fixed;
@@ -1871,7 +1829,7 @@ input.num-product::-webkit-inner-spin-button {
     opacity: 1;
 }
 
-/*//////////////////////////////////////////////////////////////////
+/*
 [ Table Shopping Cart ]*/
 
 .wrap-table-shopping-cart {
@@ -1944,7 +1902,7 @@ input.num-product::-webkit-inner-spin-button {
     line-height: 1.6;
 }
 
-/*//////////////////////////////////////////////////////////////////
+/*
 [ Block1 ]*/
 .block1 {
     position: relative;
@@ -2009,7 +1967,7 @@ input.num-product::-webkit-inner-spin-button {
     color: #fff;
 }
 
-/*//////////////////////////////////////////////////////////////////
+/*
 [ Block2 ]*/
 .block2-pic {
     position: relative;
@@ -2090,6 +2048,7 @@ input.num-product::-webkit-inner-spin-button {
 /*==================================================================
     TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT
 ==================================================================*/
+
 .cl0 {
     color: #fff;
 }
@@ -2144,16 +2103,11 @@ input.num-product::-webkit-inner-spin-button {
 .cl13 {
     color: red;
 }
-/*//////////////////////////////////////////////////////////////////
-[
-
-
-
 /*==================================================================
     SIZE SIZE SIZE SIZE SIZE SIZE SIZE SIZE SIZE SIZE SIZE SIZE SIZE
 ==================================================================*/
 
-/*//////////////////////////////////////////////////////////////////
+/*
 [ Size ]*/
 .size-101 {
     min-width: 161px;
@@ -2280,7 +2234,7 @@ input.num-product::-webkit-inner-spin-button {
     height: 40px;
 }
 
-/*//////////////////////////////////////////////////////////////////
+/*
 [ Width ]*/
 .size-201 {
     max-width: 270px;
@@ -2354,7 +2308,7 @@ input.num-product::-webkit-inner-spin-button {
     max-width: 286px;
 }
 
-/*//////////////////////////////////////////////////////////////////
+/*
 [ Height ]*/
 .size-301 {
     min-height: 30px;
@@ -2533,85 +2487,28 @@ input.num-product::-webkit-inner-spin-button {
 /*==================================================================
  HOW HOW HOW HOW HOW HOW HOW HOW HOW HOW HOW HOW HOW HOW HOW HOW HOW
 ==================================================================*/
-.plh0::-webkit-input-placeholder {
-    color: #999999;
-}
 
-.plh0:-moz-placeholder {
-    color: #999999;
-}
+.plh0::-webkit-input-placeholder { color: #999999;}
+.plh0:-moz-placeholder { color: #999999;}
+.plh0::-moz-placeholder { color: #999999;}
+.plh0:-ms-input-placeholder { color: #999999;}
+.plh1::-webkit-input-placeholder { color: #b2b2b2;}
+.plh1:-moz-placeholder { color: #b2b2b2;}
+.plh1::-moz-placeholder { color: #b2b2b2;}
+.plh1:-ms-input-placeholder { color: #b2b2b2;}
+.plh2::-webkit-input-placeholder { color: #333;}
+.plh2:-moz-placeholder { color: #333;}
+.plh2::-moz-placeholder { color: #333;}
+.plh2:-ms-input-placeholder { color: #333;}
+.plh3::-webkit-input-placeholder { color: #555;}
+.plh3:-moz-placeholder { color: #555;}
+.plh3::-moz-placeholder { color: #555;}
+.plh3:-ms-input-placeholder { color: #555;}
+.plh4::-webkit-input-placeholder { color: #888;}
+.plh4:-moz-placeholder { color: #888;}
+.plh4::-moz-placeholder { color: #888;}
+.plh4:-ms-input-placeholder { color: #888;}
 
-.plh0::-moz-placeholder {
-    color: #999999;
-}
-
-.plh0:-ms-input-placeholder {
-    color: #999999;
-}
-
-.plh1::-webkit-input-placeholder {
-    color: #b2b2b2;
-}
-
-.plh1:-moz-placeholder {
-    color: #b2b2b2;
-}
-
-.plh1::-moz-placeholder {
-    color: #b2b2b2;
-}
-
-.plh1:-ms-input-placeholder {
-    color: #b2b2b2;
-}
-
-.plh2::-webkit-input-placeholder {
-    color: #333;
-}
-
-.plh2:-moz-placeholder {
-    color: #333;
-}
-
-.plh2::-moz-placeholder {
-    color: #333;
-}
-
-.plh2:-ms-input-placeholder {
-    color: #333;
-}
-
-.plh3::-webkit-input-placeholder {
-    color: #555;
-}
-
-.plh3:-moz-placeholder {
-    color: #555;
-}
-
-.plh3::-moz-placeholder {
-    color: #555;
-}
-
-.plh3:-ms-input-placeholder {
-    color: #555;
-}
-
-.plh4::-webkit-input-placeholder {
-    color: #888;
-}
-
-.plh4:-moz-placeholder {
-    color: #888;
-}
-
-.plh4::-moz-placeholder {
-    color: #888;
-}
-
-.plh4:-ms-input-placeholder {
-    color: #888;
-}
 
 /*---------------------------------------------*/
 .js-addedwish-detail {
@@ -2624,22 +2521,21 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 .label1::after {
-    content: attr(data-label1);
-    font-size: 10px;
-    line-height: 15px;
-    color: #fff;
-    text-transform: uppercase;
-    text-align: center;
-
-    display: block;
-    position: absolute;
-    top: 3px;
-    right: -9px;
-    height: 15px;
-    min-width: 32px;
-    border-radius: 7px;
-    padding: 0 4px;
-    background-color: #f74877;
+  content: attr(data-label1);
+  font-size: 10px;
+  line-height: 15px;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  display: block;
+  position: absolute;
+  top: 3px;
+  right: -9px;
+  height: 15px;
+  min-width: 32px;
+  border-radius: 7px;
+  padding: 0 4px;
+  background-color: #f74877;
 }
 
 .label1.rs1::after {
@@ -2844,7 +2740,7 @@ input.num-product::-webkit-inner-spin-button {
       PSEUDO PSEUDO PSEUDO PSEUDO PSEUDO PSEUDO PSEUDO PSEUDO PSEUDO
 ==================================================================*/
 
-/*//////////////////////////////////////////////////////////////////
+/*
 [ Focus ]*/
 .focus-in0:focus::-webkit-input-placeholder {
     color: transparent;
@@ -2862,7 +2758,7 @@ input.num-product::-webkit-inner-spin-button {
     color: transparent;
 }
 
-/*//////////////////////////////////////////////////////////////////
+/*
 [ Hover ]*/
 
 .hov-cl0:hover {
@@ -2987,7 +2883,7 @@ input.num-product::-webkit-inner-spin-button {
   RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE
 ==================================================================*/
 
-/*//////////////////////////////////////////////////////////////////
+/*
 [ XL ]*/
 @media (max-width: 1199px) {
     .m-0-xl {
@@ -3058,7 +2954,7 @@ input.num-product::-webkit-inner-spin-button {
 
 }
 
-/*//////////////////////////////////////////////////////////////////
+/*
 [ LG ]*/
 @media (max-width: 991px) {
     .m-0-lg {
@@ -3137,7 +3033,7 @@ input.num-product::-webkit-inner-spin-button {
     }
 }
 
-/*//////////////////////////////////////////////////////////////////
+/*
 [ MD ]*/
 @media (max-width: 767px) {
     .m-0-md {
@@ -3211,7 +3107,7 @@ input.num-product::-webkit-inner-spin-button {
 
 }
 
-/*//////////////////////////////////////////////////////////////////
+/*
 [ SM ]*/
 @media (max-width: 575px) {
     .m-0-sm {
@@ -3304,7 +3200,7 @@ input.num-product::-webkit-inner-spin-button {
 
 }
 
-/*//////////////////////////////////////////////////////////////////
+/*
 [ SSM ]*/
 @media (max-width: 480px) {
     .m-0-ssm {
@@ -3375,17 +3271,15 @@ input.num-product::-webkit-inner-spin-button {
     .respon3 {
         padding: 20px;
     }
-
 }
 
-/*////////////////////////////////////*/
 
 footer{
   background: linear-gradient(360deg, rgba(0, 0, 0, .8), rgba(0, 0, 0, 0.02) 100%);
     min-height: 5vh;
 }
 
-/*///////////////////////////////////////
+/*
 banner
  */
 
@@ -3396,6 +3290,7 @@ banner
   min-height: 100vh;
   background-size: cover;
 }
+
 .h1{
   position: absolute;
   left: 10vw;
@@ -3404,10 +3299,10 @@ banner
   font-size: 2.5em;
   line-height: 1.3em;
   text-shadow: 10px 10px 10px white, 0 0 10em white, 0 0 1em white;
-
-
 }
 
+.slogan{
+  min-width: 38vw;
 
 .slogan-color{
     color: white;
@@ -3415,13 +3310,18 @@ banner
     font-size: 4em;
     padding-top: 35vh;
     padding-left: 10vw;
-
 }
+
 .slogan2{
     padding-top: 5vh;
     padding-left: 25vw;
 }
 
+.slogan-couleur{
+  color: white;
+  text-shadow: 8px 8px 8px black, 0 0 8em black, 0 0 1em black;
+}
+  
 .slogan3{
     padding-top: 5vh;
     padding-left: 45vw;
@@ -3437,11 +3337,11 @@ banner
     background-size: cover;
 }
 
-/*//////////////////////////////
-product page*/
+/*product page*/
 .search_product_bar .form-inline {
   width: 100%;
 }
+
 .search_product_bar .form-control {
   width: 100%;
   border: 2px solid rgba(255,0,0,0.5);
@@ -3452,14 +3352,11 @@ product page*/
   width: 100%;
   border: 2px solid rgba(255, 0, 0, 0.9);
   border-radius: .5rem;
-
 }
-/*//////////////////////
-article
- */
+
+/*article*/
 
 .block-article{
-
   padding: 3vh;
 }
 .image-article{
@@ -3468,9 +3365,7 @@ article
     max-height: 350px;
 
 }
-/*//////////////////////////
-main
- */
+/*main*/
 h3 {
     font-family: Quando;
 }
@@ -3482,8 +3377,7 @@ body {
 .f_quando {
     font-family: Quando;
 }
-/*////////////////////////
-add product in database
+/*add product in database
 class btn-shinjuku is supposed to be used for the buttons in the whole site ( as the client asked )
 */
 .btn-shinjuku
@@ -3492,23 +3386,63 @@ class btn-shinjuku is supposed to be used for the buttons in the whole site ( as
 	border:0px;
 	color:white;
 }
+
 .btn-shinjuku:hover
 {
 	background-color:#cc0000;
 }
-#uploader
+
+.uploader
 {
 	font-size:12px;
 	overflow:auto;
 }
+
 .formErrors
 {
 	color:red;
 }
-#preview
+
+.preview
 {
   max-width:600px;
 }
+
+/*
+contact form
+ */
+
+.contactFormTitle
+{
+  text-align:center;
+  padding-bottom:50px;
+}
+
+.sendContactFormButton
+{
+  padding-top:50px;
+  text-align:center;
+}
+
+.mailSent
+{
+    font-family: Quando;
+    color:green;
+    text-align:center;
+    font-size:24px;
+    padding-bottom:30px;
+}
+
+.mailNotSent
+{
+  font-family: Quando;
+  color:red;
+  text-align:center;
+  font-size:24px;
+  padding-bottom:30px;
+}
+
+/*
 
 lien
 
@@ -3535,35 +3469,40 @@ footer{
 
 .bold {
     font-weight: bold;
-
 }
 
-/*/////////////////////////////
+/*
 about
  */
 span {
     color: red;
 }
-
-.icons01 {
-    width: 150px;
+.icons01{
+  width: 150px;
 }
-
 .map {
-    border: 1px solid black;
+  border: 1px solid black;
 }
-
 .card {
-    width: 30rem;
+  width: 30rem;
 }
-
 small {
-    font-size: 12px;
+  font-size: 12px;
 }
 .card-text {
-    font-size: 16px;
+  font-size: 16px;
 }
-/*//////////////////////*/
+.mapmodal{
+  width: 100%;
+  height: 85vh;
+}
+.modal-dialog{
+  width: 95%;
+  height: 100%;
+}
+.modal-content{
+  height: 90%;
+}
 
 .logo{
   font-family: Shojumaru;
@@ -3571,6 +3510,7 @@ small {
   text-shadow: 3px 3px 3px white, 0 0 1em black, 0 0 0.2em white;
   font-size: 2vw;
 }
+
 .logo:hover{
   font-family: Shojumaru;
   color: white;
@@ -3591,7 +3531,6 @@ small {
     color: white;
     text-shadow: 1px 1px 2px white, 0 0 1em red, 0 0 0.2em white;
     font-size: 5vw;
-
 }
 .fa_search_mobile {
     font-size: 5vw;
@@ -3599,19 +3538,29 @@ small {
 
 .fa_search_desk {
     text-shadow: 1px 1px 2px black, 0 0 2em black, 0 0 0.5em black;
-
 }
+
 .fa_search_desk:hover {
   text-shadow: 2px 2px 3px white, 0 0 2em white, 0 0 0.5em white;
 }
+
 .hamburger-inner, .hamburger-inner::after, .hamburger-inner::before{
   background-color: white;
 }
 
-  /*icon FB*/
-
-
+/*icon FB*/
 .fa_size {
+  font-size: 2em;
+}
+
+/* Artcile review */
+
+.pd-top {
+    padding-top: 15vh;
+
     font-size: 2em;
 }
 
+.pd-right {
+  padding-right: 4vw;
+}

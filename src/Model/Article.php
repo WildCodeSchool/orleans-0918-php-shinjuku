@@ -16,9 +16,6 @@ namespace Model;
 class Article
 {
 
-    /**
-     * @return mixed
-
     private $id;
     private $name;
     private $category;
@@ -46,7 +43,6 @@ class Article
 
     /**
      * @return string
-
      */
     public function getName(): string
     {
@@ -56,9 +52,7 @@ class Article
     /**
      * @param mixed $name
      */
-
     public function setName(string $name): void
-
     {
         $this->name = $name;
     }
@@ -66,7 +60,6 @@ class Article
     /**
      * @return mixed
      */
-
     public function getCategory():string
     {
         return $this->category;
@@ -84,7 +77,6 @@ class Article
      * @return mixed
      */
     public function getPrice():float
-
     {
         return $this->price;
     }
@@ -92,9 +84,7 @@ class Article
     /**
      * @param mixed $price
      */
-
     public function setPrice(float $price): void
-
     {
         $this->price = $price;
     }
@@ -102,9 +92,7 @@ class Article
     /**
      * @return mixed
      */
-
     public function getPicture()
-
     {
         return $this->picture;
     }
@@ -112,23 +100,14 @@ class Article
     /**
      * @param mixed $picture
      */
-
     public function setPicture(string $picture): void
-
     {
         $this->picture = $picture;
     }
 
     /**
-     * @return mixed
+     * @return string
      */
-
-
-    /**
-     * @param mixed $category
-     */
- 
-
     public function getDescription():string
     {
         return $this->description;
@@ -145,7 +124,6 @@ class Article
     /**
      * @return mixed
      */
-
     public function getReview():string
     {
         return $this->review;
@@ -175,6 +153,4 @@ class Article
         $this->highlight = $highlight;
 
     }
-
-
 }

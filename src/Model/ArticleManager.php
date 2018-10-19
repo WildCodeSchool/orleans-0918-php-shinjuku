@@ -9,17 +9,13 @@
 
 namespace Model;
 
-/**
- *
- */
 class ArticleManager extends AbstractManager
 {
-    /**
-     *
-     */
     const TABLE = 'article';
 
     /**
+     * ArticleManager constructor.
+     * @param \PDO $pdo
      *  Initializes this class.
      */
     public function __construct(\PDO $pdo)

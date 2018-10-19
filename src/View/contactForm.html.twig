@@ -1,0 +1,46 @@
+<div class="container p-tb-150 p-b-150">
+    {% if mailSent is not empty %}
+        <div class="mailSent">{{ mailSent }}</div>
+    {% endif %}
+    {% if mailNotSent is not empty %}
+        <div class="mailNotSent">{{ mailNotSent }}</div>
+    {% endif %}
+    <h2 class="contactFormTitle" class="f_quando justify-content-center">Envoyez un message :</h2>
+
+        <div class="row justify-content-center">
+            <div class="col-sm-6 col-12">
+                <form method="post" action="">
+                    <div class="form-group">
+                        <label for="lastName">Nom :</label>
+                        {% if errors.lastName is defined %}
+                            <div class="formErrors">{{ errors.lastName }}</div>
+                        {% endif %}
+                        <input type="text" name="lastName" class="form-control" id="lastName" value="{{ values.lastName }}" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="firstName">Prénom :</label>
+                        {% if errors.firstName is defined %}
+                            <div class="formErrors">{{ errors.firstName }}</div>
+                        {% endif %}
+                        <input type="text" name="firstName" class="form-control" id="firstName" value="{{ values.firstName }}" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail :</label>
+                        {% if errors.email is defined %}
+                            <div class="formErrors">{{ errors.email }}</div>
+                        {% endif %}
+                        <input type="email" name="email" class="form-control" id="email" value="{{ values.email }}" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message :</label>
+                        {% if errors.message is defined %}
+                            <div class="formErrors">{{ errors.message }}</div>
+                        {% endif %}
+                        <textarea class="form-control" id="message" name="message" rows="10" required>{{ values.message }}</textarea>
+                    </div>
+                    <button type="submit" class="btn btn-shinjuku">Envoyer</button>
+                </form>
+            </div>
+        </div>
+
+</div>
