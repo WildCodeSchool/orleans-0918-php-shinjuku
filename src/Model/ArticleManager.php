@@ -26,13 +26,13 @@ class ArticleManager extends AbstractManager
     *searching article by category and by name(when searching by the client
     */
       public function searchArticle(string $category,string $search=''): array
-    {
-        $searching = '';
-        if(!empty($search)) {
-            $searching = "AND name LIKE '%$search%'";
-        }
-        return $this->pdo->query('SELECT * FROM ' . $this->table . " WHERE   category ='$category' $searching", \PDO::FETCH_CLASS, $this->className)->fetchAll();
-
+      {
+          $searching = '';
+          if (!empty($search)) {
+              $searching = "AND name LIKE '%$search%'";
+          }
+          return $this->pdo->query('SELECT * FROM ' . $this->table . " WHERE   category ='$category' $searching", \PDO::FETCH_CLASS, $this->className)->fetchAll();
+      }
     /**
      * @param Article $article
      * @return int

@@ -379,6 +379,10 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 
 /*---------------------------------------------*/
 .main-menu > li:hover > a {
+<<<<<<< HEAD
+=======
+
+>>>>>>> dev
   text-decoration: none;
   color: red;
   text-shadow: 2px 2px 3px white, 0 0 2em white, 0 0 0.5em white;
@@ -584,6 +588,10 @@ header {
 }
 
 .wrap-header-mobile {
+<<<<<<< HEAD
+=======
+
+>>>>>>> dev
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -614,6 +622,7 @@ header {
     flex-grow: 1;
 }
 
+<<<<<<< HEAD
 .logo-mobile img {
     max-width: calc(100% - 20px);
     max-height: 100%;
@@ -623,6 +632,8 @@ header {
     bottom: 0;
     margin: auto;
 }
+=======
+>>>>>>> dev
 
 /*------------------------------------------------------------------
 [ btn show menu ]*/
@@ -2063,64 +2074,20 @@ input.num-product::-webkit-inner-spin-button {
 /*==================================================================
     TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT
 ==================================================================*/
-.cl0 {
-    color: #fff;
-}
-
-.cl1 {
-    color: #717fe0;
-}
-
-.cl2 {
-    color: #333;
-}
-
-.cl3 {
-    color: #666;
-}
-
-.cl4 {
-    color: #999;
-}
-
-.cl5 {
-    color: #222;
-}
-
-.cl6 {
-    color: #888;
-}
-
-.cl7 {
-    color: #b2b2b2;
-}
-
-.cl8 {
-    color: #555;
-}
-
-.cl9 {
-    color: #aaa;
-}
-
-.cl10 {
-    color: #1d1d1d;
-}
-
-.cl11 {
-    color: #f9ba48;
-}
-
-.cl12 {
-    color: #ccc;
-}
-.cl13 {
-    color: red;
-}
-/*//////////////////////////////////////////////////////////////////
-[
-
-
+.cl0 {color: #fff;}
+.cl1 {color: #717fe0;}
+.cl2 {color: #333;}
+.cl3 {color: #666;}
+.cl4 {color: #999;}
+.cl5 {color: #222;}
+.cl6 {color: #888;}
+.cl7 {color: #b2b2b2;}
+.cl8 {color: #555;}
+.cl9 {color: #aaa;}
+.cl10 {color: #1d1d1d;}
+.cl11 {color: #f9ba48;}
+.cl12 {color: #ccc;}
+.cl13 {color: red;}
 
 /*==================================================================
     SIZE SIZE SIZE SIZE SIZE SIZE SIZE SIZE SIZE SIZE SIZE SIZE SIZE
@@ -3383,6 +3350,7 @@ body {
 
 .f_quando {
     font-family: Quando;
+}
 /*////////////////////////
 add product in database
 class btn-shinjuku is supposed to be used for the buttons in the whole site ( as the client asked )
@@ -3398,8 +3366,12 @@ class btn-shinjuku is supposed to be used for the buttons in the whole site ( as
 {
 	background-color:#cc0000;
 }
+<<<<<<< HEAD
 
 #uploader
+=======
+.uploader
+>>>>>>> dev
 {
 	font-size:12px;
 	overflow:auto;
@@ -3409,11 +3381,51 @@ class btn-shinjuku is supposed to be used for the buttons in the whole site ( as
 {
 	color:red;
 }
+<<<<<<< HEAD
 
 #preview
+=======
+.preview
+>>>>>>> dev
 {
   max-width:600px;
 }
+
+/*//////////////////////////
+contact form
+ */
+
+.contactFormTitle
+{
+  text-align:center;
+  padding-bottom:50px;
+}
+
+.sendContactFormButton
+{
+  padding-top:50px;
+  text-align:center;
+}
+
+.mailSent
+{
+    font-family: Quando;
+    color:green;
+    text-align:center;
+    font-size:24px;
+    padding-bottom:30px;
+}
+
+.mailNotSent
+{
+  font-family: Quando;
+  color:red;
+  text-align:center;
+  font-size:24px;
+  padding-bottom:30px;
+}
+
+/*/////////////////////////
 
 lien
 
@@ -3448,24 +3460,31 @@ about
 span {
     color: red;
 }
-
-.icons01 {
-    width: 150px;
+.icons01{
+  width: 150px;
 }
-
 .map {
-    border: 1px solid black;
+  border: 1px solid black;
 }
-
 .card {
-    width: 30rem;
+  width: 30rem;
 }
-
 small {
-    font-size: 12px;
+  font-size: 12px;
 }
 .card-text {
-    font-size: 16px;
+  font-size: 16px;
+}
+.mapmodal{
+  width: 100%;
+  height: 85vh;
+}
+.modal-dialog{
+  width: 95%;
+  height: 100%;
+}
+.modal-content{
+  height: 90%;
 }
 /*//////////////////////*/
 

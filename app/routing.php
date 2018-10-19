@@ -10,7 +10,6 @@
  */
 
 $routes = [
-
     'Article' => [
         ['index', '/products', 'GET'], // action, url, method
         ['add', '/article/add', ['GET', 'POST']], // action, url, method
@@ -24,5 +23,8 @@ $routes = [
 
     'Home' => [ // Controller
         ['index', '/home', 'GET'], // action, url, method
+    ],
+    'Contact' => [ // Controller
+        ['send', '/contact', ['GET', 'POST']], // action, url, method
     ],
 ];
