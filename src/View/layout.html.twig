@@ -40,7 +40,15 @@
 <body class="animsition">
     <header>
     {% include 'header.html.twig' %}
-
+    {% block banner %}
+        <div class="banner">
+            <div class="slogan-color bold d-none d-lg-block ">
+            <div>La <span class="cl2 span-shadow">Mangatek</span></div>
+            <div class="slogan2">Pour <span class="cl2 span-shadow">tout </span></div>
+            <div class="slogan3">les <span class="cl2 span-shadow">Otakus!</span></div>
+            </div>
+        </div>
+    {% endblock %}
         
     </header>
 

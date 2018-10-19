@@ -2062,21 +2062,61 @@ input.num-product::-webkit-inner-spin-button {
 /*==================================================================
     TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT
 ==================================================================*/
-.cl0 {color: #fff;}
-.cl1 {color: #717fe0;}
-.cl2 {color: #333;}
-.cl3 {color: #666;}
-.cl4 {color: #999;}
-.cl5 {color: #222;}
-.cl6 {color: #888;}
-.cl7 {color: #b2b2b2;}
-.cl8 {color: #555;}
-.cl9 {color: #aaa;}
-.cl10 {color: #1d1d1d;}
-.cl11 {color: #f9ba48;}
-.cl12 {color: #ccc;}
-.cl13 {color: red;}
 
+.cl0 {
+    color: #fff;
+}
+
+.cl1 {
+    color: #717fe0;
+}
+
+.cl2 {
+    color: black;
+}
+
+.cl3 {
+    color: #666;
+}
+
+.cl4 {
+    color: #999;
+}
+
+.cl5 {
+    color: #222;
+}
+
+.cl6 {
+    color: #888;
+}
+
+.cl7 {
+    color: #b2b2b2;
+}
+
+.cl8 {
+    color: #555;
+}
+
+.cl9 {
+    color: #aaa;
+}
+
+.cl10 {
+    color: #1d1d1d;
+}
+
+.cl11 {
+    color: #f9ba48;
+}
+
+.cl12 {
+    color: #ccc;
+}
+.cl13 {
+    color: red;
+}
 /*==================================================================
     SIZE SIZE SIZE SIZE SIZE SIZE SIZE SIZE SIZE SIZE SIZE SIZE SIZE
 ==================================================================*/
@@ -3277,17 +3317,33 @@ banner
 
 .slogan{
   min-width: 38vw;
+
+.slogan-color{
+    color: white;
+    text-shadow: 8px 8px 8px black, 0 0 8em black, 0 0 1em black;
+    font-size: 4em;
+    padding-top: 35vh;
+    padding-left: 10vw;
 }
 
 .slogan2{
-  min-width: 20vw;
+    padding-top: 5vh;
+    padding-left: 25vw;
 }
 
 .slogan-couleur{
   color: white;
   text-shadow: 8px 8px 8px black, 0 0 8em black, 0 0 1em black;
 }
+  
+.slogan3{
+    padding-top: 5vh;
+    padding-left: 45vw;
+}
+.span-shadow{
+    text-shadow: 8px 8px 8px white, 0 0 8em white, 0 0 1em white;
 
+}
 .banner2 {
     background-image: url("../images/banner2.jpg");
     min-width: 50vw;
@@ -3295,8 +3351,7 @@ banner
     background-size: cover;
 }
 
-/*//////////////////////////////
-product page*/
+/*product page*/
 .search_product_bar .form-inline {
   width: 100%;
 }
@@ -3313,9 +3368,7 @@ product page*/
   border-radius: .5rem;
 }
 
-/*//////////////////////
-article
- */
+/*article*/
 
 .block-article{
   padding: 3vh;
@@ -3325,9 +3378,7 @@ article
   min-height: 450px;
 
 }
-/*//////////////////////////
-main
- */
+/*main*/
 h3 {
     font-family: Quando;
 }
@@ -3339,8 +3390,7 @@ body {
 .f_quando {
     font-family: Quando;
 }
-/*////////////////////////
-add product in database
+/*add product in database
 class btn-shinjuku is supposed to be used for the buttons in the whole site ( as the client asked )
 */
 .btn-shinjuku
