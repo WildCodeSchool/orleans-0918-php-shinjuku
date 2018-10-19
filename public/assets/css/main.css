@@ -328,6 +328,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   color: #fff;
 }
 
+
 /*---------------------------------------------*/
 .sub-menu {
   list-style-type: none;
@@ -388,6 +389,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 .main-menu > li:hover > a {
   text-decoration: none;
   color: red;
+  text-shadow: 2px 2px 3px white, 0 0 2em white, 0 0 0.5em white;
 }
 
 .main-menu > li:hover > .sub-menu {
@@ -601,7 +603,7 @@ header{
   display: flex;
   align-items: center;
   height: 70px;
-  background: linear-gradient(180deg, rgba(0,0,0,.8), rgba(0,0,0,0.05) 100%);
+  background: linear-gradient(180deg, rgba(0,0,0,.8), rgba(0,0,0,0.7) 100%);
   padding: 15px;
   display: none;
 
@@ -623,17 +625,6 @@ header{
   -moz-flex-grow: 1;
   flex-grow: 1;
 }
-
-.logo-mobile img {
-  max-width: calc(100% - 20px);
-  max-height: 100%;
-  position:absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  margin: auto;
-}
-
 
 
 /*------------------------------------------------------------------
@@ -2427,7 +2418,6 @@ input.num-product::-webkit-inner-spin-button {
   border-radius: 2px;
 }
 
-
 /*==================================================================
  HOW HOW HOW HOW HOW HOW HOW HOW HOW HOW HOW HOW HOW HOW HOW HOW HOW
 ==================================================================*/
@@ -2435,22 +2425,18 @@ input.num-product::-webkit-inner-spin-button {
 .plh0:-moz-placeholder { color: #999999;}
 .plh0::-moz-placeholder { color: #999999;}
 .plh0:-ms-input-placeholder { color: #999999;}
-
 .plh1::-webkit-input-placeholder { color: #b2b2b2;}
 .plh1:-moz-placeholder { color: #b2b2b2;}
 .plh1::-moz-placeholder { color: #b2b2b2;}
 .plh1:-ms-input-placeholder { color: #b2b2b2;}
-
 .plh2::-webkit-input-placeholder { color: #333;}
 .plh2:-moz-placeholder { color: #333;}
 .plh2::-moz-placeholder { color: #333;}
 .plh2:-ms-input-placeholder { color: #333;}
-
 .plh3::-webkit-input-placeholder { color: #555;}
 .plh3:-moz-placeholder { color: #555;}
 .plh3::-moz-placeholder { color: #555;}
 .plh3:-ms-input-placeholder { color: #555;}
-
 .plh4::-webkit-input-placeholder { color: #888;}
 .plh4:-moz-placeholder { color: #888;}
 .plh4::-moz-placeholder { color: #888;}
@@ -2473,7 +2459,6 @@ input.num-product::-webkit-inner-spin-button {
   color: #fff;
   text-transform: uppercase;
   text-align: center;
-
   display: block;
   position: absolute;
   top: 3px;
@@ -2496,7 +2481,6 @@ input.num-product::-webkit-inner-spin-button {
   color: #333;
   border-color: #797979;
 }
-
 
 /*---------------------------------------------*/
 .wrap-input1 {
@@ -2521,7 +2505,6 @@ input.num-product::-webkit-inner-spin-button {
 .input1:focus + .focus-input1 {
   width: 100%;
 }
-
 
 /*---------------------------------------------*/
 .how-pagination1 {
@@ -2608,8 +2591,6 @@ input.num-product::-webkit-inner-spin-button {
   left: 10px;
 }
 
-
-
 /*---------------------------------------------*/
 .how-itemcart1 {
   width: 60px;
@@ -2687,8 +2668,6 @@ input.num-product::-webkit-inner-spin-button {
   right: -21px;
 }
 
-
-
 /*==================================================================
       PSEUDO PSEUDO PSEUDO PSEUDO PSEUDO PSEUDO PSEUDO PSEUDO PSEUDO
 ==================================================================*/
@@ -2700,16 +2679,12 @@ input.num-product::-webkit-inner-spin-button {
 .focus-in0:focus::-moz-placeholder { color:transparent; }
 .focus-in0:focus:-ms-input-placeholder { color:transparent; }
 
-
-
-
 /*//////////////////////////////////////////////////////////////////
 [ Hover ]*/
 
 .hov-cl0:hover {color: #fff;}
 .hov-bg0:hover {background-color: #fff;}
 .hov-cl1:hover {color: red;}
-
 .hov-bg1:hover {background-color: #717fe0;}
 
 /*---------------------------------------------*/
@@ -2769,7 +2744,6 @@ input.num-product::-webkit-inner-spin-button {
   border-color: #717fe0;
 }
 
-
 /*---------------------------------------------*/
 .hov-ovelay1 {
   position: relative;
@@ -2816,9 +2790,6 @@ input.num-product::-webkit-inner-spin-button {
   opacity: 1;
 }
 
-
-
-
 /*==================================================================
   RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE
 ==================================================================*/
@@ -2833,7 +2804,6 @@ input.num-product::-webkit-inner-spin-button {
   .m-r-0-xl {margin-right: 0;}
   .m-l-15-xl {margin-left: 15px;}
   .m-r-15-xl {margin-right: 15px;}
-
   .p-0-xl {padding: 0;}
   .p-lr-0-xl {padding-left: 0; padding-right: 0;}
   .p-lr-15-xl {padding-left: 15px; padding-right: 15px;}
@@ -2841,14 +2811,10 @@ input.num-product::-webkit-inner-spin-button {
   .p-r-0-xl {padding-right: 0;}
   .p-l-15-xl {padding-left: 15px;}
   .p-r-15-xl {padding-right: 15px;}
-
   .w-full-xl {width: 100%;}
-
   /*---------------------------------------------*/
 
 }
-
-
 /*//////////////////////////////////////////////////////////////////
 [ LG ]*/
 @media (max-width: 991px) {
@@ -2859,7 +2825,6 @@ input.num-product::-webkit-inner-spin-button {
   .m-r-0-lg {margin-right: 0;}
   .m-l-15-lg {margin-left: 15px;}
   .m-r-15-lg {margin-right: 15px;}
-
   .p-0-lg {padding: 0;}
   .p-lr-0-lg {padding-left: 0; padding-right: 0;}
   .p-lr-15-lg {padding-left: 15px; padding-right: 15px;}
@@ -2867,9 +2832,7 @@ input.num-product::-webkit-inner-spin-button {
   .p-r-0-lg{padding-right: 0;}
   .p-l-15-lg {padding-left: 15px;}
   .p-r-15-lg {padding-right: 15px;}
-
   .w-full-lg {width: 100%;}
-
   /*---------------------------------------------*/
   .respon4 {
     width: 50%;
@@ -2882,7 +2845,6 @@ input.num-product::-webkit-inner-spin-button {
   }
 }
 
-
 /*//////////////////////////////////////////////////////////////////
 [ MD ]*/
 @media (max-width: 767px) {
@@ -2893,7 +2855,6 @@ input.num-product::-webkit-inner-spin-button {
   .m-r-0-md {margin-right: 0;}
   .m-l-15-md {margin-left: 15px;}
   .m-r-15-md {margin-right: 15px;}
-
   .p-0-md {padding: 0;}
   .p-lr-0-md {padding-left: 0; padding-right: 0;}
   .p-lr-15-md {padding-left: 15px; padding-right: 15px;}
@@ -2901,16 +2862,12 @@ input.num-product::-webkit-inner-spin-button {
   .p-r-0-md{padding-right: 0;}
   .p-l-15-md {padding-left: 15px;}
   .p-r-15-md {padding-right: 15px;}
-
   .w-full-md {width: 100%;}
-
   /*---------------------------------------------*/
   .respon4 {
     width: 100%;
   }
-
 }
-
 
 /*//////////////////////////////////////////////////////////////////
 [ SM ]*/
@@ -2922,7 +2879,6 @@ input.num-product::-webkit-inner-spin-button {
   .m-r-0-sm {margin-right: 0;}
   .m-l-15-sm {margin-left: 15px;}
   .m-r-15-sm {margin-right: 15px;}
-
   .p-0-sm {padding: 0;}
   .p-lr-0-sm {padding-left: 0; padding-right: 0;}
   .p-lr-15-sm {padding-left: 15px; padding-right: 15px;}
@@ -2930,19 +2886,15 @@ input.num-product::-webkit-inner-spin-button {
   .p-r-0-sm{padding-right: 0;}
   .p-l-15-sm {padding-left: 15px;}
   .p-r-15-sm {padding-right: 15px;}
-
   .w-full-sm {width: 100%;}
-
   /*---------------------------------------------*/
   .respon1 {
     font-size: 40px;
   }
-
   /*---------------------------------------------*/
   .respon2 {
     font-size: 20px;
   }
-
   /*---------------------------------------------*/
   .respon6 {
     width: 65px;
@@ -2951,15 +2903,11 @@ input.num-product::-webkit-inner-spin-button {
   .respon6-next {
     width: calc(100% - 65px);
   }
-
   /*---------------------------------------------*/
   .respon7 {
     padding-left: 60px;
   }
-
-
 }
-
 
 /*//////////////////////////////////////////////////////////////////
 [ SSM ]*/
@@ -2971,7 +2919,6 @@ input.num-product::-webkit-inner-spin-button {
   .m-r-0-ssm {margin-right: 0;}
   .m-l-15-ssm {margin-left: 15px;}
   .m-r-15-ssm {margin-right: 15px;}
-
   .p-0-ssm {padding: 0;}
   .p-lr-0-ssm {padding-left: 0; padding-right: 0;}
   .p-lr-15-ssm {padding-left: 15px; padding-right: 15px;}
@@ -2979,40 +2926,50 @@ input.num-product::-webkit-inner-spin-button {
   .p-r-0-ssm{padding-right: 0;}
   .p-l-15-ssm {padding-left: 15px;}
   .p-r-15-ssm {padding-right: 15px;}
-
   .w-full-ssm {width: 100%;}
-
   /*---------------------------------------------*/
   .respon3 {
     padding: 20px;
   }
-
 }
-
 /*////////////////////////////////////*/
 footer{
-  background: linear-gradient(360deg, rgba(0, 0, 0, .8), rgba(0, 0, 0, 0.1) 100%);
+  background: linear-gradient(360deg, rgba(0, 0, 0, .8), rgba(0, 0, 0, 0.02) 100%);
+    min-height: 5vh;
 }
+
 /*///////////////////////////////////////
 banner
  */
 .banner{
-  background-image: url("../images/banner_home.jpg");
+  background-image: url("../images/test.jpg");
   opacity: 0.8;
-  filter: blur(3px);
   min-width: 100vw;
   min-height: 100vh;
   background-size: cover;
 }
-h1{
+
+.h1{
   position: absolute;
-  left: 20vw;
-  top: 60vh;
+  left: 10vw;
+  top: 50vh;
+  color: black;
+  font-size: 2.5em;
+  line-height: 1.3em;
+  text-shadow: 10px 10px 10px white, 0 0 10em white, 0 0 1em white;
+}
+
+.slogan{
+  min-width: 38vw;
+}
+
+.slogan2{
+  min-width: 20vw;
+}
+
+.slogan-couleur{
   color: white;
-  font-size: 200%;
-
-  text-shadow: 1px 1px 2px black, 0 0 2em black, 0 0 0.8em black;
-
+  text-shadow: 8px 8px 8px black, 0 0 8em black, 0 0 1em black;
 }
 
 .banner2{
@@ -3020,6 +2977,37 @@ h1{
   min-width: 50vw;
   min-height: 50vh;
   background-size: cover;
+}
+
+/*//////////////////////////////
+product page*/
+.search_product_bar .form-inline {
+  width: 100%;
+}
+
+.search_product_bar .form-control {
+  width: 100%;
+  border: 2px solid rgba(255,0,0,0.5);
+  border-radius: .5rem;
+}
+
+.search_product_bar .form-control:hover {
+  width: 100%;
+  border: 2px solid rgba(255, 0, 0, 0.9);
+  border-radius: .5rem;
+}
+
+/*//////////////////////
+article
+ */
+
+.block-article{
+  padding: 3vh;
+}
+.image-article{
+  overflow: hidden;
+  min-height: 450px;
+
 }
 /*//////////////////////////
 main
@@ -3063,12 +3051,13 @@ class btn-shinjuku is supposed to be used for the buttons in the whole site ( as
   max-width:600px;
 }
 
-lien
+/*lien
  */
 .lien{
   color: #FEFEFE;
 }
-icon FB
+
+/*icon FB
  */
 .fa_size{
   font-size: 2em;
@@ -3085,9 +3074,9 @@ footer{
 .fa_size{
   font-size: 1.5em;
 }
+
 .bold{
   font-weight: bold;
-
 }
 
 /*/////////////////////////////
@@ -3104,9 +3093,10 @@ span{
 .logo{
   font-family: Shojumaru;
   color: red;
-  text-shadow: 1px 1px 2px white, 0 0 1em black, 0 0 0.2em white;
+  text-shadow: 3px 3px 3px white, 0 0 1em black, 0 0 0.2em white;
   font-size: 2vw;
 }
+
 .logo:hover{
   font-family: Shojumaru;
   color: white;
@@ -3119,26 +3109,31 @@ span{
   color: red;
   text-shadow: 1px 1px 2px white, 0 0 1em red, 0 0 0.2em white;
   font-size: 5vw;
-
 }
+
 .logo_mobile:hover{
   font-family: Shojumaru;
   color: white;
-  text-shadow: 1px 1px 2px white, 0 0 1em red, 0 0 0.2em white;
   font-size: 5vw;
-
 }
 
 .fa_search_mobile{
   font-size: 5vw;
 }
 
-.fa_search_desk{
+.fa_search_desk {
   text-shadow: 1px 1px 2px black, 0 0 2em black, 0 0 0.5em black;
 }
 
-/*icon FB*/
+.fa_search_desk:hover {
+  text-shadow: 2px 2px 3px white, 0 0 2em white, 0 0 0.5em white;
+}
 
+.hamburger-inner, .hamburger-inner::after, .hamburger-inner::before{
+  background-color: white;
+}
+
+/*icon FB*/
 .fa_size {
   font-size: 2em;
 }
