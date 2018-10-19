@@ -17,7 +17,7 @@ class ContactController extends AbstractController
     public function send()
     {
         session_start();
-        $errors=array();
+        $errors=[];
         $cleanPost=[];
         $mailSent="";
         $mailNotSent="";
