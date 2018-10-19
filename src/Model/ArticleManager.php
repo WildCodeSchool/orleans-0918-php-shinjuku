@@ -17,7 +17,7 @@ namespace Model;
 
 class ArticleManager extends AbstractManager
 {
-    const TABLE = 'Article';
+    const TABLE = 'article';
 
     /**
      * ArticleManager constructor.
