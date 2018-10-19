@@ -1,16 +1,10 @@
 <?php
 /**
  * Created by PhpStorm.
-<<<<<<< HEAD
- * User: thomas
- * Date: 17/10/18
- * Time: 11:22
-=======
  * User: sylvain
  * Date: 07/03/18
  * Time: 18:20
  * PHP version 7
->>>>>>> dev
  */
 
 namespace Model;
