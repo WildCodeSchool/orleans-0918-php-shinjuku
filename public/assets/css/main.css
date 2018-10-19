@@ -3360,8 +3360,9 @@ banner
   padding: 3vh;
 }
 .image-article{
-  overflow: hidden;
-  min-height: 450px;
+    overflow: hidden;
+    min-height: 350px;
+    max-height: 350px;
 
 }
 /*main*/
