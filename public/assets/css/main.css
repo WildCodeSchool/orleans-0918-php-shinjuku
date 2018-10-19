@@ -379,10 +379,6 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 
 /*---------------------------------------------*/
 .main-menu > li:hover > a {
-<<<<<<< HEAD
-=======
-
->>>>>>> dev
   text-decoration: none;
   color: red;
   text-shadow: 2px 2px 3px white, 0 0 2em white, 0 0 0.5em white;
@@ -588,10 +584,6 @@ header {
 }
 
 .wrap-header-mobile {
-<<<<<<< HEAD
-=======
-
->>>>>>> dev
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -622,7 +614,6 @@ header {
     flex-grow: 1;
 }
 
-<<<<<<< HEAD
 .logo-mobile img {
     max-width: calc(100% - 20px);
     max-height: 100%;
@@ -632,8 +623,6 @@ header {
     bottom: 0;
     margin: auto;
 }
-=======
->>>>>>> dev
 
 /*------------------------------------------------------------------
 [ btn show menu ]*/
@@ -788,7 +777,6 @@ header {
     -o-transition: all 0.4s;
     -moz-transition: all 0.34;
     transition: all 0.4s;
-
     box-shadow: 0 3px 6px 0px rgba(0, 0, 0, 0.18);
     -moz-box-shadow: 0 3px 6px 0px rgba(0, 0, 0, 0.18);
     -webkit-box-shadow: 0 3px 6px 0px rgba(0, 0, 0, 0.18);
@@ -843,7 +831,7 @@ header {
 
     -webkit-transition: all 0.4s;
     -o-transition: all 0.4s;
-    -moz-transition: all 0.34;
+    -moz-transition: all 0.3s;
     transition: all 0.4s;
 }
 
@@ -3366,12 +3354,8 @@ class btn-shinjuku is supposed to be used for the buttons in the whole site ( as
 {
 	background-color:#cc0000;
 }
-<<<<<<< HEAD
 
-#uploader
-=======
 .uploader
->>>>>>> dev
 {
 	font-size:12px;
 	overflow:auto;
@@ -3381,12 +3365,8 @@ class btn-shinjuku is supposed to be used for the buttons in the whole site ( as
 {
 	color:red;
 }
-<<<<<<< HEAD
 
-#preview
-=======
 .preview
->>>>>>> dev
 {
   max-width:600px;
 }
@@ -3454,7 +3434,7 @@ footer{
     font-weight: bold;
 }
 
-/*/////////////////////////////
+/*
 about
  */
 span {
