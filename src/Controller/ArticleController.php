@@ -12,14 +12,14 @@ namespace Controller;
 use Model\Article;
 use Model\ArticleManager;
 
-
+/*
  * Class ArticleController
  *
  */
 class ArticleController extends AbstractController
 {
 
-
+    const ALLOWED_CATEGORY=['manga','goodies','dvd'];
     const ALLOWED_EXTENSIONS=['png', 'jpg', 'jpeg'];
 
       public function listByCategory($category)
