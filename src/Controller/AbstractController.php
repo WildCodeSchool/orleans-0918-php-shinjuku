@@ -55,9 +55,4 @@ abstract class AbstractController
     {
         return $this->pdo;
     }
-
-
-
-
-
 }
