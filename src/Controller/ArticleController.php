@@ -22,18 +22,6 @@ class ArticleController extends AbstractController
 
     const ALLOWED_EXTENSIONS=['png', 'jpg', 'jpeg'];
 
-    /**
-     * Display article creation page and Display product listing
-
-     *
-     * @return string
-     * @throws \Twig_Error_Loader
-     * @throws \Twig_Error_Runtime
-     * @throws \Twig_Error_Syntax
-     */
-
-
-   
       public function listByCategory($category)
     {
         $errors=[];
@@ -48,7 +36,6 @@ class ArticleController extends AbstractController
         return $this->twig->render('Product/article.html.twig', ['article' => $articles, 'category'=> $category, 'error'=>$errors]);
 
    }
-
 
     public function add()
     {
