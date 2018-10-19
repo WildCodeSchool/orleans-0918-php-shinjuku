@@ -22,7 +22,7 @@ $routes = [
         ['index', '/home', 'GET'], // action, url, method
     ],
 
-    'ProductDetails' => [ // Controller
+    'ArticleDetails' => [ // Controller
         ['index', '/article/{id:\d+}', 'GET'], // action, url, method
     ],
 ];

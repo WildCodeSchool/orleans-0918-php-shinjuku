@@ -8,10 +8,7 @@
 
 namespace Controller;
 
-use Model\Home;
-use Model\HomeManager;
-
-class ProductDetailsController extends AbstractController
+class ArticleDetailsController extends AbstractController
 {
     public function index()
     {
