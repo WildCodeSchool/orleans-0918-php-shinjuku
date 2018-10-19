@@ -29,27 +29,36 @@
 
 
 
-    <title>{% block title %}{% endblock %}</title>
+    <title>{% block title %}Shinjuku-World{% endblock %}</title>
 
     <link rel="stylesheet" href="/assets/css/styles.css">
     {% block stylesheet %}{% endblock %}
+
     <link rel="icon" href="/assets/images/icons/favicon.png">
 </head>
 
-<body>
+<body class="animsition">
     <header>
     {% include 'header.html.twig' %}
-        {% include 'banner_home.html.twig' %}
-
+    {% block banner %}
+        <div class="banner">
+            <div class="slogan-color bold d-none d-lg-block ">
+            <div>La <span class="cl2 span-shadow">Mangatek</span></div>
+            <div class="slogan2">Pour <span class="cl2 span-shadow">tout </span></div>
+            <div class="slogan3">les <span class="cl2 span-shadow">Otakus!</span></div>
+            </div>
+        </div>
+    {% endblock %}
+        
     </header>
 
     <main>
         {% block content %}{% endblock %}
+
     </main>
 
     <footer>
         {% include 'footer.html.twig' %}
-
     </footer>
 
 </body>
@@ -60,7 +69,6 @@
     <!--===============================================================================================-->
     <script src="/assets/js/popper.js"></script>
     <script src="/assets/js/bootstrap.min.js"></script>
-
     <!--===============================================================================================-->
     <script src="/assets/js/slick.min.js"></script>
     <script src="/assets/js/slick-custom.js"></script>
@@ -124,6 +132,9 @@
                 ps.update();
             })
         });
+    </script>
+    <!--===============================================================================================-->
+    <script src="/assets/js/uploadPreview.js"></script>
     <!--===============================================================================================-->
     <script src="/assets/js/isotope.pkgd.min.js"></script>
     <!--===============================================================================================-->
