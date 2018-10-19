@@ -34,7 +34,7 @@ Paragrap        : 18px/1.6 '', Arial, sans-serif;
 Input, textarea : 14px/1.6 '', Arial, sans-serif;
 -------------------------------------------------------------------*/
 
-/*//////////////////////////////////////////////////////////////////
+/*
 [ FONT ]*/
 
 @font-face {
@@ -42,7 +42,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
     src: url('../fonts/shojumara/Shojumaru-Regular.otf');
 }
 
-/*//////////////////////////////////////////////////////////////////
+/*
 [ RS PLUGIN ]*/
 
 /*------------------------------------------------------------------
@@ -63,7 +63,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
     outline: none !important;
 }
 
-/*//////////////////////////////////////////////////////////////////
+/*
 [ LOADDING ]*/
 .animsition-loading-1 {
     position: absolute;
@@ -101,7 +101,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
     }
 }
 
-/*//////////////////////////////////////////////////////////////////
+/*
 [ BUTTON BACK TO TOP ]*/
 .btn-back-to-top {
     display: none;
@@ -140,10 +140,6 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
     }
 }
 
-/*//////////////////////////////////////////////////////////////////
-[ Header ]*/
-
-/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 [ Header Desktop ]*/
 
 .container-menu-desktop {
@@ -169,7 +165,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
     height: 124px;
 }
 
-/*==================================================================
+/*
 [ Top bar ]*/
 .top-bar {
     height: 40px;
@@ -735,7 +731,7 @@ header {
     }
 }
 
-/*//////////////////////////////////////////////////////////////////
+/*
 [ Sidebar ]*/
 .wrap-sidebar {
     position: fixed;
@@ -829,7 +825,7 @@ header {
     opacity: 1;
 }
 
-/*//////////////////////////////////////////////////////////////////
+/*
 [ Header cart ]*/
 .wrap-header-cart {
     position: fixed;
@@ -981,7 +977,7 @@ header {
     }
 }
 
-/*//////////////////////////////////////////////////////////////////
+/*
 [ Restyle Select2 ]*/
 
 .rs1-select2 .select2-container {
@@ -1121,7 +1117,7 @@ header {
     content: "\f0d7";
 }
 
-/*//////////////////////////////////////////////////////////////////
+/*
 [ Slick1 ]*/
 .wrap-slick1 {
     position: relative;
@@ -1288,7 +1284,7 @@ header {
     }
 }
 
-/*//////////////////////////////////////////////////////////////////
+/*
 [ Slick2 ]*/
 
 .wrap-slick2 {
@@ -1338,7 +1334,7 @@ header {
     }
 }
 
-/*//////////////////////////////////////////////////////////////////
+/*
 [ Slick3 ]*/
 .wrap-slick3 {
     position: relative;
@@ -1423,7 +1419,7 @@ header {
     border-color: #ccc;
 }
 
-/*//////////////////////////////////////////////////////////////////
+/*
 [ RS Magnific-Popup ]*/
 .mfp-bg {
     z-index: 10000;
@@ -1515,7 +1511,7 @@ button.mfp-close {
     opacity: 0;
 }
 
-/*//////////////////////////////////////////////////////////////////
+/*
 [ Tab01 ]*/
 .tab01 .nav-tabs {
     display: -webkit-box;
@@ -1559,7 +1555,7 @@ button.mfp-close {
     border-color: #797979;
 }
 
-/*//////////////////////////////////////////////////////////////////
+/*
 [ RS sweet alert ]*/
 .swal-overlay {
     overflow-y: auto;
@@ -1609,7 +1605,7 @@ button.mfp-close {
     margin-top: 0;
 }
 
-/*//////////////////////////////////////////////////////////////////
+/*
 [ Filter ]*/
 .show-search .icon-search,
 .show-filter .icon-filter {
@@ -1713,7 +1709,7 @@ button.mfp-close {
     }
 }
 
-/*//////////////////////////////////////////////////////////////////
+/*
 [ Num Product ]*/
 .wrap-num-product {
     width: 140px;
@@ -1750,7 +1746,7 @@ input.num-product::-webkit-inner-spin-button {
     margin: 0;
 }
 
-/*//////////////////////////////////////////////////////////////////
+/*
 [ Tolltip100 ]*/
 .tooltip100 {
     position: relative;
@@ -1797,7 +1793,7 @@ input.num-product::-webkit-inner-spin-button {
     opacity: 1;
 }
 
-/*//////////////////////////////////////////////////////////////////
+/*
 [ Modal1 ]*/
 .wrap-modal1 {
     position: fixed;
@@ -1833,7 +1829,7 @@ input.num-product::-webkit-inner-spin-button {
     opacity: 1;
 }
 
-/*//////////////////////////////////////////////////////////////////
+/*
 [ Table Shopping Cart ]*/
 
 .wrap-table-shopping-cart {
@@ -1906,7 +1902,7 @@ input.num-product::-webkit-inner-spin-button {
     line-height: 1.6;
 }
 
-/*//////////////////////////////////////////////////////////////////
+/*
 [ Block1 ]*/
 .block1 {
     position: relative;
@@ -1971,7 +1967,7 @@ input.num-product::-webkit-inner-spin-button {
     color: #fff;
 }
 
-/*//////////////////////////////////////////////////////////////////
+/*
 [ Block2 ]*/
 .block2-pic {
     position: relative;
@@ -2111,7 +2107,7 @@ input.num-product::-webkit-inner-spin-button {
     SIZE SIZE SIZE SIZE SIZE SIZE SIZE SIZE SIZE SIZE SIZE SIZE SIZE
 ==================================================================*/
 
-/*//////////////////////////////////////////////////////////////////
+/*
 [ Size ]*/
 .size-101 {
     min-width: 161px;
@@ -2238,7 +2234,7 @@ input.num-product::-webkit-inner-spin-button {
     height: 40px;
 }
 
-/*//////////////////////////////////////////////////////////////////
+/*
 [ Width ]*/
 .size-201 {
     max-width: 270px;
@@ -2312,7 +2308,7 @@ input.num-product::-webkit-inner-spin-button {
     max-width: 286px;
 }
 
-/*//////////////////////////////////////////////////////////////////
+/*
 [ Height ]*/
 .size-301 {
     min-height: 30px;
@@ -2744,7 +2740,7 @@ input.num-product::-webkit-inner-spin-button {
       PSEUDO PSEUDO PSEUDO PSEUDO PSEUDO PSEUDO PSEUDO PSEUDO PSEUDO
 ==================================================================*/
 
-/*//////////////////////////////////////////////////////////////////
+/*
 [ Focus ]*/
 .focus-in0:focus::-webkit-input-placeholder {
     color: transparent;
@@ -2762,7 +2758,7 @@ input.num-product::-webkit-inner-spin-button {
     color: transparent;
 }
 
-/*//////////////////////////////////////////////////////////////////
+/*
 [ Hover ]*/
 
 .hov-cl0:hover {
@@ -2887,7 +2883,7 @@ input.num-product::-webkit-inner-spin-button {
   RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE
 ==================================================================*/
 
-/*//////////////////////////////////////////////////////////////////
+/*
 [ XL ]*/
 @media (max-width: 1199px) {
     .m-0-xl {
@@ -2958,7 +2954,7 @@ input.num-product::-webkit-inner-spin-button {
 
 }
 
-/*//////////////////////////////////////////////////////////////////
+/*
 [ LG ]*/
 @media (max-width: 991px) {
     .m-0-lg {
@@ -3037,7 +3033,7 @@ input.num-product::-webkit-inner-spin-button {
     }
 }
 
-/*//////////////////////////////////////////////////////////////////
+/*
 [ MD ]*/
 @media (max-width: 767px) {
     .m-0-md {
@@ -3111,7 +3107,7 @@ input.num-product::-webkit-inner-spin-button {
 
 }
 
-/*//////////////////////////////////////////////////////////////////
+/*
 [ SM ]*/
 @media (max-width: 575px) {
     .m-0-sm {
@@ -3204,7 +3200,7 @@ input.num-product::-webkit-inner-spin-button {
 
 }
 
-/*//////////////////////////////////////////////////////////////////
+/*
 [ SSM ]*/
 @media (max-width: 480px) {
     .m-0-ssm {
@@ -3276,14 +3272,14 @@ input.num-product::-webkit-inner-spin-button {
         padding: 20px;
     }
 }
-/*////////////////////////////////////*/
+
 
 footer{
   background: linear-gradient(360deg, rgba(0, 0, 0, .8), rgba(0, 0, 0, 0.02) 100%);
     min-height: 5vh;
 }
 
-/*///////////////////////////////////////
+/*
 banner
  */
 
@@ -3411,7 +3407,7 @@ class btn-shinjuku is supposed to be used for the buttons in the whole site ( as
   max-width:600px;
 }
 
-/*//////////////////////////
+/*
 contact form
  */
 
@@ -3445,7 +3441,7 @@ contact form
   padding-bottom:30px;
 }
 
-/*/////////////////////////
+/*
 
 lien
 
@@ -3506,7 +3502,6 @@ small {
 .modal-content{
   height: 90%;
 }
-/*//////////////////////*/
 
 .logo{
   font-family: Shojumaru;
