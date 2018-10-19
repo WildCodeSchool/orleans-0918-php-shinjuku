@@ -3463,8 +3463,9 @@ article
   padding: 3vh;
 }
 .image-article{
-  overflow: hidden;
-  min-height: 450px;
+    overflow: hidden;
+    min-height: 35vh;
+    max-height: 35vh;
 
 }
 /*//////////////////////////
