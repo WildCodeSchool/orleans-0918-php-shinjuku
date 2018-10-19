@@ -379,14 +379,10 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 
 /*---------------------------------------------*/
 .main-menu > li:hover > a {
-    <<<<<<< HEAD
-    text-decoration: none;
-    color: red;
-=======
+
 text-decoration: none;
     color: red;
     text-shadow: 2px 2px 3px white, 0 0 2em white, 0 0 0.5em white;
->>>>>>> 7a661d34bd25d6b1f1b1b02e9e38faf38241e17a
 }
 
 .main-menu > li:hover > .sub-menu {
