@@ -2099,7 +2099,7 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 .cl2 {
-    color: #333;
+    color: black;
 }
 
 .cl3 {
@@ -3407,17 +3407,29 @@ banner
 
 
 }
-.slogan{
-  min-width: 38vw;
+
+
+.slogan-color{
+    color: white;
+    text-shadow: 8px 8px 8px black, 0 0 8em black, 0 0 1em black;
+    font-size: 4em;
+    padding-top: 35vh;
+    padding-left: 10vw;
+
 }
 .slogan2{
-  min-width: 20vw;
-}
-.slogan-couleur{
-  color: white;
-  text-shadow: 8px 8px 8px black, 0 0 8em black, 0 0 1em black;
+    padding-top: 5vh;
+    padding-left: 25vw;
 }
 
+.slogan3{
+    padding-top: 5vh;
+    padding-left: 45vw;
+}
+.span-shadow{
+    text-shadow: 8px 8px 8px white, 0 0 8em white, 0 0 1em white;
+
+}
 .banner2 {
     background-image: url("../images/banner2.jpg");
     min-width: 50vw;
