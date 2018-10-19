@@ -20,10 +20,16 @@ class ContactController extends AbstractController
         $errors=array();
         $cleanPost=[];
         $mailSent="";
+        $mailNotSent="";
 
         if (isset($_SESSION['mailSent']) && !empty($_SESSION['mailSent'])) {
             $mailSent=$_SESSION['mailSent'];
             unset($_SESSION['mailSent']);
+        }
+
+        if (isset($_SESSION['mailNotSent']) && !empty($_SESSION['mailNotSent'])) {
+            $mailNotSent=$_SESSION['mailNotSent'];
+            unset($_SESSION['mailNotSent']);
         }
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -74,23 +80,23 @@ class ContactController extends AbstractController
                     $errors['message'] = 'Veuillez remplir le champ "Description" avec 5000 caractères maximum';
                 }
 
-                if(0==count($errors)) {
+                if(empty($errors)) {
 
                     try {
-                        $transport = (new Swift_SmtpTransport('smtp.gmail.com', 465))
-                            ->setUsername('shinjuku.projet@gmail.com')
-                            ->setPassword('Projet2shinjuku')
-                            ->setEncryption('ssl');
+                        $transport = (new Swift_SmtpTransport(MAIL_TRANSPORT, MAIL_PORT))
+                            ->setUsername(MAIL_USER)
+                            ->setPassword(MAIL_PASSWORD)
+                            ->setEncryption(MAIL_ENCRYPTION);
                         $mailer = new Swift_Mailer($transport);
                         $message = new Swift_Message();
-                        $message->setSubject(uniqid());
+                        $message->setSubject('Message du formulaire de contact du site shinjuku');
                         $message->setFrom([$cleanPost['email'] => 'sender name']);
                         $message->addTo('shinjuku.projet@gmail.com','recipient name');
                         $message->setBody("Nouveau message de ".$cleanPost['lastName']." ".$cleanPost['firstName']." : ".$cleanPost['message']);
                         $result = $mailer->send($message);
                         $_SESSION['mailSent'] = 'Message envoyé';
                         } catch (Exception $e) {
-                        echo $e->getMessage();
+                            $_SESSION['mailNotSent'] = $e->getMessage();
                         }
 
                     header('Location:/contact');
@@ -98,7 +104,7 @@ class ContactController extends AbstractController
                 }
             }
         }
-        return $this->twig->render('contact.html.twig', ['errors' => $errors, 'values' => $cleanPost, 'mailSent' => $mailSent
+        return $this->twig->render('contact.html.twig', ['errors' => $errors, 'values' => $cleanPost, 'mailSent' => $mailSent, 'mailNotSent' => $mailNotSent
         ]);
     }
 }

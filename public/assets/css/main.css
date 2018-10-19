@@ -3085,6 +3085,15 @@ contact form
     padding-bottom:30px;
 }
 
+.mailNotSent
+{
+  font-family: Quando;
+  color:red;
+  text-align:center;
+  font-size:24px;
+  padding-bottom:30px;
+}
+
 /*/////////////////////////
 
 lien
