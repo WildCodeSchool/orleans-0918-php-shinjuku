@@ -50,7 +50,7 @@ abstract class AbstractManager
     {
         return $this->pdo->query('SELECT * FROM ' . $this->table, \PDO::FETCH_CLASS, $this->className)->fetchAll();
     }
-   
+
     
     /**
      * Get one row from database by ID.
