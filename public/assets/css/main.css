@@ -3471,7 +3471,7 @@ class btn-shinjuku is supposed to be used for the buttons in the whole site ( as
 {
     color:red;
 }
-#preview
+.preview
 {
     max-width:600px;
 }
