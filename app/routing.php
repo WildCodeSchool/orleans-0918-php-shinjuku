@@ -20,4 +20,7 @@ $routes = [
     'Home' => [ // Controller
         ['index', '/home', 'GET'], // action, url, method
     ],
+    'Home' => [ // Controller
+        ['article', '/home', 'GET'], // action, url, method
+    ],
 ];

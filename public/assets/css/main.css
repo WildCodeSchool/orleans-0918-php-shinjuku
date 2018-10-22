@@ -3078,13 +3078,34 @@ body{
 .fa_search_mobile{
   font-size: 5vw;
 }
-.fa_search_desk{
+.fa_search_desk {
   text-shadow: 1px 1px 2px black, 0 0 2em black, 0 0 0.5em black;
 
-
+}
 
 /*icon FB*/
 
 .fa_size{
   font-size: 2em;
+}
+
+/*home articles
+
+*/
+.card-body{
+
+  height: 25vh;
+
+
+}
+.card{
+  margin-bottom: 5vh;
+  margin-top: 5vh;
+  padding: 10px;
+
+}
+
+.card-img-top{
+  min-height: 500px;
+  max-height: 500px;
 }

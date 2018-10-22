@@ -1,9 +1,10 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: thomas
- * Date: 12/10/18
- * Time: 09:36
+ * User: root
+ * Date: 11/10/17
+ * Time: 16:07
+ * PHP version 7
  */
 
 namespace Controller;
@@ -11,10 +12,19 @@ namespace Controller;
 use Model\Home;
 use Model\HomeManager;
 
+
 class HomeController extends AbstractController
 {
-    public function index()
+
+
+
+    public function article()
     {
-        return $this->twig->render('home.html.twig');
+        $articlesManager = new HomeManager($this->getPdo());
+        $articles = $articlesManager->selecthighlight();
+
+        return $this->twig->render('home.html.twig', ['article' => $articles]);
     }
+
+
 }
