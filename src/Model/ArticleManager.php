@@ -33,6 +33,14 @@ class ArticleManager extends AbstractManager
           }
           return $this->pdo->query('SELECT * FROM ' . $this->table . " WHERE   category ='$category' $searching", \PDO::FETCH_CLASS, $this->className)->fetchAll();
       }
+    /*
+ *searching article by name
+ */
+    public function searchArticleGeneral(string $search=''): array
+    {
+
+        return $this->pdo->query('SELECT * FROM ' . $this->table . " WHERE   name LIKE '%$search%'", \PDO::FETCH_CLASS, $this->className)->fetchAll();
+    }
     /**
      * @param Article $article
      * @return int

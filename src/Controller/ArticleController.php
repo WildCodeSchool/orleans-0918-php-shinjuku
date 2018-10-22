@@ -32,8 +32,14 @@ class ArticleController extends AbstractController
         if (strlen($_GET['search']?? '') > 45) {
             $errors['toomuch'] = "La recherche doit contenir 45 caractères maximum!";
         }
-        return $this->twig->render('Product/article.html.twig', ['article' => $articles, 'category'=> $category, 'error'=>$errors]);
+        return $this->twig->render('Article/article.html.twig', ['article' => $articles, 'category'=> $category, 'error'=>$errors]);
     }
+        public function searchArticleGeneral()
+        {
+            $articleManager=new ArticleManager($this->getPdo());
+            $articles = $articleManager->searchArticleGeneral($_GET['search'] ?? '');
+            return $this->twig->render('Article/article_page_search.html.twig', ['article' => $articles]);
+        }
 
     public function add()
     {
