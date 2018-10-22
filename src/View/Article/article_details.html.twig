@@ -32,7 +32,7 @@
             </div>
         </div>
 
-       {# {% if article.review is not empty %} #}
+       {% if article.review is not empty %}
         <!-- optional -->
         <div class="bor10 m-t-50 p-t-43 p-b-40">
             <!-- Tab01 -->
@@ -41,7 +41,7 @@
                     <li class="nav-item p-b-10">
                         <div class="row">
                             <div class="pd-right">
-                                <img class='certifiedLogo' src="https://via.placeholder.com/120x120" alt="Certified logo">
+                                <img class='certifiedLogo' src="../../assets/images/icons/logo_certified.png" alt="Certified logo">
                             </div>
                             <div>
                                 <p class="Expertise">Avis de l'expert :</p>
@@ -64,5 +64,5 @@
         </div>
     </div>
 </section>
-   {# {% endif %} #}
+   {% endif %}
 {% endblock %}
