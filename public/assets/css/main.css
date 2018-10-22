@@ -3588,3 +3588,36 @@ small {
     font-size: 2em;
 }
 
+/*
+contact form
+*/
+
+.contactFormTitle
+{
+    text-align:center;
+    padding-bottom:50px;
+}
+
+.sendContactFormButton
+{
+    padding-top:50px;
+    text-align:center;
+}
+
+.mailSent
+{
+    font-family: Quando;
+    color:green;
+    text-align:center;
+    font-size:24px;
+    padding-bottom:30px;
+}
+
+.mailNotSent
+{
+    font-family: Quando;
+    color:red;
+    text-align:center;
+    font-size:24px;
+    padding-bottom:30px;
+}
