@@ -113,7 +113,7 @@ class ArticleController extends AbstractController
                         $uploadDir = __DIR__ . '/../../public/assets/images/upload/';
                         $uploadFile = $uploadDir . $filename;
                         move_uploaded_file($_FILES['picture']['tmp_name'], $uploadFile);
-                        $article->setPicture($uploadFile);
+                        $article->setPicture($filename);
                     }
 
                     $article->setDescription($cleanPost['description']);
