@@ -22,8 +22,7 @@ class HomeController extends AbstractController
     {
         $articlesManager = new HomeManager($this->getPdo());
         $articles = $articlesManager->selecthighlight();
-
-        return $this->twig->render('home.html.twig', ['article' => $articles]);
+        return $this->twig->render('Home/home.html.twig', ['article' => $articles]);
     }
 
 
