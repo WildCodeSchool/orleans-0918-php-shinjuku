@@ -3430,24 +3430,32 @@ product page*/
 
 
 }
+.search_bar{
+    flex-flow: nowrap;
+}
+
 .searchbar-container{
-margin-top: 5vh;
+    margin-top: 5vh;
+
 }
 
 success:focus {
     box-shadow: 0 0 0 3px rgba(255,0,0,.5);
 }
+.btn-outline-success{
+    color: white;
+    font-weight: bold;
+    border-color: red;
+    border-radius: 0em 1em 1em 0em;
+    background-color: red;
+    min-height: 41px;
+
+
+}
 .btn-outline-success:hover {
     color: #fff;
-    background-color: red;
-    border-color: red;
-}
-
-.search-bar{
-    margin-left: 1vw;
-    margin-right: -40px;
-    border-radius: 1em;
-
+    background-color: #cc0000;
+    border-color: #cc0000;
 }
 .btn-outline-success.focus, .btn-outline-success:focus {
     box-shadow: 0 0 0 3px rgba(255, 0, 0, .5);
@@ -3457,6 +3465,15 @@ success:focus {
     background-color: red;
     border-color: red;
 }
+.search-bar{
+    margin-left: 1vw;
+    margin-right: -40px;
+    border-radius: 1em;
+    min-height: 41px;
+    min-width: 30vw;
+
+}
+
 .search-bar:active{
     border-color: rgba(255,0,0,0.3);
 }
