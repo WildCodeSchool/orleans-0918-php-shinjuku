@@ -3405,20 +3405,66 @@ banner
 
 /*//////////////////////////////
 product page*/
-.search_product_bar .form-inline {
-    width: 100%;
+/*.search_product_bar .form-inline {*/
+    /*width: 100%;*/
+/*}*/
+/*.search_product_bar .form-control {*/
+    /*width: 100%;*/
+    /*border: 2px solid rgba(0,0,0,0.1);*/
+    /*background: linear-gradient(to bottom right, rgba(0,0,0,0.3), transparent);*/
+    /*border-radius: 1rem;*/
+/*}*/
+
+/*.search_product_bar .form-control:hover {*/
+    /*width: 100%;*/
+    /*border: 2px solid rgba(255, 0, 0, 0.5);*/
+    /*border-radius: 1rem;*/
+
+/*}*/
+.btn-outline-success{
+    color: red;
+    font-weight: bold;
+    border-color: red;
+    border-radius: 1.5em;
+    background-color: white;
+
+
 }
-.search_product_bar .form-control {
-    width: 100%;
-    border: 2px solid rgba(255,0,0,0.5);
-    border-radius: .5rem;
+.searchbar-container{
+margin-top: 5vh;
 }
 
-.search_product_bar .form-control:hover {
-    width: 100%;
-    border: 2px solid rgba(255, 0, 0, 0.9);
-    border-radius: .5rem;
+success:focus {
+    box-shadow: 0 0 0 3px rgba(255,0,0,.5);
+}
+.btn-outline-success:hover {
+    color: #fff;
+    background-color: red;
+    border-color: red;
+}
 
+.search-bar{
+    margin-left: 1vw;
+    margin-right: -40px;
+    border-radius: 1em;
+
+}
+.btn-outline-success.focus, .btn-outline-success:focus {
+    box-shadow: 0 0 0 3px rgba(255, 0, 0, .5);
+}
+.btn-outline-success.active, .btn-outline-success:active, .show > .btn-outline-success.dropdown-toggle {
+    color: #fff;
+    background-color: red;
+    border-color: red;
+}
+.search-bar:active{
+    border-color: rgba(255,0,0,0.3);
+}
+.search-bar:focus{
+    border-color: rgba(255,0,0,0.3);
+}
+.search-bar:hover{
+    border-color: rgba(255,0,0,0.3);
 }
 /*//////////////////////
 article
@@ -3566,6 +3612,8 @@ small {
     font-size: 5vw;
 
 }
+
+
 .fa_search_mobile {
     font-size: 5vw;
 }
@@ -3581,10 +3629,16 @@ small {
     background-color: white;
 }
 
+.logo-pres{
+    font-family: Shojumaru;
+    color: red;
+    text-shadow: 3px 3px 3px white, 0 0 1em white, 0 0 0.2em white;
+    font-size: 2vw;
 /*icon FB*/
 
 
 .fa_size {
     font-size: 2em;
 }
+
 
