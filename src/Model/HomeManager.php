@@ -60,7 +60,7 @@ class HomeManager extends AbstractManager
         return $statement->execute();
     }
 
-    public function selecthighlight()
+    public function selectHighlight()
     {
         // prepared request
         $statement = $this->pdo->prepare("SELECT * FROM $this->table WHERE highlight IS NOT NULL ORDER BY category DESC ");
