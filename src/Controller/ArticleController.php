@@ -139,8 +139,6 @@ class ArticleController extends AbstractController
         $articleManager = new ArticleManager($this->pdo);
         $article = $articleManager->selectOneById($id);
 
-        return $this->twig->render('Article/article_details.html.twig', ['Article' => $article]);
+        return $this->twig->render('Article/article_details.html.twig', ['article' => $article]);
     }
-
 }
-
