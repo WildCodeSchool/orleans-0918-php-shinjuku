@@ -3405,22 +3405,7 @@ banner
 
 /*//////////////////////////////
 product page*/
-/*.search_product_bar .form-inline {*/
-    /*width: 100%;*/
-/*}*/
-/*.search_product_bar .form-control {*/
-    /*width: 100%;*/
-    /*border: 2px solid rgba(0,0,0,0.1);*/
-    /*background: linear-gradient(to bottom right, rgba(0,0,0,0.3), transparent);*/
-    /*border-radius: 1rem;*/
-/*}*/
 
-/*.search_product_bar .form-control:hover {*/
-    /*width: 100%;*/
-    /*border: 2px solid rgba(255, 0, 0, 0.5);*/
-    /*border-radius: 1rem;*/
-
-/*}*/
 .btn-outline-success{
     color: red;
     font-weight: bold;
