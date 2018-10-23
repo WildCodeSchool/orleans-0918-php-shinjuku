@@ -21,7 +21,7 @@ $routes = [
         ['index', '/about', 'GET'], //rajout du lien
     ],
     'Home' => [ // Controller
-//        ['index', '/home', 'GET'], // action, url, method
+
         ['article', '/home', 'GET'], // action, url, method
     ],
     'Contact' => [ // Controller
