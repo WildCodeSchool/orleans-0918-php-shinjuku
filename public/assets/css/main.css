@@ -3020,7 +3020,7 @@ input.num-product::-webkit-inner-spin-button {
         width: 100%;
     }
 
-    /*---------------------------------------------*/
+
 
 }
 
@@ -3619,7 +3619,6 @@ small {
 .fa_search_mobile {
     font-size: 5vw;
 }
-
 .fa_search_desk {
     text-shadow: 1px 1px 2px black, 0 0 2em black, 0 0 0.5em black;
 
@@ -3629,6 +3628,7 @@ small {
 }
 .hamburger-inner, .hamburger-inner::after, .hamburger-inner::before{
     background-color: white;
+
 }
 
 .logo-pres{
@@ -3675,6 +3675,31 @@ contact form
     text-align:center;
     font-size:24px;
     padding-bottom:30px;
+}
+
+/*home articles
+
+*/
+.card-body{
+  height: 15vh;
+}
+.card{
+  margin-bottom: 5vh;
+  margin-top: 5vh;
+  padding: 30px;
+  max-width: 100vw;
+    border: none;
+}
+
+.card-title{
+    Font-Weight: bold;
+
+}
+
+h2{
+    text-align: center;
+    Font-Weight: bold;
+    font-family: Quando;
 }
 
 /* Artcile review */

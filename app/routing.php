@@ -22,11 +22,9 @@ $routes = [
     'About' => [ // Controller
         ['index', '/about', 'GET'], //rajout du lien
     ],
-
     'Home' => [ // Controller
         ['index', '/', 'GET'], // action, url, method
     ],
-
     'Contact' => [ // Controller
         ['send', '/contact', ['GET', 'POST']], // action, url, method
     ],
