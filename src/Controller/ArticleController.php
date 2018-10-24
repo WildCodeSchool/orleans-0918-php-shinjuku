@@ -24,15 +24,31 @@ class ArticleController extends AbstractController
       public function listByCategory($category)
     {
         $errors=[];
+        $nbPages=1;
+        $currentPage=1;
+        if (isset($_GET['currentPage'])) {
+            $currentPage=$_GET['currentPage'];
+            if ($_GET['currentPage']!=1) {
+                $firstItem = (16 * ($currentPage - 1));
+            } else {
+                $firstItem=0;
+            }
+        } else {
+            $firstItem=0;
+        }
         $articleManager=new ArticleManager($this->getPdo());
         $articles = $articleManager->searchArticle($category,$_GET['search'] ?? '');
+        $articlesByPage=array_slice($articles, $firstItem, 16);
         if(!in_array($category,self::ALLOWED_CATEGORY)){
             $errors['category']= "Catégorie inexistante!";
         }
         if (strlen($_GET['search']?? '') > 45) {
             $errors['toomuch'] = "La recherche doit contenir 45 caractères maximum!";
         }
-        return $this->twig->render('Product/article.html.twig', ['article' => $articles, 'category'=> $category, 'error'=>$errors]);
+        if (count($articles)>16) {
+            $nbPages=ceil((count($articles))/16);
+        }
+        return $this->twig->render('Product/article.html.twig', ['article' => $articlesByPage, 'category'=> $category, 'error'=>$errors, 'nbPages' => $nbPages, 'currentPage' => $currentPage, 'get' => $_GET]);
     }
 
     public function add()
