@@ -25,33 +25,29 @@ class ArticleManager extends AbstractManager
     /*
     *searching article by category and by name(when searching by the client
     */
-     public function searchArticle(string $category,string $search=''): array
-      {   $searching = '';
-          if (!empty($search)) {
-              $searching = "AND name LIKE :search";
-          }
-          $statement=$this->pdo->prepare('SELECT * FROM ' . $this->table . " WHERE   category =:category $searching");
-          $statement->setFetchMode(\PDO::FETCH_CLASS, $this->className);
-          $statement->bindValue('category', $category, \PDO::PARAM_STR);
-          if (!empty($search)) {
-              $statement->bindValue('search', "%$search%", \PDO::PARAM_STR);
-          }
-          if ($statement->execute()) {
-              return $statement->fetchAll();
-          }
-      }
-    /*
- *searching article by name
- */
-    public function searchArticleGeneral(string $search=''): array
-    { /*prepare request*/
-        $statement= $this->pdo->prepare('SELECT * FROM ' . $this->table . " WHERE name LIKE :search");
+    public function searchArticle(string $category = '', string $search = ''): array
+     {
+        $queryFragments = [];
+
+        if (!empty($search)) {
+            $queryFragments[] = "name LIKE :search";
+        }
+        if (!empty($category)) {
+            $queryFragments[] = "category =:category";
+        }
+
+        $statement = $this->pdo->prepare('SELECT * FROM ' . $this->table . " WHERE " . implode(" AND ", $queryFragments));
         $statement->setFetchMode(\PDO::FETCH_CLASS, $this->className);
-        $statement->bindValue('search', "%$search%", \PDO::PARAM_STR);
+        if (!empty($search)) {
+            $statement->bindValue('search', "%$search%", \PDO::PARAM_STR);
+        }
+        if (!empty($category)) {
+            $statement->bindValue('category', $category, \PDO::PARAM_STR);
+        }
         if ($statement->execute()) {
             return $statement->fetchAll();
         }
-   }
+    }
     /**
      * @param Article $article
      * @return int
