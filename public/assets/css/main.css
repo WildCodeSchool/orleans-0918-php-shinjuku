@@ -3424,6 +3424,10 @@ product page*/
 article
  */
 
+.eventail-category{
+    max-width: 100px;
+}
+
 .block-article{
 
     padding: 3vh;
