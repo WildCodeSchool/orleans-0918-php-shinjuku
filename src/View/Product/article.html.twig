@@ -22,19 +22,19 @@
         {% if nbPages is defined and nbPages > 1 %}
             <div class="row justify-content-end paging">
                 {% if currentPage != 1 %}
-                    <a href="?{% if get.search is defined %}search={{ get.search }}&{% endif %}{% if get.category is defined %}category={{ get.category }}&{% endif %}currentPage={{ 1 }}"><button class="btn btn-shinjuku"><<</button></a>
-                    <a href="?{% if get.search is defined %}search={{ get.search }}&{% endif %}{% if get.category is defined %}category={{ get.category }}&{% endif %}currentPage={{ currentPage-1 }}"><button class="btn btn-shinjuku"><</button></a>
+                    <a href="?{{ get.search ? 'search=' ~ get.search ~ '&'}}{{ get.category ? 'category=' ~ get.category ~ '&'}}currentPage={{ 1 }}" class="btn btn-shinjuku"><<</a>
+                    <a href="?{{ get.search ? 'search=' ~ get.search ~ '&'}}{{ get.category ? 'category=' ~ get.category ~ '&'}}currentPage={{ currentPage-1 }}" class="btn btn-shinjuku"><</a>
                 {% endif %}
                 {% for i in 1..nbPages %}
                     {% if currentPage != i %}
-                        <a href="?{% if get.search is defined %}search={{ get.search }}&{% endif %}{% if get.category is defined %}category={{ get.category }}&{% endif %}currentPage={{ i }}"><button class="btn btn-shinjuku">{{ i }}</button></a>
+                        <a href="?{{ get.search ? 'search=' ~ get.search ~ '&'}}{{ get.category ? 'category=' ~ get.category ~ '&'}}currentPage={{ i }}" class="btn btn-shinjuku">{{ i }}</a>
                     {% else %}
                         <button class="btn btn-shinjuku currentPageButton">{{ i }}</button>
                     {% endif %}
                 {% endfor %}
                 {% if currentPage < nbPages %}
-                    <a href="?{% if get.search is defined %}search={{ get.search }}&{% endif %}{% if get.category is defined %}category={{ get.category }}&{% endif %}currentPage={{ currentPage+1 }}"><button class="btn btn-shinjuku">></button></a>
-                    <a href="?{% if get.search is defined %}search={{ get.search }}&{% endif %}{% if get.category is defined %}category={{ get.category }}&{% endif %}currentPage={{ nbPages }}"><button class="btn btn-shinjuku">>></button></a>
+                    <a href="?{{ get.search ? 'search=' ~ get.search ~ '&'}}{{ get.category ? 'category=' ~ get.category ~ '&'}}currentPage={{ currentPage+1 }}" class="btn btn-shinjuku">></a>
+                    <a href="?{{ get.search ? 'search=' ~ get.search ~ '&'}}{{ get.category ? 'category=' ~ get.category ~ '&'}}currentPage={{ nbPages }}" class="btn btn-shinjuku">>></a>
                 {% endif %}
             </div>
         {% endif %}
@@ -60,24 +60,24 @@
                 </div>
             {% endfor %}
         </div>
-            {% if nbPages is defined and nbPages > 1 %}
-                <div class="row justify-content-end paging">
-                    {% if currentPage != 1 %}
-                        <a href="?{% if get.search is defined %}search={{ get.search }}&{% endif %}{% if get.category is defined %}category={{ get.category }}&{% endif %}currentPage={{ 1 }}"><button class="btn btn-shinjuku"><<</button></a>
-                        <a href="?{% if get.search is defined %}search={{ get.search }}&{% endif %}{% if get.category is defined %}category={{ get.category }}&{% endif %}currentPage={{ currentPage-1 }}"><button class="btn btn-shinjuku"><</button></a>
+        {% if nbPages is defined and nbPages > 1 %}
+            <div class="row justify-content-end paging">
+                {% if currentPage != 1 %}
+                    <a href="?{{ get.search ? 'search=' ~ get.search ~ '&'}}{{ get.category ? 'category=' ~ get.category ~ '&'}}currentPage={{ 1 }}" class="btn btn-shinjuku"><<</a>
+                    <a href="?{{ get.search ? 'search=' ~ get.search ~ '&'}}{{ get.category ? 'category=' ~ get.category ~ '&'}}currentPage={{ currentPage-1 }}" class="btn btn-shinjuku"><</a>
+                {% endif %}
+                {% for i in 1..nbPages %}
+                    {% if currentPage != i %}
+                        <a href="?{{ get.search ? 'search=' ~ get.search ~ '&'}}{{ get.category ? 'category=' ~ get.category ~ '&'}}currentPage={{ i }}" class="btn btn-shinjuku">{{ i }}</a>
+                    {% else %}
+                        <button class="btn btn-shinjuku currentPageButton">{{ i }}</button>
                     {% endif %}
-                    {% for i in 1..nbPages %}
-                        {% if currentPage != i %}
-                            <a href="?{% if get.search is defined %}search={{ get.search }}&{% endif %}{% if get.category is defined %}category={{ get.category }}&{% endif %}currentPage={{ i }}"><button class="btn btn-shinjuku">{{ i }}</button></a>
-                        {% else %}
-                            <button class="btn btn-shinjuku currentPageButton">{{ i }}</button>
-                        {% endif %}
-                    {% endfor %}
-                    {% if currentPage < nbPages %}
-                        <a href="?{% if get.search is defined %}search={{ get.search }}&{% endif %}{% if get.category is defined %}category={{ get.category }}&{% endif %}currentPage={{ currentPage+1 }}"><button class="btn btn-shinjuku">></button></a>
-                        <a href="?{% if get.search is defined %}search={{ get.search }}&{% endif %}{% if get.category is defined %}category={{ get.category }}&{% endif %}currentPage={{ nbPages }}"><button class="btn btn-shinjuku">>></button></a>
-                    {% endif %}
-                </div>
-            {% endif %}
+                {% endfor %}
+                {% if currentPage < nbPages %}
+                    <a href="?{{ get.search ? 'search=' ~ get.search ~ '&'}}{{ get.category ? 'category=' ~ get.category ~ '&'}}currentPage={{ currentPage+1 }}" class="btn btn-shinjuku">></a>
+                    <a href="?{{ get.search ? 'search=' ~ get.search ~ '&'}}{{ get.category ? 'category=' ~ get.category ~ '&'}}currentPage={{ nbPages }}" class="btn btn-shinjuku">>></a>
+                {% endif %}
+            </div>
+        {% endif %}
     </div>
     {% endblock %}

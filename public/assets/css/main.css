@@ -3462,6 +3462,7 @@ class btn-shinjuku is supposed to be used for the buttons in the whole site ( as
 .btn-shinjuku:hover
 {
     background-color:#cc0000;
+    color:white;
     font-weight:bold;
 }
 #uploader
