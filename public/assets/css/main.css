@@ -3519,7 +3519,7 @@ class btn-shinjuku is supposed to be used for the buttons in the whole site ( as
 {
     color:red;
 }
-#preview
+.preview
 {
     max-width:600px;
 }
@@ -3643,4 +3643,51 @@ small {
     font-size: 2em;
 }
 
+/*
+contact form
+*/
 
+.contactFormTitle
+{
+    text-align:center;
+    padding-bottom:50px;
+}
+
+.sendContactFormButton
+{
+    padding-top:50px;
+    text-align:center;
+}
+
+.mailSent
+{
+    font-family: Quando;
+    color:green;
+    text-align:center;
+    font-size:24px;
+    padding-bottom:30px;
+}
+
+.mailNotSent
+{
+    font-family: Quando;
+    color:red;
+    text-align:center;
+    font-size:24px;
+    padding-bottom:30px;
+}
+
+/* Artcile review */
+
+.pd-top {
+    padding-top: 15vh;
+    font-size: 2em;
+}
+
+.pd-right {
+    padding-right: 4vw;
+}
+
+.certifiedLogo {
+    height: 100px;
+}
