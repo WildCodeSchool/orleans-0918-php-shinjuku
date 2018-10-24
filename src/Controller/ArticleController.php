@@ -34,13 +34,17 @@ class ArticleController extends AbstractController
         }
         return $this->twig->render('Article/article.html.twig', ['article' => $articles, 'category'=> $category, 'error'=>$errors]);
     }
-        public function searchArticleGeneral()
+    public function searchArticleGeneral()
         {
+            $articles = [];
+            if (strlen($_GET['search']?? '') < 3) {
+                $errors['notenough'] = "La recherche doit contenir 3 caractère minimum!";
+                return $this->twig->render('Article/article.html.twig', ['article' => $articles, 'error'=>$errors]);
+            }
             $articleManager=new ArticleManager($this->getPdo());
             $articles = $articleManager->searchArticleGeneral($_GET['search'] ?? '');
-            return $this->twig->render('Article/article_page_search.html.twig', ['article' => $articles]);
+            return $this->twig->render('Article/article.html.twig', ['article' => $articles]);
         }
-
     public function add()
     {
         $errors=array();
