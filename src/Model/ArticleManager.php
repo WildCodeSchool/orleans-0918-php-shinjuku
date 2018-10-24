@@ -53,4 +53,15 @@ class ArticleManager extends AbstractManager
             return $this->pdo->lastInsertId();
         }
     }
+    
+    public function selectHighlight()
+    {
+        // prepared request
+        $statement = $this->pdo->prepare("SELECT * FROM $this->table WHERE highlight IS NOT NULL ORDER BY category DESC ");
+        $statement->setFetchMode(\PDO::FETCH_CLASS, $this->className);
+        $statement->bindValue('highlight', $highlight, \PDO::PARAM_INT);
+        $statement->execute();
+
+        return $statement->fetchall();
+    }
 }
