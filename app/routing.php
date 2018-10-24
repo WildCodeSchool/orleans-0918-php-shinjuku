@@ -13,6 +13,7 @@ $routes = [
     'Article' => [
         ['index', '/products', 'GET'], // action, url, method
         ['add', '/article/add', ['GET', 'POST']], // action, url, method
+        ['showAll', '/article/list', ['GET', 'POST']], // action, url, method
         ['show', '/article/{id:\d+}', 'GET'], // action, url, method
         ['listByCategory', '/article/{category}', 'GET'], // action, url, method
     ],
