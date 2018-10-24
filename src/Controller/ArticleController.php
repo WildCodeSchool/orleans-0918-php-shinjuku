@@ -21,30 +21,32 @@ class ArticleController extends AbstractController
     const ALLOWED_CATEGORY=['manga','goodies','dvd'];
     const ALLOWED_EXTENSIONS=['png', 'jpg', 'jpeg'];
 
-      public function listByCategory($category)
+  public function listByCategory($category)
     {
-        $errors=[];
-        $articleManager=new ArticleManager($this->getPdo());
-        $articles = $articleManager->searchArticle($category,$_GET['search'] ?? '');
-        if(!in_array($category,self::ALLOWED_CATEGORY)){
-            $errors['category']= "Catégorie inexistante!";
+        $errors = [];
+        $articleManager = new ArticleManager($this->getPdo());
+        $articles = $articleManager->searchArticle($category, $_GET['search'] ?? '');
+        if (!in_array($category, self::ALLOWED_CATEGORY)) {
+            $errors['category'] = "Catégorie inexistante!";
         }
-        if (strlen($_GET['search']?? '') > 45) {
+        if (strlen($_GET['search'] ?? '') > 45) {
             $errors['toomuch'] = "La recherche doit contenir 45 caractères maximum!";
         }
-        return $this->twig->render('Article/article.html.twig', ['article' => $articles, 'category'=> $category, 'error'=>$errors]);
+        return $this->twig->render('Article/article.html.twig', ['article' => $articles, 'category' => $category, 'error' => $errors]);
     }
+
     public function searchArticleGeneral()
-        {
-            $articles = [];
-            if (strlen($_GET['search']?? '') < 3) {
-                $errors['notenough'] = "La recherche doit contenir 3 caractère minimum!";
-                return $this->twig->render('Article/article.html.twig', ['article' => $articles, 'error'=>$errors]);
-            }
-            $articleManager=new ArticleManager($this->getPdo());
-            $articles = $articleManager->searchArticleGeneral($_GET['search'] ?? '');
-            return $this->twig->render('Article/article.html.twig', ['article' => $articles]);
+    {
+        $articles = [];
+        if (strlen($_GET['search'] ?? '') < 3) {
+            $errors['notenough'] = "La recherche doit contenir 3 caractère minimum!";
+            return $this->twig->render('Article/article.html.twig', ['article' => $articles, 'error' => $errors]);
         }
+        $articleManager = new ArticleManager($this->getPdo());
+        $articles = $articleManager->searchArticle("", $_GET['search'] ?? '');
+        return $this->twig->render('Article/article_page_search.html.twig', ['article' => $articles]);
+    }
+
     public function add()
     {
         $errors=array();
