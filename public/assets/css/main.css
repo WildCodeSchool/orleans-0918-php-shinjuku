@@ -3621,3 +3621,18 @@ contact form
     font-size:24px;
     padding-bottom:30px;
 }
+
+/* Artcile review */
+
+.pd-top {
+    padding-top: 15vh;
+    font-size: 2em;
+}
+
+.pd-right {
+    padding-right: 4vw;
+}
+
+.certifiedLogo {
+    height: 100px;
+}
