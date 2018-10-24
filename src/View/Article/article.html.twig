@@ -3,17 +3,12 @@
 {% block banner %} <div class="banner2"></div>{% endblock %}
 {% block content %}
 <section class="product">
-    <!-- Product -->
-    <div class="bg0 m-t-23 p-b-140">
-        <div class="container">
-                <!--Search bar-->
-            <div class="row d-flex justify-content-center bd-highlight mb-3  search_product_bar">
-                <nav class="m-b-100 search_bar col-md-8 col-lg-5  navbar navbar-light">
-                    <form class="search_bar form-inline" method="get"  action="">
-			<input class="search-bar form-control my-lg-0" id="search" type="search" name="search" aria-label="Search" placeholder="Ex: naruto..." label="recherche">
-                        <input type="hidden" name="category" value="">
-                    </form>
-                </nav>
+    <div class="container-fluid m-t-25"
+        <div class="row">
+            <div class="col-lg-12 d-flex justify-content-center title-category">
+                <img  class="eventail-category" src="../assets/images/hire-japanese-culture.png" alt="éventail">
+                <h2 class="bold cl13 f_quando text-uppercase p-t-10">{{ category}}</h2>
+                <img class="eventail-category" src="../assets/images/hire-japanese-culture.png" alt="éventail">
             </div>
         </div>
     </div>
@@ -42,4 +37,5 @@
             {% endfor %}
         </div>
     </div>
+</section>
     {% endblock %}
