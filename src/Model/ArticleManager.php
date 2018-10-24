@@ -25,22 +25,33 @@ class ArticleManager extends AbstractManager
     /*
     *searching article by category and by name(when searching by the client
     */
-      public function searchArticle(string $category,string $search=''): array
-      {
-          $searching = '';
+     public function searchArticle(string $category,string $search=''): array
+      {   $searching = '';
           if (!empty($search)) {
-              $searching = "AND name LIKE '%$search%'";
+              $searching = "AND name LIKE :search";
           }
-          return $this->pdo->query('SELECT * FROM ' . $this->table . " WHERE   category ='$category' $searching", \PDO::FETCH_CLASS, $this->className)->fetchAll();
+          $statement=$this->pdo->prepare('SELECT * FROM ' . $this->table . " WHERE   category =:category $searching");
+          $statement->setFetchMode(\PDO::FETCH_CLASS, $this->className);
+          $statement->bindValue('category', $category, \PDO::PARAM_STR);
+          if (!empty($search)) {
+              $statement->bindValue('search', "%$search%", \PDO::PARAM_STR);
+          }
+          if ($statement->execute()) {
+              return $statement->fetchAll();
+          }
       }
     /*
  *searching article by name
  */
     public function searchArticleGeneral(string $search=''): array
-    {
-
-        return $this->pdo->query('SELECT * FROM ' . $this->table . " WHERE   name LIKE '%$search%'", \PDO::FETCH_CLASS, $this->className)->fetchAll();
-    }
+    { /*prepare request*/
+        $statement= $this->pdo->prepare('SELECT * FROM ' . $this->table . " WHERE name LIKE :search");
+        $statement->setFetchMode(\PDO::FETCH_CLASS, $this->className);
+        $statement->bindValue('search', "%$search%", \PDO::PARAM_STR);
+        if ($statement->execute()) {
+            return $statement->fetchAll();
+        }
+   }
     /**
      * @param Article $article
      * @return int
