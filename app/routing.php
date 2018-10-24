@@ -15,14 +15,15 @@ $routes = [
         ['add', '/article/add', ['GET', 'POST']], // action, url, method
         ['show', '/article/{id:\d+}', 'GET'], // action, url, method
         ['listByCategory', '/article/{category}', 'GET'], // action, url, method
+        ['article', '/home', 'GET'], // action, url, method
     ],
 
     'About' => [ // Controller
         ['index', '/about', 'GET'], //rajout du lien
     ],
     'Home' => [ // Controller
-
-        ['article', '/home', 'GET'], // action, url, method
+        ['index', '/home', 'GET'], // action, url, method
+        
     ],
 
     'Contact' => [ // Controller
