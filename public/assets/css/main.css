@@ -3442,7 +3442,7 @@ h3 {
 }
 
 body {
-    font-size: 16px;
+    font-size: 16pt;
 }
 
 .f_quando {
@@ -3511,7 +3511,7 @@ span{
     color: red;
 }
 .icons01{
-    width: 150px;
+    width: 200px;
 }
 .map {
     border: 1px solid black;
@@ -3523,7 +3523,7 @@ small {
     font-size: 12px;
 }
 .card-text {
-    font-size: 16px;
+    font-size: 16pt;
 }
 .mapmodal{
     width: 100%;
