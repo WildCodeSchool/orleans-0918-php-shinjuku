@@ -21,7 +21,7 @@ class ArticleController extends AbstractController
     const ALLOWED_CATEGORY=['manga','goodies','dvd'];
     const ALLOWED_EXTENSIONS=['png', 'jpg', 'jpeg'];
 
-      public function listByCategory($category)
+    public function listByCategory($category)
     {
         $errors=[];
         $articleManager=new ArticleManager($this->getPdo());
@@ -32,7 +32,7 @@ class ArticleController extends AbstractController
         if (strlen($_GET['search']?? '') > 45) {
             $errors['toomuch'] = "La recherche doit contenir 45 caractères maximum!";
         }
-        return $this->twig->render('Product/article.html.twig', ['article' => $articles, 'category'=> $category, 'error'=>$errors]);
+        return $this->twig->render('Article/article.html.twig', ['article' => $articles, 'category'=> $category, 'error'=>$errors]);
     }
 
     public function add()
@@ -113,7 +113,7 @@ class ArticleController extends AbstractController
                         $uploadDir = __DIR__ . '/../../public/assets/images/upload/';
                         $uploadFile = $uploadDir . $filename;
                         move_uploaded_file($_FILES['picture']['tmp_name'], $uploadFile);
-                        $article->setPicture($uploadFile);
+                        $article->setPicture($filename);
                     }
 
                     $article->setDescription($cleanPost['description']);
@@ -141,5 +141,13 @@ class ArticleController extends AbstractController
 
         return $this->twig->render('Article/article_details.html.twig', ['article' => $article]);
     }
-}
 
+
+    public function showAll()
+    {
+        $articleManager = new ArticleManager($this->pdo);
+        $articles = $articleManager->selectAll();
+
+        return $this->twig->render('Article/list.html.twig', ['articles' => $articles]);
+    }
+}
