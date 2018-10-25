@@ -156,5 +156,6 @@ class ArticleController extends AbstractController
         $articleManager = new ArticleManager($this->getPdo());
         $articleManager->delete($id);
         header('Location:/article/list');
+        exit();
     }
 }
