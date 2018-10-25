@@ -5,17 +5,17 @@
  * Date: 12/10/18
  * Time: 09:36
  */
-
 namespace Controller;
-
 use Model\Home;
 use Model\HomeManager;
-
+use Model\ArticleManager;
 class HomeController extends AbstractController
 {
+
     public function index()
     {
-
-        return $this->twig->render('/Home/home.html.twig');
+        $articlesManager = new ArticleManager($this->getPdo());
+        $articles = $articlesManager->selectHighlight();
+        return $this->twig->render('Home/home.html.twig', ['article' => $articles]);
     }
 }

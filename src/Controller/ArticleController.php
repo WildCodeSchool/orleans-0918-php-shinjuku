@@ -22,7 +22,7 @@ class ArticleController extends AbstractController
     const ALLOWED_EXTENSIONS=['png', 'jpg', 'jpeg'];
     const ARTICLE_BY_PAGE=16;
 
-      public function listByCategory($category)
+    public function listByCategory($category)
     {
         $errors=[];
         $nbPages=1;
@@ -147,8 +147,14 @@ class ArticleController extends AbstractController
         $articleManager = new ArticleManager($this->pdo);
         $article = $articleManager->selectOneById($id);
 
-        return $this->twig->render('Article/article_details.html.twig', ['Article' => $article]);
+        return $this->twig->render('Article/article_details.html.twig', ['article' => $article]);
     }
 
-}
+    public function showAll()
+    {
+        $articleManager = new ArticleManager($this->pdo);
+        $articles = $articleManager->selectAll();
 
+        return $this->twig->render('Article/list.html.twig', ['articles' => $articles]);
+    }
+}

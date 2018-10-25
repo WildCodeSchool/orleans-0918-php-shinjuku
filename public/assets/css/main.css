@@ -3020,7 +3020,7 @@ input.num-product::-webkit-inner-spin-button {
         width: 100%;
     }
 
-    /*---------------------------------------------*/
+
 
 }
 
@@ -3405,20 +3405,68 @@ banner
 
 /*//////////////////////////////
 product page*/
-.search_product_bar .form-inline {
-    width: 100%;
+
+.btn-outline-success{
+    color: red;
+    font-weight: bold;
+    border-color: red;
+    border-radius: 1.5em;
+    background-color: white;
+
+
 }
-.search_product_bar .form-control {
-    width: 100%;
-    border: 2px solid rgba(255,0,0,0.5);
-    border-radius: .5rem;
+.search_bar{
+    flex-flow: nowrap;
 }
 
-.search_product_bar .form-control:hover {
-    width: 100%;
-    border: 2px solid rgba(255, 0, 0, 0.9);
-    border-radius: .5rem;
+.searchbar-container{
+    margin-top: 5vh;
 
+}
+
+success:focus {
+    box-shadow: 0 0 0 3px rgba(255,0,0,.5);
+}
+.btn-outline-success{
+    color: white;
+    font-weight: bold;
+    border-color: red;
+    border-radius: 0em 1em 1em 0em;
+    background-color: red;
+    min-height: 41px;
+
+
+}
+.btn-outline-success:hover {
+    color: #fff;
+    background-color: #cc0000;
+    border-color: #cc0000;
+}
+.btn-outline-success.focus, .btn-outline-success:focus {
+    box-shadow: 0 0 0 3px rgba(255, 0, 0, .5);
+}
+.btn-outline-success.active, .btn-outline-success:active, .show > .btn-outline-success.dropdown-toggle {
+    color: #fff;
+    background-color: red;
+    border-color: red;
+}
+.search-bar{
+    margin-left: 1vw;
+    margin-right: -40px;
+    border-radius: 1em;
+    min-height: 41px;
+    min-width: 30vw;
+
+}
+
+.search-bar:active{
+    border-color: rgba(255,0,0,0.3);
+}
+.search-bar:focus{
+    border-color: rgba(255,0,0,0.3);
+}
+.search-bar:hover{
+    border-color: rgba(255,0,0,0.3);
 }
 /*//////////////////////
 article
@@ -3442,7 +3490,7 @@ h3 {
 }
 
 body {
-    font-size: 16px;
+    font-size: 16pt;
 }
 
 .f_quando {
@@ -3514,7 +3562,7 @@ span{
     color: red;
 }
 .icons01{
-    width: 150px;
+    width: 200px;
 }
 .map {
     border: 1px solid black;
@@ -3526,7 +3574,7 @@ small {
     font-size: 12px;
 }
 .card-text {
-    font-size: 16px;
+    font-size: 16pt;
 }
 .mapmodal{
     width: 100%;
@@ -3569,10 +3617,11 @@ small {
     font-size: 5vw;
 
 }
+
+
 .fa_search_mobile {
     font-size: 5vw;
 }
-
 .fa_search_desk {
     text-shadow: 1px 1px 2px black, 0 0 2em black, 0 0 0.5em black;
 
@@ -3582,8 +3631,14 @@ small {
 }
 .hamburger-inner, .hamburger-inner::after, .hamburger-inner::before{
     background-color: white;
+
 }
 
+.logo-pres{
+    font-family: Shojumaru;
+    color: red;
+    text-shadow: 3px 3px 3px white, 0 0 1em white, 0 0 0.2em white;
+    font-size: 2vw;
 /*icon FB*/
 
 
@@ -3631,7 +3686,46 @@ contact form
     padding:30px;
 }
 
-.paging a
-{
-    margin:5px;
+.paging a {
+    margin: 5px;
+}
+
+/*home articles
+
+*/
+.card-body{
+  height: 15vh;
+}
+.card{
+  margin-bottom: 5vh;
+  margin-top: 5vh;
+  padding: 30px;
+  max-width: 100vw;
+    border: none;
+}
+
+.card-title{
+    Font-Weight: bold;
+
+}
+
+h2{
+    text-align: center;
+    Font-Weight: bold;
+    font-family: Quando;
+}
+
+/* Artcile review */
+
+.pd-top {
+    padding-top: 15vh;
+    font-size: 2em;
+}
+
+.pd-right {
+    padding-right: 4vw;
+}
+
+.certifiedLogo {
+    height: 100px;
 }
