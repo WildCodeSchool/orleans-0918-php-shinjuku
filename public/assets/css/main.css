@@ -3635,10 +3635,3 @@ contact form
 {
     margin:5px;
 }
-
-.currentPageButton, .currentPageButton:hover
-{
-    background-color:#cc0000;
-    cursor: default;
-    font-weight:bold;
-}

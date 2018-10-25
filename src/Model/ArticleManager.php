@@ -12,7 +12,7 @@ namespace Model;
 class ArticleManager extends AbstractManager
 {
     const TABLE = 'article';
-
+    const ARTICLE_BY_PAGE=16;
     /**
      * ArticleManager constructor.
      * @param \PDO $pdo
@@ -25,14 +25,29 @@ class ArticleManager extends AbstractManager
     /*
     *searching article by category and by name(when searching by the client
     */
-      public function searchArticle(string $category,string $search=''): array
+      public function searchArticle(int $currentPage, string $category,string $search=''): array
       {
           $searching = '';
           if (!empty($search)) {
               $searching = "AND name LIKE '%$search%'";
           }
-          return $this->pdo->query('SELECT * FROM ' . $this->table . " WHERE   category ='$category' $searching", \PDO::FETCH_CLASS, $this->className)->fetchAll();
+          $offset=($currentPage*self::ARTICLE_BY_PAGE)-self::ARTICLE_BY_PAGE;
+          return $this->pdo->query('SELECT * FROM ' . $this->table . " WHERE   category ='$category' $searching LIMIT 16 OFFSET ".$offset, \PDO::FETCH_CLASS, $this->className)->fetchAll();
       }
+
+    /**
+     * @param string $category
+     * @param string $search
+     * @return array
+     */
+    public function countArticle(string $category,string $search=''): int
+    {
+        $searching = '';
+        if (!empty($search)) {
+            $searching = "AND name LIKE '%$search%'";
+        }
+        return $this->pdo->query('SELECT COUNT(*) FROM ' . $this->table . " WHERE   category ='$category' $searching")->fetchColumn();
+    }
     /**
      * @param Article $article
      * @return int

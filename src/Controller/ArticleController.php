@@ -27,24 +27,20 @@ class ArticleController extends AbstractController
         $errors=[];
         $nbPages=1;
         $currentPage=1;
-        $firstItem=0;
         if (isset($_GET['currentPage'])) {
             $currentPage = $_GET['currentPage'];
-            if ($currentPage != 1) {
-                $firstItem = (self::ARTICLE_BY_PAGE * ($currentPage - 1));
-            }
         }
         $articleManager=new ArticleManager($this->getPdo());
-        $articles = $articleManager->searchArticle($category,$_GET['search'] ?? '');
-        $articlesByPage=array_slice($articles, $firstItem, 16);
+        $count=$articleManager->countArticle($category,$_GET['search'] ?? '');
+        $articles = $articleManager->searchArticle($currentPage, $category,$_GET['search'] ?? '');
         if(!in_array($category,self::ALLOWED_CATEGORY)){
             $errors['category']= "Catégorie inexistante!";
         }
         if (strlen($_GET['search']?? '') > 45) {
             $errors['toomuch'] = "La recherche doit contenir 45 caractères maximum!";
         }
-        $nbPages=ceil((count($articles))/16);
-        return $this->twig->render('Product/article.html.twig', ['article' => $articlesByPage, 'category'=> $category, 'error'=>$errors, 'nbPages' => $nbPages, 'currentPage' => $currentPage, 'get' => $_GET]);
+        $nbPages=ceil($count/self::ARTICLE_BY_PAGE);
+        return $this->twig->render('Product/article.html.twig', ['article' => $articles, 'category'=> $category, 'error'=>$errors, 'nbPages' => $nbPages, 'currentPage' => $currentPage, 'get' => $_GET]);
     }
 
     public function add()
