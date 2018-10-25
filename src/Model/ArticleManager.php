@@ -54,7 +54,10 @@ class ArticleManager extends AbstractManager
     {
         return $this->pdo->query("SELECT * FROM $this->table WHERE highlight IS NOT NULL ORDER BY category DESC ", \PDO::FETCH_CLASS, $this->className)->fetchAll();
     }
-
+    /**
+     * @param int $id
+     * @return void
+     */
     public function delete(int $id): void
     {
         // prepared request

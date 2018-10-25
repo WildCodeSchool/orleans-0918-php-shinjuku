@@ -18,11 +18,4 @@ class HomeController extends AbstractController
         $articles = $articlesManager->selectHighlight();
         return $this->twig->render('Home/home.html.twig', ['article' => $articles]);
     }
-
-    public function delete(int $id)
-    {
-        $articleManager = new ArticleManager($this->getPdo());
-        $articleManager->delete($id);
-        header('Location:/');
-    }
 }
