@@ -141,21 +141,5 @@ class ArticleController extends AbstractController
 
         return $this->twig->render('Article/article_details.html.twig', ['article' => $article]);
     }
-
-
-
-
-//    /**
-//     * Handle item deletion
-//     *
-//     * @param int $id
-//     */
-//    public function delete(int $id)
-//    {
-//        $articleManager = new ArticleManager($this->getPdo());
-//        $articleManager->delete($id);
-//        header('Location:/');
-//    }
-
 }
 
