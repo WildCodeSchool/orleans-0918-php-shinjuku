@@ -3505,10 +3505,13 @@ class btn-shinjuku is supposed to be used for the buttons in the whole site ( as
     background-color:red;
     border:0px;
     color:white;
+    font-weight:bold;
 }
 .btn-shinjuku:hover
 {
     background-color:#cc0000;
+    color:white;
+    font-weight:bold;
 }
 #uploader
 {
@@ -3675,6 +3678,16 @@ contact form
     text-align:center;
     font-size:24px;
     padding-bottom:30px;
+}
+
+/* Paging */
+.paging
+{
+    padding:30px;
+}
+
+.paging a {
+    margin: 5px;
 }
 
 /*home articles
