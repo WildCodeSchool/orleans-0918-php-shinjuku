@@ -25,8 +25,8 @@ class ArticleManager extends AbstractManager
     *searching article by category and by name(when searching by the client
     */
 
-    public function searchArticle(int $currentPage, string $category = '', string $search = ''): array
-     {
+    public function searchArticle(string $category = '', string $search = ''): array
+    {
         $queryFragments = [];
 
         if (!empty($search)) {
@@ -35,8 +35,8 @@ class ArticleManager extends AbstractManager
         if (!empty($category)) {
             $queryFragments[] = "category =:category";
         }
-         $offset=($currentPage*self::ARTICLE_BY_PAGE)-self::ARTICLE_BY_PAGE;
-        $statement = $this->pdo->prepare('SELECT * FROM ' . $this->table . " WHERE " . implode(" AND ", $queryFragments)" LIMIT 16 OFFSET $offset");
+
+        $statement = $this->pdo->prepare('SELECT * FROM ' . $this->table . " WHERE " . implode(" AND ", $queryFragments));
         $statement->setFetchMode(\PDO::FETCH_CLASS, $this->className);
         if (!empty($search)) {
             $statement->bindValue('search', "%$search%", \PDO::PARAM_STR);
@@ -47,18 +47,33 @@ class ArticleManager extends AbstractManager
         if ($statement->execute()) {
             return $statement->fetchAll();
         }
+    }
     /**
      * @param string $category
      * @param string $search
      * @return int
      */
-    public function countArticle(string $category,string $search=''): int
+    public function countArticle(string $category='' , string $search =''): int
     {
-        $searching = '';
+        $queryFragments = [];
+
         if (!empty($search)) {
-            $searching = "AND name LIKE '%$search%'";
+            $queryFragments[] = "name LIKE :search";
         }
-        return $this->pdo->query('SELECT COUNT(*) FROM ' . $this->table . " WHERE   category ='$category' $searching")->fetchColumn();
+        if (!empty($category)) {
+            $queryFragments[] = "category =:category";
+        }
+        $statement= $this->pdo->prepare('SELECT COUNT(*) FROM ' . $this->table . " WHERE " . implode(" AND ", $queryFragments));
+        $statement->setFetchMode(\PDO::FETCH_COLUMN, 0);
+        if (!empty($search)) {
+            $statement->bindValue('search', "%$search%", \PDO::PARAM_STR);
+        }
+        if (!empty($category)) {
+            $statement->bindValue('category', $category, \PDO::PARAM_STR);
+        }
+        if ($statement->execute()) {
+            return $statement->fetchColumn();
+        }
     }
     /**
      * @param Article $article
