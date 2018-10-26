@@ -24,15 +24,15 @@ class ArticleController extends AbstractController
 
   public function listByCategory($category)
     {
+        $errors = [];
         $nbPages=1;
         $currentPage=1;
-        $errors = [];
         if (isset($_GET['currentPage'])) {
             $currentPage = $_GET['currentPage'];
         }
         $articleManager = new ArticleManager($this->getPdo());
         $count=$articleManager->countArticle($category,$_GET['search'] ?? '');
-        $articles = $articleManager->searchArticle($currentPage, $category, $_GET['search'] ?? '');
+        $articles = $articleManager->searchArticle($category, $_GET['search'] ?? '');
         if (!in_array($category, self::ALLOWED_CATEGORY)) {
             $errors['category'] = "Catégorie inexistante!";
         }
@@ -40,26 +40,20 @@ class ArticleController extends AbstractController
             $errors['toomuch'] = "La recherche doit contenir 45 caractères maximum!";
         }
         $nbPages=ceil($count/self::ARTICLE_BY_PAGE);
-        return $this->twig->render('Product/article.html.twig', ['article' => $articles, 'category'=> $category, 'error'=>$errors, 'nbPages' => $nbPages, 'currentPage' => $currentPage, 'get' => $_GET]);
+        return $this->twig->render('Article/article.html.twig', ['article' => $articles, 'category'=> $category, 'error'=>$errors, 'nbPages' => $nbPages, 'currentPage' => $currentPage, 'get' => $_GET]);
     }
 
     public function searchArticleGeneral()
     {
-        $nbPages=1;
-        $currentPage=1;
         $articles = [];
-        if (strlen($_GET['search']) < 3) {
+        if (strlen($_GET['search'] ?? '') < 3) {
             $errors['notenough'] = "La recherche doit contenir 3 caractère minimum!";
             return $this->twig->render('Article/article.html.twig', ['article' => $articles, 'error' => $errors]);
         }
         $articleManager = new ArticleManager($this->getPdo());
-        $count=$articleManager->countArticle($category,$_GET['search'] ?? '');
-        $articles = $articleManager->searchArticle($currentPage,"", $_GET['search'] ?? '');
-        $nbPages=ceil($count/self::ARTICLE_BY_PAGE);
-        return $this->twig->render('Article/article_page_search.html.twig', ['article' => $articles, 'nbPages' => $nbPages, 'currentPage' => $currentPage, 'get' => $_GET]);
+        $articles = $articleManager->searchArticle("", $_GET['search'] ?? '');
+        return $this->twig->render('Article/article_page_search.html.twig', ['article' => $articles]);
     }
-
-
 
     public function add()
     {
