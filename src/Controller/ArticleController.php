@@ -45,14 +45,18 @@ class ArticleController extends AbstractController
 
     public function searchArticleGeneral()
     {
+        $nbPages=1;
+        $currentPage=1;
         $articles = [];
         if (strlen($_GET['search'] ?? '') < 3) {
             $errors['notenough'] = "La recherche doit contenir 3 caractère minimum!";
             return $this->twig->render('Article/article.html.twig', ['article' => $articles, 'error' => $errors]);
         }
         $articleManager = new ArticleManager($this->getPdo());
-        $articles = $articleManager->searchArticle("", $_GET['search'] ?? '');
-        return $this->twig->render('Article/article_page_search.html.twig', ['article' => $articles]);
+        $count=$articleManager->countArticle($category,$_GET['search'] ?? '');
+        $articles = $articleManager->searchArticle($currentPage,"", $_GET['search'] ?? '');
+        $nbPages=ceil($count/self::ARTICLE_BY_PAGE);
+        return $this->twig->render('Article/article_page_search.html.twig', ['article' => $articles, 'nbPages' => $nbPages, 'currentPage' => $currentPage, 'get' => $_GET]);
     }
 
 
