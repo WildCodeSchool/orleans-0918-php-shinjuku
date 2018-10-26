@@ -13,15 +13,12 @@ $routes = [
     'Article' => [
         ['index', '/products', 'GET'], // action, url, method
         ['add', '/article/add', ['GET', 'POST']], // action, url, method
-
-         ['searchArticleGeneral', '/article/search', 'GET'], // action, url, method
+        ['searchArticleGeneral', '/article/search', 'GET'], // action, url, method
         ['showAll', '/article/list', ['GET', 'POST']], // action, url, method
         ['edit', '/article/edit', ['GET', 'POST']], // action, url, method
-
         ['show', '/article/{id:\d+}', 'GET'], // action, url, method
         ['listByCategory', '/article/{category}', 'GET'], // action, url, method
     ],
-
     'About' => [ // Controller
         ['index', '/about', 'GET'], //rajout du lien
     ],
