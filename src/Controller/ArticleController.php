@@ -31,7 +31,7 @@ class ArticleController extends AbstractController
             $currentPage = $_GET['currentPage'];
         }
         $articleManager = new ArticleManager($this->getPdo());
-        $count=$articleManager->countArticle($category,$_GET['search'] ?? '');
+        $count=$articleManager->countArticle($currentPage,$category,$_GET['search'] ?? '');
         $articles = $articleManager->searchArticle($category, $_GET['search'] ?? '');
         if (!in_array($category, self::ALLOWED_CATEGORY)) {
             $errors['category'] = "Catégorie inexistante!";
