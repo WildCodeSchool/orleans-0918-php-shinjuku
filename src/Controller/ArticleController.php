@@ -60,7 +60,6 @@ class ArticleController extends AbstractController
         $count=$articleManager->countArticle($category='',$_GET['search'] ?? '');
         $articles = $articleManager->searchArticle($currentPage, "", $_GET['search'] ?? '');
         $nbPages=ceil($count/self::ARTICLE_BY_PAGE);
-        var_dump($nbPages);
         return $this->twig->render('Article/article_page_search.html.twig', ['article' => $articles, 'error'=>$errors, 'nbPages' => $nbPages, 'currentPage' => $currentPage, 'get' => $_GET]);
     }
 
