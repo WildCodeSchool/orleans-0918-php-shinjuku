@@ -6,13 +6,11 @@
  * Time: 18:20
  * PHP version 7
  */
-
 namespace Model;
-
 class ArticleManager extends AbstractManager
 {
     const TABLE = 'article';
-
+    const ARTICLE_BY_PAGE=16;
     /**
      * ArticleManager constructor.
      * @param \PDO $pdo
@@ -22,10 +20,12 @@ class ArticleManager extends AbstractManager
     {
         parent::__construct(self::TABLE, $pdo);
     }
+
     /*
     *searching article by category and by name(when searching by the client
     */
-    public function searchArticle(string $category = '', string $search = ''): array
+
+    public function searchArticle(int $currentPage, string $category = '', string $search = ''): array
      {
         $queryFragments = [];
 
@@ -35,8 +35,8 @@ class ArticleManager extends AbstractManager
         if (!empty($category)) {
             $queryFragments[] = "category =:category";
         }
-
-        $statement = $this->pdo->prepare('SELECT * FROM ' . $this->table . " WHERE " . implode(" AND ", $queryFragments));
+         $offset=($currentPage*self::ARTICLE_BY_PAGE)-self::ARTICLE_BY_PAGE;
+        $statement = $this->pdo->prepare('SELECT * FROM ' . $this->table . " WHERE " . implode(" AND ", $queryFragments)" LIMIT 16 OFFSET $offset");
         $statement->setFetchMode(\PDO::FETCH_CLASS, $this->className);
         if (!empty($search)) {
             $statement->bindValue('search', "%$search%", \PDO::PARAM_STR);
@@ -47,6 +47,18 @@ class ArticleManager extends AbstractManager
         if ($statement->execute()) {
             return $statement->fetchAll();
         }
+    /**
+     * @param string $category
+     * @param string $search
+     * @return int
+     */
+    public function countArticle(string $category,string $search=''): int
+    {
+        $searching = '';
+        if (!empty($search)) {
+            $searching = "AND name LIKE '%$search%'";
+        }
+        return $this->pdo->query('SELECT COUNT(*) FROM ' . $this->table . " WHERE   category ='$category' $searching")->fetchColumn();
     }
     /**
      * @param Article $article
@@ -63,9 +75,13 @@ class ArticleManager extends AbstractManager
         $statement->bindValue('description', $article->getDescription(), \PDO::PARAM_STR);
         $statement->bindValue('review', $article->getReview(), \PDO::PARAM_STR);
         $statement->bindValue('highlight', $article->getHighlight(), \PDO::PARAM_BOOL);
-
         if ($statement->execute()) {
             return $this->pdo->lastInsertId();
         }
+    }
+
+    public function selectHighlight()
+    {
+        return $this->pdo->query("SELECT * FROM $this->table WHERE highlight IS NOT NULL ORDER BY category DESC ", \PDO::FETCH_CLASS, $this->className)->fetchAll();
     }
 }

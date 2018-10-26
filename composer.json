@@ -16,6 +16,7 @@
         "twig/twig": "^2.4",
         "squizlabs/php_codesniffer": "^3.3",
         "swiftmailer/swiftmailer": "^6.1"
+
     },
     "require-dev": {
     },
