@@ -52,7 +52,7 @@ class ArticleController extends AbstractController
         if (isset($_GET['currentPage'])) {
             $currentPage = $_GET['currentPage'];
         }
-        if (strlen($_GET['search']) < 3) {
+        if (mb_strlen($_GET['search']) < 3) {
             $errors['notenough'] = "La recherche doit contenir 3 caractère minimum!";
             return $this->twig->render('Article/article.html.twig', ['article' => $articles, 'error' => $errors]);
         }
