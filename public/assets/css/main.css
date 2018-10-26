@@ -3634,11 +3634,13 @@ small {
 
 }
 
-.logo-pres{
+.logo-pres {
     font-family: Shojumaru;
     color: red;
     text-shadow: 3px 3px 3px white, 0 0 1em white, 0 0 0.2em white;
     font-size: 2vw;
+}
+
 /*icon FB*/
 
 
