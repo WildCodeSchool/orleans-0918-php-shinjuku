@@ -36,7 +36,7 @@ class ArticleController extends AbstractController
         if (!in_array($category, self::ALLOWED_CATEGORY)) {
             $errors['category'] = "Catégorie inexistante!";
         }
-        if (strlen($_GET['search'] ?? '') > 45) {
+        if (strlen($_GET['search']) > 45) {
             $errors['toomuch'] = "La recherche doit contenir 45 caractères maximum!";
         }
         $nbPages=ceil($count/self::ARTICLE_BY_PAGE);
@@ -52,12 +52,12 @@ class ArticleController extends AbstractController
         if (isset($_GET['currentPage'])) {
             $currentPage = $_GET['currentPage'];
         }
-        if (strlen($_GET['search'] ?? '') < 3) {
+        if (strlen($_GET['search']) < 3) {
             $errors['notenough'] = "La recherche doit contenir 3 caractère minimum!";
             return $this->twig->render('Article/article.html.twig', ['article' => $articles, 'error' => $errors]);
         }
         $articleManager = new ArticleManager($this->getPdo());
-        $count=$articleManager->countArticle($category='',$_GET['search'] ?? '');
+        $count=$articleManager->countArticle($category ?? '',$_GET['search'] ?? '');
         $articles = $articleManager->searchArticle($currentPage, "", $_GET['search'] ?? '');
         $nbPages=ceil($count/self::ARTICLE_BY_PAGE);
         return $this->twig->render('Article/article_page_search.html.twig', ['article' => $articles, 'error'=>$errors, 'nbPages' => $nbPages, 'currentPage' => $currentPage, 'get' => $_GET]);
