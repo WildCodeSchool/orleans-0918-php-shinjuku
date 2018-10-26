@@ -22,7 +22,7 @@ class ArticleController extends AbstractController
     const ALLOWED_EXTENSIONS=['png', 'jpg', 'jpeg'];
     const ARTICLE_BY_PAGE=16;
 
-  public function listByCategory($category)
+   public function listByCategory($category)
     {
         $errors = [];
         $nbPages=1;
@@ -46,13 +46,22 @@ class ArticleController extends AbstractController
     public function searchArticleGeneral()
     {
         $articles = [];
+        $errors = [];
+        $nbPages=1;
+        $currentPage=1;
+        if (isset($_GET['currentPage'])) {
+            $currentPage = $_GET['currentPage'];
+        }
         if (strlen($_GET['search'] ?? '') < 3) {
             $errors['notenough'] = "La recherche doit contenir 3 caractère minimum!";
             return $this->twig->render('Article/article.html.twig', ['article' => $articles, 'error' => $errors]);
         }
         $articleManager = new ArticleManager($this->getPdo());
-        $articles = $articleManager->searchArticle("", $_GET['search'] ?? '');
-        return $this->twig->render('Article/article_page_search.html.twig', ['article' => $articles]);
+        $count=$articleManager->countArticle($category='',$_GET['search'] ?? '');
+        $articles = $articleManager->searchArticle($currentPage, "", $_GET['search'] ?? '');
+        $nbPages=ceil($count/self::ARTICLE_BY_PAGE);
+        var_dump($nbPages);
+        return $this->twig->render('Article/article_page_search.html.twig', ['article' => $articles, 'error'=>$errors, 'nbPages' => $nbPages, 'currentPage' => $currentPage, 'get' => $_GET]);
     }
 
     public function add()
