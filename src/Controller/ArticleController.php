@@ -22,7 +22,7 @@ class ArticleController extends AbstractController
     const ALLOWED_EXTENSIONS=['png', 'jpg', 'jpeg'];
     const ARTICLE_BY_PAGE=16;
 
-   public function listByCategory($category)
+   public function listByCategory(string $category)
     {
         $errors = [];
         $nbPages=1;
@@ -57,8 +57,8 @@ class ArticleController extends AbstractController
             return $this->twig->render('Article/article.html.twig', ['article' => $articles, 'error' => $errors]);
         }
         $articleManager = new ArticleManager($this->getPdo());
-        $count=$articleManager->countArticle($category ?? '',$_GET['search'] ?? '');
-        $articles = $articleManager->searchArticle($currentPage, "", $_GET['search'] ?? '');
+        $count=$articleManager->countArticle('',$_GET['search'] ?? '');
+        $articles = $articleManager->searchArticle($currentPage, "", $_GET['search']);
         $nbPages=ceil($count/self::ARTICLE_BY_PAGE);
         return $this->twig->render('Article/article_page_search.html.twig', ['article' => $articles, 'error'=>$errors, 'nbPages' => $nbPages, 'currentPage' => $currentPage, 'get' => $_GET]);
     }
