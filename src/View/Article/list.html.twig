@@ -9,6 +9,8 @@
             <!--Search bar-->
             <div class="row d-flex justify-content-center bd-highlight mb-3  search_product_bar">
                 <nav class="m-b-100 search_bar col-md-12 col-lg-5 col-xs-12 col-sm-12  navbar navbar-light">
+                    <a href="/article/add" class="add" NAME="add" VALUE="add"><button type="button" class="btn btn-success btn-sm">Ajouter un nouvel article</button></a>
+
                     <form class="search_bar form-inline" method="get"  action="">
                         <label for="search" >Recherche</label>
                         <input class="search-bar form-control my-lg-0" id="search" type="search" name="search" aria-label="Search" placeholder="Ex: naruto..." label="recherche">
@@ -39,9 +41,9 @@
                             </div>
                         </div>
                     </div>
-                    <button type="button" class="btn btn-primary btn-sm">Modifier</button>
 
-                    <a href="/article/list/{{ article.id }}"  onclick="return confirm('Etes vous sur de vouloir supprimer cet article')" class="btn btn-danger" NAME="supprimer" VALUE=" supprimer ">supprimer</a>
+                    <a href="/article/edit/{{ article.id }}"  class="update" NAME="update" VALUE="update"><button type="button" class="btn btn-primary btn-sm">Modifier</button></a>
+                    <a href="/article/list/{{ article.id }}"  onclick="return confirm('Etes vous sur de vouloir supprimer cet article')" class="delete" NAME="supprimer" VALUE="supprimer"><button type="button" class="btn btn-danger btn-sm">Supprimer</button></a>
 
                 </div>
             {% endfor %}

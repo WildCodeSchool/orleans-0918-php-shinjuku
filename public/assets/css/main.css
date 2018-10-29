@@ -3731,3 +3731,19 @@ h2{
 .certifiedLogo {
     height: 100px;
 }
+
+/*delete button*/
+.delete {
+    text-decoration: none;
+    color: white;
+}
+
+/*add button*/
+.btn-success {
+    margin-right: 5vw;
+}
+
+.add {
+    text-decoration: none;
+    color: white;
+}
