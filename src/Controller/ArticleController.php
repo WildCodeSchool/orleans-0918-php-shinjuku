@@ -27,6 +27,7 @@ class ArticleController extends AbstractController
         $errors=[];
         $nbPages=1;
         $currentPage=1;
+        $search=$_GET['search'] ?? '';
         $_GET['currentPage']=trim($_GET['currentPage']);
         if ((isset($_GET['currentPage']))) {
             if ((is_int($_GET['currentPage'])) && ($_GET['currentPage']>0)) {
@@ -34,12 +35,12 @@ class ArticleController extends AbstractController
             }    
         }
         $articleManager=new ArticleManager($this->getPdo());
-        $count=$articleManager->countArticle($category,$_GET['search'] ?? '');
-        $articles = $articleManager->searchArticle($currentPage, $category,$_GET['search'] ?? '');
+        $count=$articleManager->countArticle($category, $search);
+        $articles = $articleManager->searchArticle($currentPage, $category, $search);
         if(!in_array($category,self::ALLOWED_CATEGORY)){
             $errors['category']= "Catégorie inexistante!";
         }
-        if (strlen($_GET['search']?? '') > 45) {
+        if (strlen($search) > 45) {
             $errors['toomuch'] = "La recherche doit contenir 45 caractères maximum!";
         }
         $nbPages=ceil($count/self::ARTICLE_BY_PAGE);
