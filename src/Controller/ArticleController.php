@@ -27,8 +27,11 @@ class ArticleController extends AbstractController
         $errors=[];
         $nbPages=1;
         $currentPage=1;
-        if (isset($_GET['currentPage'])) {
-            $currentPage = $_GET['currentPage'];
+        $_GET['currentPage']=trim($_GET['currentPage']);
+        if ((isset($_GET['currentPage']))) {
+            if ((is_int($_GET['currentPage'])) && ($_GET['currentPage']>0)) {
+                $currentPage = $_GET['currentPage'];
+            }    
         }
         $articleManager=new ArticleManager($this->getPdo());
         $count=$articleManager->countArticle($category,$_GET['search'] ?? '');
