@@ -59,7 +59,7 @@ class ArticleController extends AbstractController
             return $this->twig->render('Article/article.html.twig', ['article' => $articles, 'errors' => $errors]);
         }
         $articleManager = new ArticleManager($this->getPdo());
-        $count=$articleManager->countArticle('',$search);
+        $count=$articleManager->countArticle(null, $search);
         $articles = $articleManager->searchArticle($currentPage, "", $_GET['search']);
         $nbPages=ceil($count/self::ARTICLE_BY_PAGE);
         return $this->twig->render('Article/article_page_search.html.twig', ['article' => $articles, 'errors'=>$errors, 'nbPages' => $nbPages, 'currentPage' => $currentPage, 'get' => $_GET]);
