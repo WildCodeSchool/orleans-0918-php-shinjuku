@@ -40,7 +40,7 @@ class ArticleController extends AbstractController
             $errors['toomuch'] = "La recherche doit contenir 45 caractères maximum!";
         }
         $nbPages=ceil($count/self::ARTICLE_BY_PAGE);
-        return $this->twig->render('Article/article.html.twig', ['article' => $articles, 'category'=> $category, 'error'=>$errors, 'nbPages' => $nbPages, 'currentPage' => $currentPage, 'get' => $_GET]);
+        return $this->twig->render('Article/article.html.twig', ['article' => $articles, 'category'=> $category, 'errors'=>$errors, 'nbPages' => $nbPages, 'currentPage' => $currentPage, 'get' => $_GET]);
     }
 
     public function add()
