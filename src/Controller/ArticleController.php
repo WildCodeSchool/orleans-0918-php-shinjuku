@@ -20,19 +20,27 @@ class ArticleController extends AbstractController
 
     const ALLOWED_CATEGORY=['manga','goodies','dvd'];
     const ALLOWED_EXTENSIONS=['png', 'jpg', 'jpeg'];
+    const ARTICLE_BY_PAGE=16;
 
     public function listByCategory($category)
     {
         $errors=[];
+        $nbPages=1;
+        $currentPage=1;
+        if (isset($_GET['currentPage'])) {
+            $currentPage = $_GET['currentPage'];
+        }
         $articleManager=new ArticleManager($this->getPdo());
-        $articles = $articleManager->searchArticle($category,$_GET['search'] ?? '');
+        $count=$articleManager->countArticle($category,$_GET['search'] ?? '');
+        $articles = $articleManager->searchArticle($currentPage, $category,$_GET['search'] ?? '');
         if(!in_array($category,self::ALLOWED_CATEGORY)){
             $errors['category']= "Catégorie inexistante!";
         }
         if (strlen($_GET['search']?? '') > 45) {
             $errors['toomuch'] = "La recherche doit contenir 45 caractères maximum!";
         }
-        return $this->twig->render('Article/article.html.twig', ['article' => $articles, 'category'=> $category, 'error'=>$errors]);
+        $nbPages=ceil($count/self::ARTICLE_BY_PAGE);
+        return $this->twig->render('Product/article.html.twig', ['article' => $articles, 'category'=> $category, 'error'=>$errors, 'nbPages' => $nbPages, 'currentPage' => $currentPage, 'get' => $_GET]);
     }
 
     public function add()

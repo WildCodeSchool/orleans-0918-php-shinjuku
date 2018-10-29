@@ -92,7 +92,7 @@ class ContactController extends AbstractController
                         $message->setSubject('Message du formulaire de contact du site shinjuku');
                         $message->setFrom([$cleanPost['email'] => 'sender name']);
                         $message->addTo('shinjuku.projet@gmail.com','recipient name');
-                        $message->setBody("Nouveau message de ".$cleanPost['lastName']." ".$cleanPost['firstName']." : ".$cleanPost['message']);
+                        $message->setBody("Nouveau message de ".$cleanPost['lastName']." ".$cleanPost['firstName']." ( ".$cleanPost['email']." ) : ".$cleanPost['message']);
                         $result = $mailer->send($message);
                         $_SESSION['mailSent'] = 'Message envoyé';
                         } catch (Exception $e) {
