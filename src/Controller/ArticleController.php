@@ -150,11 +150,20 @@ class ArticleController extends AbstractController
         return $this->twig->render('Article/article_details.html.twig', ['article' => $article]);
     }
 
+
     public function showAll()
     {
         $articleManager = new ArticleManager($this->pdo);
         $articles = $articleManager->selectAll();
 
         return $this->twig->render('Article/list.html.twig', ['articles' => $articles]);
+    }
+
+    public function deleteArticle(int $id)
+    {
+        $articleManager = new ArticleManager($this->getPdo());
+        $articleManager->delete($id);
+        header('Location:/article/list');
+        exit();
     }
 }

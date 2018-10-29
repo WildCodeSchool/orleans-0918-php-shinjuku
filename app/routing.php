@@ -17,6 +17,7 @@ $routes = [
         ['edit', '/article/edit', ['GET', 'POST']], // action, url, method
         ['show', '/article/{id:\d+}', 'GET'], // action, url, method
         ['listByCategory', '/article/{category}', 'GET'], // action, url, method
+        ['deleteArticle', '/article/list/{id:\d+}', 'GET'],
     ],
 
     'About' => [ // Controller
@@ -24,8 +25,11 @@ $routes = [
     ],
     'Home' => [ // Controller
         ['index', '/', 'GET'], // action, url, method
-    ],
+
+
+   ],
     'Contact' => [ // Controller
         ['send', '/contact', ['GET', 'POST']], // action, url, method
     ],
 ];
+
