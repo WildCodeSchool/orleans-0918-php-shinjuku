@@ -24,6 +24,7 @@ class ArticleController extends AbstractController
 
    public function listByCategory(string $category)
     {
+        $search = "$_GET['search'] ?? ''";
         $errors = [];
         $nbPages=1;
         $currentPage=1;
@@ -31,8 +32,8 @@ class ArticleController extends AbstractController
             $currentPage = $_GET['currentPage'];
         }
         $articleManager = new ArticleManager($this->getPdo());
-        $count=$articleManager->countArticle($category,$_GET['search'] ?? '');
-        $articles = $articleManager->searchArticle($currentPage,$category, $_GET['search'] ?? '');
+        $count=$articleManager->countArticle($category,$search);
+        $articles = $articleManager->searchArticle($currentPage,$category, $search);
         if (!in_array($category, self::ALLOWED_CATEGORY)) {
             $errors['category'] = "Catégorie inexistante!";
         }
@@ -45,6 +46,7 @@ class ArticleController extends AbstractController
 
     public function searchArticleGeneral()
     {
+        $search = "$_GET['search'] ?? ''";
         $articles = [];
         $errors = [];
         $nbPages=1;
@@ -57,7 +59,7 @@ class ArticleController extends AbstractController
             return $this->twig->render('Article/article.html.twig', ['article' => $articles, 'errors' => $errors]);
         }
         $articleManager = new ArticleManager($this->getPdo());
-        $count=$articleManager->countArticle('',$_GET['search'] ?? '');
+        $count=$articleManager->countArticle('',$search);
         $articles = $articleManager->searchArticle($currentPage, "", $_GET['search']);
         $nbPages=ceil($count/self::ARTICLE_BY_PAGE);
         return $this->twig->render('Article/article_page_search.html.twig', ['article' => $articles, 'errors'=>$errors, 'nbPages' => $nbPages, 'currentPage' => $currentPage, 'get' => $_GET]);
