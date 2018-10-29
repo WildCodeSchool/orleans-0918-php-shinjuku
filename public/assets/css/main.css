@@ -3344,6 +3344,8 @@ input.num-product::-webkit-inner-spin-button {
 
 }
 
+
+/*////////////////////////////////////*/
 footer{
     background: linear-gradient(360deg, rgba(0, 0, 0, .8), rgba(0, 0, 0, 0.02) 100%);
     min-height: 5vh;
@@ -3587,6 +3589,8 @@ small {
 .modal-content{
     height: 90%;
 }
+
+/*//////////////////////*/
 
 .logo{
     font-family: Shojumaru;
