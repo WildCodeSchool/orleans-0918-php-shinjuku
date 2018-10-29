@@ -3487,7 +3487,16 @@ main
  */
 h3 {
     font-family: Quando;
-
+}
+.highLight {
+    font-family: Quando;
+    text-align: center;
+    Font-Weight: bold;
+    padding-bottom: 50px;
+}
+h2 {
+    font-family: Quando;
+    Font-Weight: bold;
 }
 
 body {
@@ -3496,6 +3505,12 @@ body {
 
 .f_quando {
     font-family: Quando;
+}
+
+.homePresentation{
+
+    font-family: Quando;
+    padding-top: 50px;
 }
 /*////////////////////////
 add product in database
@@ -3594,6 +3609,7 @@ small {
     font-size: 2vw;
 }
 .logo:hover{
+
     font-family: Shojumaru;
     color: white;
     text-shadow: 1px 1px 2px white, 0 0 1em red, 0 0 0.2em white;
@@ -3632,11 +3648,13 @@ small {
 
 }
 
-.logo-pres{
+.logo-pres {
+
     font-family: Shojumaru;
     color: red;
     text-shadow: 3px 3px 3px white, 0 0 1em white, 0 0 0.2em white;
-    font-size: 2vw;
+    font-size: 28pt;
+}
 /*icon FB*/
 
 
@@ -3697,13 +3715,6 @@ contact form
 
 }
 
-h2{
-    text-align: center;
-    Font-Weight: bold;
-    font-family: Quando;
-}
-
-
 /* Artcile review */
 
 .pd-top {
@@ -3718,3 +3729,4 @@ h2{
 .certifiedLogo {
     height: 100px;
 }
+
