@@ -32,7 +32,7 @@ class ArticleManager extends AbstractManager
               $searching = "AND name LIKE '%$search%'";
           }
           $offset=($currentPage*self::ARTICLE_BY_PAGE)-self::ARTICLE_BY_PAGE;
-          return $this->pdo->query('SELECT * FROM ' . $this->table . " WHERE   category ='$category' $searching LIMIT 16 OFFSET ".$offset, \PDO::FETCH_CLASS, $this->className)->fetchAll();
+          return $this->pdo->query('SELECT * FROM ' . $this->table . " WHERE   category ='$category' $searching LIMIT ".self::ARTICLE_BY_PAGE." OFFSET ".$offset, \PDO::FETCH_CLASS, $this->className)->fetchAll();
       }
 
     /**
