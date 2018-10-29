@@ -36,7 +36,7 @@ class ArticleManager extends AbstractManager
             $queryFragments[] = "category =:category";
         }
         $offset=($currentPage*self::ARTICLE_BY_PAGE)-self::ARTICLE_BY_PAGE;
-        $statement = $this->pdo->prepare('SELECT * FROM ' . $this->table . " WHERE " . implode(" AND ", $queryFragments) . " LIMIT 16 OFFSET " .$offset);
+        $statement = $this->pdo->prepare('SELECT * FROM ' . $this->table . " WHERE " . implode(" AND ", $queryFragments) . " LIMIT ".self::ARTICLE_BY_PAGE." OFFSET " .$offset);
         $statement->setFetchMode(\PDO::FETCH_CLASS, $this->className);
         if (!empty($search)) {
             $statement->bindValue('search', "%$search%", \PDO::PARAM_STR);
