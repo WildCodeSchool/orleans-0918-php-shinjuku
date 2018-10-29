@@ -17,14 +17,19 @@ $routes = [
         ['edit', '/article/edit', ['GET', 'POST']], // action, url, method
         ['show', '/article/{id:\d+}', 'GET'], // action, url, method
         ['searchArticle', '/article/search', 'GET'], // action, url, method
+        ['deleteArticle', '/article/list/{id:\d+}', 'GET'],
+
     ],
     'About' => [ // Controller
         ['index', '/about', 'GET'], //rajout du lien
     ],
     'Home' => [ // Controller
         ['index', '/', 'GET'], // action, url, method
-    ],
+
+
+   ],
     'Contact' => [ // Controller
         ['send', '/contact', ['GET', 'POST']], // action, url, method
     ],
 ];
+
