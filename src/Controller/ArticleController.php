@@ -22,7 +22,7 @@ class ArticleController extends AbstractController
     const ALLOWED_EXTENSIONS=['png', 'jpg', 'jpeg'];
     const ARTICLE_BY_PAGE=16;
 
-      public function listByCategory($category)
+    public function listByCategory($category)
     {
         $errors=[];
         $nbPages=1;
