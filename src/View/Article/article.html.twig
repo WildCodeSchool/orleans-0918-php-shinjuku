@@ -37,7 +37,11 @@
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 m-b-35 block-article">
                     <div class="block2">
                         <div class="block2-pic hov-img0">
+                            {% if article.picture is not empty %}
                             <img src="{{ article.picture }}" alt="IMG-PRODUCT" class="image-article" >
+                            {% else %}
+                            <img src="https://via.placeholder.com/350x150" alt="IMG-PRODUCT" class="image-article" >
+                            {% endif %}
                         </div>
                         <div class="block2-txt flex-w flex-t p-t-14">
                             <div class="block2-txt-child1 flex-col-l ">

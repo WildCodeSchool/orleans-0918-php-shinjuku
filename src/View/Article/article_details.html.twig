@@ -11,7 +11,11 @@
                         <div class="slick3 gallery-lb">
                             <div class="item-slick3" data-thumb="https://via.placeholder.com/513x634">
                                 <div class="wrap-pic-w pos-relative">
-                                    <img src="{{ article.picture }}" alt="Image de l'article {{ article.name }}">
+                                    {% if article.picture is not empty %}
+                                        <img src="{{ article.picture }}" alt="IMG-PRODUCT" class="image-article" >
+                                    {% else %}
+                                        <img src="https://via.placeholder.com/350x150" alt="IMG-PRODUCT" class="image-article" >
+                                    {% endif %}
                                 </div>
                             </div>
                         </div>
