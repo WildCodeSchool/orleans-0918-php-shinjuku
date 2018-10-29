@@ -1,13 +1,17 @@
 {% if nbPages is defined and nbPages > 1 %}
-            <div class="row justify-content-end paging">
-                {% if currentPage != 1 %}
-                    <a href="?{{ get.search ? 'search=' ~ get.search ~ '&'}}{{ get.category ? 'category=' ~ get.category ~ '&'}}currentPage={{ 1 }}" class="btn btn-shinjuku"><i class="fas fa-angle-double-left"></i></a>
-                    <a href="?{{ get.search ? 'search=' ~ get.search ~ '&'}}{{ get.category ? 'category=' ~ get.category ~ '&'}}currentPage={{ currentPage-1 }}" class="btn btn-shinjuku"><i class="fas fa-angle-left"></i></a>
-                {% endif %}
-                <a href="" class="btn btn-shinjuku disabled">{{ currentPage }}</a>
-                {% if currentPage < nbPages %}
-                    <a href="?{{ get.search ? 'search=' ~ get.search ~ '&'}}{{ get.category ? 'category=' ~ get.category ~ '&'}}currentPage={{ currentPage+1 }}" class="btn btn-shinjuku"><i class="fas fa-angle-right"></i></a>
-                    <a href="?{{ get.search ? 'search=' ~ get.search ~ '&'}}{{ get.category ? 'category=' ~ get.category ~ '&'}}currentPage={{ nbPages }}" class="btn btn-shinjuku"><i class="fas fa-angle-double-right"></i></a>
-                {% endif %}
-            </div>
+    <div class="row justify-content-end paging">
+        {% if currentPage != 1 %}
+            <a href="?{{ get.search ? 'search=' ~ get.search ~ '&' }}{{ get.category ? 'category=' ~ get.category ~ '&' }}currentPage={{ 1 }}"
+               class="btn btn-shinjuku"><i class="fas fa-angle-double-left"></i></a>
+            <a href="?{{ get.search ? 'search=' ~ get.search ~ '&' }}{{ get.category ? 'category=' ~ get.category ~ '&' }}currentPage={{ currentPage-1 }}"
+               class="btn btn-shinjuku"><i class="fas fa-angle-left"></i></a>
         {% endif %}
+        <a href="" class="btn btn-shinjuku disabled">{{ currentPage }}</a>
+        {% if currentPage < nbPages %}
+            <a href="?{{ get.search ? 'search=' ~ get.search ~ '&' }}{{ get.category ? 'category=' ~ get.category ~ '&' }}currentPage={{ currentPage+1 }}"
+               class="btn btn-shinjuku"><i class="fas fa-angle-right"></i></a>
+            <a href="?{{ get.search ? 'search=' ~ get.search ~ '&' }}{{ get.category ? 'category=' ~ get.category ~ '&' }}currentPage={{ nbPages }}"
+               class="btn btn-shinjuku"><i class="fas fa-angle-double-right"></i></a>
+        {% endif %}
+    </div>
+{% endif %}

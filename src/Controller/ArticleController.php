@@ -18,117 +18,113 @@ use Model\ArticleManager;
 class ArticleController extends AbstractController
 {
 
-    const ALLOWED_CATEGORY=['manga','goodies','dvd'];
-    const ALLOWED_EXTENSIONS=['png', 'jpg', 'jpeg'];
-    const ARTICLE_BY_PAGE=16;
+    const ALLOWED_CATEGORY = ['manga', 'goodies', 'dvd'];
+    const ALLOWED_EXTENSIONS = ['png', 'jpg', 'jpeg'];
+    const ARTICLE_BY_PAGE = 16;
 
-   public function listByCategory(string $category)
+    public function searchArticle()
     {
-        $search = $_GET['search'] ?? '';
+        $category = $_GET['category'] ?? null;
+        $search = $_GET['search'] ?? null;
         $errors = [];
-        $nbPages=1;
-        $currentPage=1;
-        if (isset($_GET['currentPage'])) {
-            $currentPage = $_GET['currentPage'];
-        }
-        $articleManager = new ArticleManager($this->getPdo());
-        $count=$articleManager->countArticle($category,$search);
-        $articles = $articleManager->searchArticle($currentPage,$category, $search);
-        if (!in_array($category, self::ALLOWED_CATEGORY)) {
+        $articles = [];
+        $nbPages = 1;
+
+        $currentPage = $_GET['currentPage'] ?? 1;
+
+
+        if (!empty($category) && !in_array($category, self::ALLOWED_CATEGORY)) {
             $errors['category'] = "Catégorie inexistante!";
         }
-        if (mb_strlen($_GET['search']) > 45) {
-            $errors['tooMuch'] = "La recherche doit contenir 45 caractères maximum!";
+        if (!empty($search) && mb_strlen($search) > 255) {
+            $errors['tooMuch'] = "La recherche doit contenir 255 caractères maximum !";
         }
-        $nbPages=ceil($count/self::ARTICLE_BY_PAGE);
-        return $this->twig->render('Article/article.html.twig', ['article' => $articles, 'category'=> $category, 'errors'=>$errors, 'nbPages' => $nbPages, 'currentPage' => $currentPage, 'get' => $_GET]);
-    }
+        if (!empty($search) && mb_strlen($search) < 3) {
+            $errors['notEnough'] = "La recherche doit contenir 3 caractères minimum !";
+        }
 
-    public function searchArticleGeneral()
-    {
-        $search = $_GET['search'] ?? '';
-        $articles = [];
-        $errors = [];
-        $nbPages=1;
-        $currentPage=1;
-        if (isset($_GET['currentPage'])) {
-            $currentPage = $_GET['currentPage'];
+        if (empty($errors)) {
+            $articleManager = new ArticleManager($this->getPdo());
+            $count = $articleManager->countArticle($category, $search);
+            $articles = $articleManager->searchArticle($currentPage, $category, $search);
+            $nbPages = ceil($count / self::ARTICLE_BY_PAGE);
         }
-        if (mb_strlen($search < 3) {
-            $errors['notEnough'] = "La recherche doit contenir 3 caractère minimum!";
-        }
-        $articleManager = new ArticleManager($this->getPdo());
-        $count=$articleManager->countArticle(null, $search);
-        $articles = $articleManager->searchArticle($currentPage, "", $search);
-        $nbPages=ceil($count/self::ARTICLE_BY_PAGE);
-        return $this->twig->render('Article/article_page_search.html.twig', ['article' => $articles, 'errors'=>$errors, 'nbPages' => $nbPages, 'currentPage' => $currentPage, 'get' => $_GET]);
+
+        return $this->twig->render('Article/article.html.twig', [
+            'article' => $articles,
+            'category' => $category,
+            'errors' => $errors,
+            'nbPages' => $nbPages,
+            'currentPage' => $currentPage,
+            'search' => $search,
+        ]);
     }
 
     public function add()
     {
-        $errors=array();
+        $errors = array();
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $cleanPost=[];
+            $cleanPost = [];
             foreach ($_POST as $key => $value) {
-                $cleanPost[$key]=trim($value);
+                $cleanPost[$key] = trim($value);
             }
 
-            if($_POST){
+            if ($_POST) {
 
-                if(empty($cleanPost['name'])) {
+                if (empty($cleanPost['name'])) {
                     $errors['name'] = 'Veuillez remplir le champ "Nom';
                 }
-                if(empty($cleanPost['category'])) {
+                if (empty($cleanPost['category'])) {
                     $errors['category'] = 'Veuillez remplir le champ "Catégorie"';
                 }
-                if(empty($cleanPost['price'])) {
+                if (empty($cleanPost['price'])) {
                     $errors['price'] = 'Veuillez remplir le champ "Prix"';
                 }
-                if(empty($cleanPost['description'])) {
+                if (empty($cleanPost['description'])) {
                     $errors['description'] = 'Veuillez remplir le champ "Description"';
                 }
 
-                if (!preg_match("/^[a-zA-Z0-9 ]+$/", $cleanPost['name'])){
+                if (!preg_match("/^[a-zA-Z0-9 ]+$/", $cleanPost['name'])) {
                     $errors['name'] = 'Veuillez remplir le champ "Nom" uniquement avec des caractères alphanumériques';
                 }
 
-                if (!preg_match("/^[a-z]+$/", $cleanPost['category'])){
+                if (!preg_match("/^[a-z]+$/", $cleanPost['category'])) {
                     $errors['category'] = 'Veuillez remplir le champ "Catégorie" uniquement avec des caractères alphabétiques';
                 }
 
-                if (!preg_match("/^[0-9]+$/", $cleanPost['price'])){
+                if (!preg_match("/^[0-9]+$/", $cleanPost['price'])) {
                     $errors['price'] = 'Veuillez remplir le champ "Prix" uniquement avec des caractères numériques';
                 }
 
-                if ($cleanPost['price']<=0) {
+                if ($cleanPost['price'] <= 0) {
                     $errors['price'] = 'Veuillez remplir le champ "Prix" avec une valeur supérieur à 0';
                 }
 
-                if (strlen($cleanPost['name'])>255) {
+                if (strlen($cleanPost['name']) > 255) {
                     $errors['name'] = 'Veuillez remplir le champ "Nom" avec 255 caractères maximum';
                 }
-                if (strlen($cleanPost['category'])>255) {
+                if (strlen($cleanPost['category']) > 255) {
                     $errors['category'] = 'Veuillez remplir le champ "Catégorie" avec 255 caractères maximum';
                 }
-                if (strlen(strval($cleanPost['price']))>11) {
+                if (strlen(strval($cleanPost['price'])) > 11) {
                     $errors['price'] = 'Veuillez remplir le champ "Prix" avec 11 caractères maximum';
                 }
-                if (strlen($cleanPost['description'])>5000) {
+                if (strlen($cleanPost['description']) > 5000) {
                     $errors['description'] = 'Veuillez remplir le champ "Description" avec 5000 caractères maximum';
                 }
-                if ((strlen($cleanPost['review'])>5000) && (!empty($cleanPost['review']))) {
+                if ((strlen($cleanPost['review']) > 5000) && (!empty($cleanPost['review']))) {
                     $errors['review'] = 'Veuillez remplir le champ "Avis de la boutique" avec 5000 caractères maximum';
                 }
 
                 if (!empty($_FILES['picture']['name'])) {
                     $extension = pathinfo($_FILES['picture']['name'], PATHINFO_EXTENSION);
                     if (!in_array($extension, self::ALLOWED_EXTENSIONS)) {
-                        $errors['picture'] = 'Veuillez télécharger une image au format ' . implode (', ', self::ALLOWED_EXTENSIONS). ' uniquement';
+                        $errors['picture'] = 'Veuillez télécharger une image au format ' . implode(', ', self::ALLOWED_EXTENSIONS) . ' uniquement';
                     }
                 }
 
-                if(0==count($errors)) {
+                if (0 == count($errors)) {
                     $articleManager = new ArticleManager($this->getPdo());
 
                     $article = new Article();
@@ -138,7 +134,7 @@ class ArticleController extends AbstractController
 
                     if (!empty($_FILES['picture']['name'])) {
                         $extension = pathinfo($_FILES['picture']['name'], PATHINFO_EXTENSION);
-                        $filename = uniqid() . '.' .$extension;
+                        $filename = uniqid() . '.' . $extension;
                         $uploadDir = __DIR__ . '/../../public/assets/images/upload/';
                         $uploadFile = $uploadDir . $filename;
                         move_uploaded_file($_FILES['picture']['tmp_name'], $uploadFile);

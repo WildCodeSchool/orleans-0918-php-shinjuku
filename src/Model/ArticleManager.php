@@ -23,7 +23,7 @@ class ArticleManager extends AbstractManager
     /*
     *searching article by category and by name(when searching by the client
     */
-    public function searchArticle(int $currentPage, string $category = '', string $search = ''): array
+    public function searchArticle(int $currentPage, ?string $category = '', ?string $search = ''): array
     {
         $queryFragments = [];
 
@@ -42,6 +42,7 @@ class ArticleManager extends AbstractManager
         if (!empty($category)) {
             $statement->bindValue('category', $category, \PDO::PARAM_STR);
         }
+
         if ($statement->execute()) {
             return $statement->fetchAll();
         }
@@ -51,7 +52,7 @@ class ArticleManager extends AbstractManager
      * @param string $search
      * @return int
      */
-    public function countArticle(?string $category , string $search =''): int
+    public function countArticle(?string $category , ?string $search): int
     {
         $queryFragments = [];
 
