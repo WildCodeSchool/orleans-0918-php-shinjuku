@@ -40,7 +40,7 @@ class ArticleController extends AbstractController
             $errors['toomuch'] = "La recherche doit contenir 45 caractères maximum!";
         }
         $nbPages=ceil($count/self::ARTICLE_BY_PAGE);
-        return $this->twig->render('Article/article.html.twig', ['article' => $articles, 'category'=> $category, 'error'=>$errors, 'nbPages' => $nbPages, 'currentPage' => $currentPage, 'get' => $_GET]);
+        return $this->twig->render('Article/article.html.twig', ['article' => $articles, 'category'=> $category, 'errors'=>$errors, 'nbPages' => $nbPages, 'currentPage' => $currentPage, 'get' => $_GET]);
     }
 
     public function searchArticleGeneral()
@@ -54,13 +54,13 @@ class ArticleController extends AbstractController
         }
         if (mb_strlen($_GET['search']) < 3) {
             $errors['notenough'] = "La recherche doit contenir 3 caractère minimum!";
-            return $this->twig->render('Article/article.html.twig', ['article' => $articles, 'error' => $errors]);
+            return $this->twig->render('Article/article.html.twig', ['article' => $articles, 'errors' => $errors]);
         }
         $articleManager = new ArticleManager($this->getPdo());
         $count=$articleManager->countArticle('',$_GET['search'] ?? '');
         $articles = $articleManager->searchArticle($currentPage, "", $_GET['search']);
         $nbPages=ceil($count/self::ARTICLE_BY_PAGE);
-        return $this->twig->render('Article/article_page_search.html.twig', ['article' => $articles, 'error'=>$errors, 'nbPages' => $nbPages, 'currentPage' => $currentPage, 'get' => $_GET]);
+        return $this->twig->render('Article/article_page_search.html.twig', ['article' => $articles, 'errors'=>$errors, 'nbPages' => $nbPages, 'currentPage' => $currentPage, 'get' => $_GET]);
     }
 
     public function add()
