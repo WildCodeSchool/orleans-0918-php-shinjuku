@@ -20,11 +20,9 @@ class ArticleManager extends AbstractManager
     {
         parent::__construct(self::TABLE, $pdo);
     }
-
     /*
     *searching article by category and by name(when searching by the client
     */
-
     public function searchArticle(int $currentPage, string $category = '', string $search = ''): array
     {
         $queryFragments = [];
