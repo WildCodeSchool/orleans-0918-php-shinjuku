@@ -3710,8 +3710,21 @@ h2{
     Font-Weight: bold;
     font-family: Quando;
 }
+/* Article details*/
 
-/* Artcile review */
+.articleTitle {
+    float: left;
+}
+
+.description {
+    padding-top: 7vh;
+    flex-wrap: wrap;
+    text-align: left;
+    color: red;
+    font-style: bold;
+}
+
+/* Article details review */
 
 .pd-top {
     padding-top: 15vh;
@@ -3720,6 +3733,12 @@ h2{
 
 .pd-right {
     padding-right: 4vw;
+}
+
+.descriptionContent {
+    padding-top: 5vh;
+    font-size: 20pt;
+    padding-bottom: 5vh;
 }
 
 .certifiedLogo {
