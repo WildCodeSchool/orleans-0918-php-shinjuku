@@ -2,57 +2,54 @@
 
 {% block content %}
 
-    <!-- Title page -->
-    <section class=" bg-img1 txt-center p-lr-15 p-tb-92">
-        <h2 class=" m-t-70 ltext-105 cl0 txt-center">
-            Accueil
-        </h2>
-    </section>
+
 
     <!-- Content page -->
     <section class="bg0 p-t-75 p-b-120">
         <div class="container">
-            <div class="row">
+            <div class="row api_container">
                 <div class="order-md-2 col-md-7 col-lg-8 p-b-30">
                     <div class="p-t-7 p-l-85 p-l-15-lg p-l-0-md">
-                        <h3 class="mtext-111 cl2 p-b-16">LA boutique Orléanaise de manga !</strong></h3>
+                        <h3 class="mtext-111 cl2 p-b-16">LA boutique Orléanaise de manga !</h3>
                         <p class="stext-113  p-b-26">
-                            Toutes l'equipe vous accueillent avec passion pour vous accompagner à la decouverte de nos nombreuses references (Manga, DVD, Goodies) : Classiques, Nouveautés, Occasions.
+                            Cette boutique de référence de la culture japonaise est remplie du sol au plafond de mangas,
+                            de revues portant sur les mangas et le japon, de DVD d'animés, de maquettes, et de
+                            goodies.... de mangas !
+                            Toutes l'equipe vous accueillent avec passion pour vous accompagner à la decouverte de nos nombreuses references.
                             Venez nous rencontrer lors des événements, des ateliers ou des soirées et conquerir le SHINJUKU WORLD !!!
                         </p>
                     </div>
                 </div>
 
+                <div class="order-md-1 col-11 col-md-5 col-lg-4 m-lr-auto p-b-30">
 
+                        <div class="logo-pres col-mx-auto">
+                            SHINJUKU-WORLD
+                        </div>
+                </div>
             </div>
+        </div>
+    </section>
 
             {% include 'Home/facebook_api.html.twig' %}
 
-            <div class="row">
-                <h2 class="col-lg-12">Nos Nouveautés</h2>
-                {% for key, value in article %}
+    <div class="row">
+        <h2 class="col-lg-12">Nos Nouveautés</h2>
+        {% for key, value in article %}
 
-                    <div class="col-lg-4 col-md-8 col-sm-12 col-xs-12">
-                        <div class="card block2-pic hov-img0">
-                            <img class="card-img-top image-article" src="{{ value.picture}}" alt="Card image cap">
-                            <div class="card-body">
-                                <h5><a href= "article/{{value.id}}" class="card-title cl10 hov-cl1 trans-04  p-b-6 bold"> {{ value.name}}</h5>
-                                <div class="card-text cl13" class="text bold"> {{ value.price}} €</div>
-
-                                {#modif sp3#}
-                               {#lien en attente a modif qd page admin liste prod ok  #}
-                               <a href="/home/delete/{{value.id}}"  onclick="return confirm('Etes vous sur de vouloir supprimer cet article')" class="btn btn-danger" NAME="supprimer" VALUE=" supprimer ">supprimer</a>
-
-                            </div>
-
-                        </div>
+            <div class="col-lg-4 col-md-8 col-sm-12 col-xs-12">
+                <div class="card block2-pic hov-img0">
+                    <img class="card-img-top image-article" src="{{ value.picture}}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5><a href= "article/{{value.id}}" class="card-title cl10 hov-cl1 trans-04  p-b-6 bold"> {{ value.name}}</h5>
+                        <div class="card-text cl13" class="text bold"> {{ value.price}} €</div>
                     </div>
-                {% endfor %}
 
+                </div>
             </div>
-        </div>
-    </div>
-</section>
+        {% endfor %}
+
+
 
 {% endblock %}
 
