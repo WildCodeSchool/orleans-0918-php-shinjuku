@@ -36,7 +36,7 @@ class ArticleController extends AbstractController
         if (!in_array($category, self::ALLOWED_CATEGORY)) {
             $errors['category'] = "Catégorie inexistante!";
         }
-        if (strlen($_GET['search']) > 45) {
+        if (mb_strlen($_GET['search']) > 45) {
             $errors['toomuch'] = "La recherche doit contenir 45 caractères maximum!";
         }
         $nbPages=ceil($count/self::ARTICLE_BY_PAGE);
