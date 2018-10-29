@@ -51,7 +51,7 @@ class ArticleManager extends AbstractManager
      * @param string $search
      * @return int
      */
-    public function countArticle(string $category='' , string $search =''): int
+    public function countArticle(?string $category , string $search =''): int
     {
         $queryFragments = [];
 
