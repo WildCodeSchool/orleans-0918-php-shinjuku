@@ -3430,6 +3430,7 @@ success:focus {
     border-radius: 0em 1em 1em 0em;
     background-color: red;
     min-height: 41px;
+    min-height: 75px;
 }
 
 .btn-outline-success:hover {
@@ -3452,7 +3453,7 @@ success:focus {
     margin-left: 1vw;
     margin-right: -40px;
     border-radius: 1em;
-    min-height: 41px;
+    min-height: 75px;
     min-width: 30vw;
 }
 
@@ -3469,6 +3470,33 @@ success:focus {
 }
 
 /*article*/
+
+/*//////////////////////
+article
+ */
+.product{
+    min-height: 50vh;
+}
+
+.eventail-category{
+    max-width: 100px;
+}
+.article-price{
+    min-width: 291px;
+}
+
+.badge-price{
+    background-color: red;
+    font-size: 0.9em;
+    min-width: 90px;
+}
+
+
+.badge-category{
+    background-color: black;
+    min-width: 90px;
+    margin-left: 6vw;
+}
 
 .block-article{
 
@@ -3747,4 +3775,20 @@ h2{
 
 .certifiedLogo {
     height: 100px;
+}
+
+/*delete button*/
+.delete {
+    text-decoration: none;
+    color: white;
+}
+
+/*add button*/
+.btn-success {
+    margin-right: 5vw;
+}
+
+.add {
+    text-decoration: none;
+    color: white;
 }
