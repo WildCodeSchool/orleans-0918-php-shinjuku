@@ -3344,16 +3344,14 @@ input.num-product::-webkit-inner-spin-button {
 
 }
 
-/*////////////////////////////////////*/
 
+/*////////////////////////////////////*/
 footer{
     background: linear-gradient(360deg, rgba(0, 0, 0, .8), rgba(0, 0, 0, 0.02) 100%);
     min-height: 5vh;
 }
 
-/*///////////////////////////////////////
-banner
- */
+/*banner*/
 
 .banner{
     background-image: url("../images/test.jpg");
@@ -3362,6 +3360,7 @@ banner
     min-height: 100vh;
     background-size: cover;
 }
+
 .h1{
     position: absolute;
     left: 10vw;
@@ -3370,10 +3369,7 @@ banner
     font-size: 2.5em;
     line-height: 1.3em;
     text-shadow: 10px 10px 10px white, 0 0 10em white, 0 0 1em white;
-
-
 }
-
 
 .slogan-color{
     color: white;
@@ -3381,8 +3377,8 @@ banner
     font-size: 4em;
     padding-top: 35vh;
     padding-left: 10vw;
-
 }
+
 .slogan2{
     padding-top: 5vh;
     padding-left: 25vw;
@@ -3392,10 +3388,12 @@ banner
     padding-top: 5vh;
     padding-left: 45vw;
 }
+
 .span-shadow{
     text-shadow: 8px 8px 8px white, 0 0 8em white, 0 0 1em white;
 
 }
+
 .banner2 {
     background-image: url("../images/banner2.jpg");
     min-width: 50vw;
@@ -3403,8 +3401,7 @@ banner
     background-size: cover;
 }
 
-/*//////////////////////////////
-product page*/
+/*product page*/
 
 .btn-outline-success{
     color: red;
@@ -3412,63 +3409,68 @@ product page*/
     border-color: red;
     border-radius: 1.5em;
     background-color: white;
-
-
 }
+
 .search_bar{
     flex-flow: nowrap;
 }
 
 .searchbar-container{
     margin-top: 5vh;
-
 }
 
 success:focus {
     box-shadow: 0 0 0 3px rgba(255,0,0,.5);
 }
+
 .btn-outline-success{
     color: white;
     font-weight: bold;
     border-color: red;
     border-radius: 0em 1em 1em 0em;
     background-color: red;
+    min-height: 41px;
     min-height: 75px;
-
-
 }
+
 .btn-outline-success:hover {
     color: #fff;
     background-color: #cc0000;
     border-color: #cc0000;
 }
+
 .btn-outline-success.focus, .btn-outline-success:focus {
     box-shadow: 0 0 0 3px rgba(255, 0, 0, .5);
 }
+
 .btn-outline-success.active, .btn-outline-success:active, .show > .btn-outline-success.dropdown-toggle {
     color: #fff;
     background-color: red;
     border-color: red;
 }
+
 .search-bar{
     margin-left: 1vw;
     margin-right: -40px;
     border-radius: 1em;
     min-height: 75px;
     min-width: 30vw;
-    font-size: 1em;
-
 }
 
 .search-bar:active{
     border-color: rgba(255,0,0,0.3);
 }
+
 .search-bar:focus{
     border-color: rgba(255,0,0,0.3);
 }
+
 .search-bar:hover{
     border-color: rgba(255,0,0,0.3);
 }
+
+/*article*/
+
 /*//////////////////////
 article
  */
@@ -3504,11 +3506,9 @@ article
     overflow: hidden;
     min-height: 350px;
     max-height: 350px;
-
 }
-/*//////////////////////////
-main
- */
+
+/*main*/
 h3 {
     font-family: Quando;
 }
@@ -3520,8 +3520,8 @@ body {
 .f_quando {
     font-family: Quando;
 }
-/*////////////////////////
-add product in database
+
+/*add product in database
 class btn-shinjuku is supposed to be used for the buttons in the whole site ( as the client asked )
 */
 .btn-shinjuku
@@ -3531,32 +3531,33 @@ class btn-shinjuku is supposed to be used for the buttons in the whole site ( as
     color:white;
     font-weight:bold;
 }
+
 .btn-shinjuku:hover
 {
     background-color:#cc0000;
     color:white;
     font-weight:bold;
 }
+
 #uploader
 {
     font-size:12px;
     overflow:auto;
 }
+
 .formErrors
 {
     color:red;
 }
+
 .preview
 {
     max-width:600px;
 }
 
-lien
-
 .lien{
     color: #FEFEFE;
 }
-icon FB
 
 .fa_size{
     font-size: 2em;
@@ -3576,41 +3577,47 @@ footer{
 
 .bold {
     font-weight: bold;
-
 }
 
-/*/////////////////////////////
-about
- */
+/*about*/
 span{
     color: red;
 }
+
 .icons01{
     width: 200px;
 }
+
 .map {
     border: 1px solid black;
 }
+
 .card {
     width: 30rem;
 }
+
 small {
     font-size: 12px;
 }
+
 .card-text {
     font-size: 16pt;
 }
+
 .mapmodal{
     width: 100%;
     height: 85vh;
 }
+
 .modal-dialog{
     width: 95%;
     height: 100%;
 }
+
 .modal-content{
     height: 90%;
 }
+
 /*//////////////////////*/
 
 .logo{
@@ -3619,6 +3626,7 @@ small {
     text-shadow: 3px 3px 3px white, 0 0 1em black, 0 0 0.2em white;
     font-size: 2vw;
 }
+
 .logo:hover{
     font-family: Shojumaru;
     color: white;
@@ -3631,7 +3639,6 @@ small {
     color: red;
     text-shadow: 1px 1px 2px white, 0 0 1em red, 0 0 0.2em white;
     font-size: 5vw;
-
 }
 
 .logo_mobile:hover {
@@ -3639,23 +3646,23 @@ small {
     color: white;
     text-shadow: 1px 1px 2px white, 0 0 1em red, 0 0 0.2em white;
     font-size: 5vw;
-
 }
 
 
 .fa_search_mobile {
     font-size: 5vw;
 }
+
 .fa_search_desk {
     text-shadow: 1px 1px 2px black, 0 0 2em black, 0 0 0.5em black;
-
 }
+
 .fa_search_desk:hover {
     text-shadow: 2px 2px 3px white, 0 0 2em white, 0 0 0.5em white;
 }
+
 .hamburger-inner, .hamburger-inner::after, .hamburger-inner::before{
     background-color: white;
-
 }
 
 .logo-pres {
@@ -3666,15 +3673,11 @@ small {
 }
 
 /*icon FB*/
-
-
 .fa_size {
     font-size: 2em;
 }
 
-/*
-contact form
-*/
+/*contact form*/
 
 .contactFormTitle
 {
@@ -3716,12 +3719,11 @@ contact form
     margin: 5px;
 }
 
-/*home articles
-
-*/
+/*home articles*/
 .card-body{
   height: 15vh;
 }
+
 .card{
   margin-bottom: 5vh;
   margin-top: 5vh;
@@ -3740,8 +3742,21 @@ h2{
     Font-Weight: bold;
     font-family: Quando;
 }
+/* Article details*/
 
-/* Artcile review */
+.articleTitle {
+    float: left;
+}
+
+.description {
+    padding-top: 7vh;
+    flex-wrap: wrap;
+    text-align: left;
+    color: red;
+    font-style: bold;
+}
+
+/* Article details review */
 
 .pd-top {
     padding-top: 15vh;
@@ -3750,6 +3765,12 @@ h2{
 
 .pd-right {
     padding-right: 4vw;
+}
+
+.descriptionContent {
+    padding-top: 5vh;
+    font-size: 20pt;
+    padding-bottom: 5vh;
 }
 
 .certifiedLogo {
