@@ -380,7 +380,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 /*---------------------------------------------*/
 .main-menu > li:hover > a {
 
-text-decoration: none;
+    text-decoration: none;
     color: red;
     text-shadow: 2px 2px 3px white, 0 0 2em white, 0 0 0.5em white;
 }
@@ -585,8 +585,8 @@ header {
 }
 
 .wrap-header-mobile {
-  
-display: -webkit-box;
+
+    display: -webkit-box;
     display: -webkit-flex;
     display: -moz-box;
     display: -ms-flexbox;
@@ -617,22 +617,22 @@ display: -webkit-box;
 }
 
 
-             /*------------------------------------------------------------------
-             [ btn show menu ]*/
-         .hamburger {
-             display: -webkit-box;
-             display: -webkit-flex;
-             display: -moz-box;
-             display: -ms-flexbox;
-             display: flex;
-             align-items: center;
-             padding: 0;
-             -webkit-transform: scale(0.7);
-             -moz-transform: scale(0.7);
-             -ms-transform: scale(0.7);
-             -o-transform: scale(0.7);
-             transform: scale(0.7);
-         }
+/*------------------------------------------------------------------
+[ btn show menu ]*/
+.hamburger {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    -webkit-transform: scale(0.7);
+    -moz-transform: scale(0.7);
+    -ms-transform: scale(0.7);
+    -o-transform: scale(0.7);
+    transform: scale(0.7);
+}
 
 .hamburger:hover {
     opacity: 1;
@@ -3479,7 +3479,7 @@ article
 }
 
 .eventail-category{
-    max-width: 100px;
+    max-width: 450px;
 }
 .article-price{
     min-width: 291px;
@@ -3505,7 +3505,7 @@ article
 .image-article{
     overflow: hidden;
     min-height: 350px;
-    max-height: 350px;
+    max-height: 800px;
 }
 
 /*main*/
@@ -3721,14 +3721,14 @@ small {
 
 /*home articles*/
 .card-body{
-  height: 15vh;
+    height: 15vh;
 }
 
 .card{
-  margin-bottom: 5vh;
-  margin-top: 5vh;
-  padding: 30px;
-  max-width: 100vw;
+    margin-bottom: 5vh;
+    margin-top: 5vh;
+    padding: 30px;
+    max-width: 100vw;
     border: none;
 }
 
@@ -3791,4 +3791,8 @@ h2{
 .add {
     text-decoration: none;
     color: white;
+}
+
+.image-highlight {
+    height: 550px;
 }
