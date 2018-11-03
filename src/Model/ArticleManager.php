@@ -53,4 +53,25 @@ class ArticleManager extends AbstractManager
             return $this->pdo->lastInsertId();
         }
     }
+    /**
+     * @param Article $article
+     * @return int
+     */
+    public function edit(Article $article): int
+    {
+        // prepared request
+        $statement = $this->pdo->prepare("UPDATE $this->table SET id=:id, name=:name, category=:category, price=:price, picture=:picture, description=:description, review=:review, highlight=:highlight WHERE id=:id");
+        $statement->bindValue('id', $article->getId(), \PDO::PARAM_INT);
+        $statement->bindValue('name', $article->getName(), \PDO::PARAM_STR);
+        $statement->bindValue('category', $article->getCategory(), \PDO::PARAM_STR);
+        $statement->bindValue('price', $article->getPrice(), \PDO::PARAM_STR);
+        $statement->bindValue('picture', $article->getPicture(), \PDO::PARAM_STR);
+        $statement->bindValue('description', $article->getDescription(), \PDO::PARAM_STR);
+        $statement->bindValue('review', $article->getReview(), \PDO::PARAM_STR);
+        $statement->bindValue('highlight', $article->getHighlight(), \PDO::PARAM_BOOL);
+
+        if ($statement->execute()) {
+            return $this->pdo->lastInsertId();
+        }
+    }
 }
