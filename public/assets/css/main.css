@@ -3508,7 +3508,14 @@ article
 
     padding: 3vh;
 }
-.image-article{
+
+.image-article {
+    overflow: hidden;
+    min-height: 350px;
+    max-height: 350px;
+}
+
+.image-articlebis {
     overflow: hidden;
     min-height: 350px;
     max-height: 680px;
