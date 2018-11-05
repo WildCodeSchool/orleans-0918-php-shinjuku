@@ -3759,6 +3759,10 @@ h2{
     font-weight: bold;
 }
 
+.title {
+    text-transform: capitalize;
+}
+
 .description {
     padding-top: 7vh;
     flex-wrap: wrap;
