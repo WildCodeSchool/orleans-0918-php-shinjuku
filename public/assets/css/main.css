@@ -3479,18 +3479,24 @@ article
 }
 
 .eventail-category{
-    max-width: 450px;
+    max-width: 100px;
 }
+
 .article-price{
     min-width: 291px;
 }
 
-.badge-price{
+.badge-price2{
+    background-color: red;
+    font-size: 0.9em;
+    min-width: 90px;
+}
+
+.badge-price2{
     background-color: red;
     font-size: 16pt;
     min-width: 90px;
 }
-
 
 .badge-category{
     background-color: black;
@@ -3797,5 +3803,9 @@ h2{
 
 .review {
     font-size: 18pt;
+    font-weight: bold;
+}
+
+.bold {
     font-weight: bold;
 }
