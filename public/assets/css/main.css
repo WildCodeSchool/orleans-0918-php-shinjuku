@@ -3521,12 +3521,19 @@ body {
         margin: 6vh;
         font-size: 14pt;
     }
+    .homeTitle{
+        margin-top: 5vh;
+    }
 }
 
 .homeTitle{
     font-size: 2.5em;
     justify-content: center;
 
+}
+.home-container{
+    margin-top: 15vh;
+    margin-bottom: 5vh;
 }
 
 
