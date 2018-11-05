@@ -9,7 +9,7 @@
             <!--Search bar-->
             <div class="row d-flex justify-content-center bd-highlight mb-3  search_product_bar">
                 <nav class="m-b-100 search_bar col-md-12 col-lg-5 col-xs-12 col-sm-12  navbar navbar-light">
-                    <a href="/article/add" class="add btn btn-success btn-sm" NAME="add" VALUE="add">Ajouter un nouvel article</a>
+                    <a href="/admin/add" class="add btn btn-success btn-sm" NAME="add" VALUE="add">Ajouter un nouvel article</a>
 
                     <form class="search_bar form-inline" method="get"  action="">
                         <label for="search" >Recherche</label>
@@ -42,8 +42,8 @@
                         </div>
                     </div>
 
-                    <a href="/article/edit/{{ article.id }}"  class="update btn btn-primary btn-sm" NAME="update" VALUE="update">Modifier</a>
-                    <a href="/article/list/{{ article.id }}"  onclick="return confirm('Etes vous sur de vouloir supprimer cet article')" class="delete btn btn-danger btn-sm" NAME="supprimer" VALUE="supprimer">Supprimer</a>
+                    <a href="/admin/edit/{{ article.id }}"  class="update btn btn-primary btn-sm" NAME="update" VALUE="update">Modifier</a>
+                    <a href="/admin/list/{{ article.id }}"  onclick="return confirm('Etes vous sur de vouloir supprimer cet article')" class="delete btn btn-danger btn-sm" NAME="supprimer" VALUE="supprimer">Supprimer</a>
 
                 </div>
             {% endfor %}
