@@ -3539,22 +3539,38 @@ class btn-shinjuku is supposed to be used for the buttons in the whole site ( as
     font-weight:bold;
 }
 
-#uploader
+.formTitle
+{
+    text-align:center;
+    margin-bottom:50px;
+    color:red;
+}
+.productPicture
 {
     font-size:12px;
+}
+.uploader
+{
     overflow:auto;
 }
 
+.highlightBlock
+{
+    padding:16px;
+}
+
+.centeredBtn
+{
+    text-align:center;
+}
 .formErrors
 {
     color:red;
 }
 
-.preview
-{
-    max-width:600px;
-}
-
+/*////////////////////////////////////
+lien
+*/
 .lien{
     color: #FEFEFE;
 }
