@@ -29,4 +29,3 @@ $routes = [
         ['send', '/contact', ['GET', 'POST']], // action, url, method
     ],
 ];
-
