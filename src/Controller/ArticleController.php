@@ -97,9 +97,9 @@ class ArticleController extends AbstractController
                 $cleanPost[$key] = trim($value);
             }
 
-            if ($_POST) {
+            if (!empty($_POST)) {
                 $errors = $this->validate($cleanPost);
-                if (0 == count($errors)) {
+                if (!empty($errors)) {
                     $articleManager = new ArticleManager($this->getPdo());
 
                     $article = new Article();
@@ -143,10 +143,10 @@ class ArticleController extends AbstractController
             foreach ($_POST as $key => $value) {
                 $cleanPost[$key] = trim($value);
             }
-            if ($_POST) {
+            if (!empty($_POST)) {
                 $errors = $this->validate($cleanPost);
 
-                if (0 == count($errors)) {
+                if (!empty($errors)) {
                     $articleManager = new ArticleManager($this->getPdo());
                     $article = new Article();
                     $article->setId($id);
