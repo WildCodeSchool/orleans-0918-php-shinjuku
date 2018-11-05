@@ -1,0 +1,33 @@
+<!-- Articles -->
+<div class="container">
+    <div class="row ">
+        <div class="col-lg-12 bold cl13 fs-30 d-flex justify-content-center m-t-50">{{ errors.category }} {{ errors.tooMuch }} {{ errors.notEnough }}</div>
+        {% for article in article %}
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 m-b-35 block-article">
+                <div class="block2">
+                    <div class="block2-pic hov-img0">
+                        <img src="{{ article.picture }}" alt="IMG-PRODUCT" class="image-article">
+                    </div>
+                    <div class="block2-txt flex-w flex-t p-t-14">
+                        <div class="block2-txt-child1 flex-col-l ">
+                            <a href="/article/{{ article.id }}"
+                               class=" cl10 hov-cl1 trans-04  p-b-6 bold">
+                                {{ article.name }}
+                            </a>
+                            <div class="d-flex flex-row article-price">
+                                <div>
+                                    <span class="badge badge-primary badge-price bold">Prix:{{ article.price }}€</span>
+                                </div>
+                                {% if category is empty %}
+                                    <div class="ml-auto">
+                                        <span class="badge badge-primary badge-category">{{ article.category }}</span>
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>

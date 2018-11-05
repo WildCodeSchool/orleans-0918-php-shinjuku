@@ -11,7 +11,11 @@
                         <div class="slick3 gallery-lb">
                             <div class="item-slick3" data-thumb="https://via.placeholder.com/513x634">
                                 <div class="wrap-pic-w pos-relative">
-                                    <img src="{{ article.picture }}" alt="Image de l'article {{article.name}}">
+                                    {% if article.picture is not empty %}
+                                        <img src="{{ article.picture }}" alt="Image de l'article {{ article.name }}" class="image-article" >
+                                    {% else %}
+                                        <img src="/assets/images/manga.png" alt="image par defaut" class="image-article" >
+                                    {% endif %}
                                 </div>
                             </div>
                         </div>
@@ -21,18 +25,18 @@
 
             <div class="col-md-6 col-lg-5 p-b-30">
                 <div class="p-r-50 p-t-5 p-lr-0-lg">
-                    <h4 class="mtext-105 cl2 js-name-detail p-b-14 articleTitle">{{ article.name }}</h4>
+                    <h1 class="cl2 articleTitle">{{ article.name }}</h1>
 
-                    <h2>Description :</h2>
+                    <h2 class="description">Description :</h2>
 
-                    <p class="stext-102 cl3 p-t-23 pdgBottom">{{ article.description }}</p>
+                    <p class="stext-102 cl3 p-t-23 pdgBottom descriptionContent">{{ article.description }}</p>
 
                     <span class="mtext-106 cl2">{{ article.price }} €</span>
                 </div>
             </div>
         </div>
 
-        {% if article.review is not empty %}
+       {% if article.review is not empty %}
         <!-- optional -->
         <div class="bor10 m-t-50 p-t-43 p-b-40">
             <!-- Tab01 -->
@@ -41,7 +45,7 @@
                     <li class="nav-item p-b-10">
                         <div class="row">
                             <div class="pd-right">
-                                <img class='certifiedLogo' src="https://via.placeholder.com/120x120" alt="Certified logo">
+                                <img class='certifiedLogo' src="../../assets/images/icons/logo_certified.png" alt="Certified logo">
                             </div>
                             <div>
                                 <p class="Expertise">Avis de l'expert :</p>
@@ -52,7 +56,6 @@
 
                 <!-- Tab panes -->
                 <div class="tab-content p-t-43">
-                    <!-- - -->
                     <div class="tab-pane fade show active" id="description" role="tabpanel">
                         <div class="how-pos2 p-lr-15-md">
                             <p class="stext-102 cl6">
@@ -65,5 +68,5 @@
         </div>
     </div>
 </section>
-    {% endif %}
+   {% endif %}
 {% endblock %}
