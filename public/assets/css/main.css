@@ -3487,7 +3487,7 @@ article
 
 .badge-price{
     background-color: red;
-    font-size: 0.9em;
+    font-size: 16pt;
     min-width: 90px;
 }
 
@@ -3505,7 +3505,7 @@ article
 .image-article{
     overflow: hidden;
     min-height: 350px;
-    max-height: 800px;
+    max-height: 680px;
 }
 
 /*main*/
@@ -3573,10 +3573,6 @@ footer{
 
 .fa_size {
     font-size: 1.5em;
-}
-
-.bold {
-    font-weight: bold;
 }
 
 /*about*/
@@ -3797,4 +3793,9 @@ h2{
 
 .image-highlight {
     height: 550px;
+}
+
+.review {
+    font-size: 18pt;
+    font-weight: bold;
 }
