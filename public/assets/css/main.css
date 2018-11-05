@@ -3419,7 +3419,7 @@ footer{
     margin-top: 5vh;
 }
 
-success:focus {
+.success:focus {
     box-shadow: 0 0 0 3px rgba(255,0,0,.5);
 }
 
@@ -3430,7 +3430,7 @@ success:focus {
     border-radius: 0em 1em 1em 0em;
     background-color: red;
     min-height: 41px;
-    min-height: 75px;
+    max-height: 75px;
 }
 
 .btn-outline-success:hover {
