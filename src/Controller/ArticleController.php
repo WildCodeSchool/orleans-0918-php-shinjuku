@@ -99,6 +99,7 @@ class ArticleController extends AbstractController
 
             if (!empty($_POST)) {
                 $errors = $this->validate($cleanPost);
+                if ($cleanPost['price'] <= 0 )
                 if (!empty($errors)) {
                     $articleManager = new ArticleManager($this->getPdo());
 
