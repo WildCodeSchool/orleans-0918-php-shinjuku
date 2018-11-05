@@ -3746,6 +3746,7 @@ h2{
 
 .articleTitle {
     float: left;
+    text-transform:capitalize;
 }
 
 .description {
