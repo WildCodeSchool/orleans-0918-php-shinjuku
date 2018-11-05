@@ -3511,7 +3511,25 @@ body {
 
     font-family: Quando;
     padding-top: 50px;
+    padding-bottom: 50px;
+    font-size: 16pt;
+    Line-Height: 33pt;
 }
+
+@media (max-width: 576px) {
+    .homePresentation {
+        margin: 6vh;
+        font-size: 14pt;
+    }
+}
+
+.homeTitle{
+    font-size: 2.5em;
+    justify-content: center;
+
+}
+
+
 /*////////////////////////
 add product in database
 class btn-shinjuku is supposed to be used for the buttons in the whole site ( as the client asked )
