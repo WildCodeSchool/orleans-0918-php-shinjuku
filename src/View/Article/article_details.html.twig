@@ -31,7 +31,13 @@
 
                     <p class="stext-102 cl3 p-t-23 pdgBottom descriptionContent">{{ article.description }}</p>
 
-                    <span class="mtext-106 cl2">{{ article.price }} €</span>
+                    <div class="d-flex flex-row article-price">
+
+                    <div>
+                        <span class="badge badge-primary badge-price bold">Prix:{{ article.price }}€</span>
+                    </div>
+
+                    </div>
                 </div>
             </div>
         </div>
