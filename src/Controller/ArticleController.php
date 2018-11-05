@@ -32,7 +32,6 @@ class ArticleController extends AbstractController
 
         $currentPage = $_GET['currentPage'] ?? 1;
 
-
         if (!empty($category) && !in_array($category, self::ALLOWED_CATEGORY)) {
             $errors['category'] = "Catégorie inexistante!";
         }
