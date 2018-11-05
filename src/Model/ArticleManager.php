@@ -6,9 +6,7 @@
  * Time: 18:20
  * PHP version 7
  */
-
 namespace Model;
-
 class ArticleManager extends AbstractManager
 {
     const TABLE = 'article';
@@ -25,28 +23,56 @@ class ArticleManager extends AbstractManager
     /*
     *searching article by category and by name(when searching by the client
     */
-      public function searchArticle(int $currentPage, string $category,string $search=''): array
-      {
-          $searching = '';
-          if (!empty($search)) {
-              $searching = "AND name LIKE '%$search%'";
-          }
-          $offset=($currentPage*self::ARTICLE_BY_PAGE)-self::ARTICLE_BY_PAGE;
-          return $this->pdo->query('SELECT * FROM ' . $this->table . " WHERE   category ='$category' $searching LIMIT ".self::ARTICLE_BY_PAGE." OFFSET ".$offset, \PDO::FETCH_CLASS, $this->className)->fetchAll();
-      }
+    public function searchArticle(int $currentPage, ?string $category = '', ?string $search = ''): array
+    {
+        $queryFragments = [];
 
+        if (!empty($search)) {
+            $queryFragments[] = "name LIKE :search";
+        }
+        if (!empty($category)) {
+            $queryFragments[] = "category =:category";
+        }
+        $offset=($currentPage*self::ARTICLE_BY_PAGE)-self::ARTICLE_BY_PAGE;
+        $statement = $this->pdo->prepare('SELECT * FROM ' . $this->table . " WHERE " . implode(" AND ", $queryFragments) . " LIMIT ".self::ARTICLE_BY_PAGE." OFFSET " .$offset);
+        $statement->setFetchMode(\PDO::FETCH_CLASS, $this->className);
+        if (!empty($search)) {
+            $statement->bindValue('search', "%$search%", \PDO::PARAM_STR);
+        }
+        if (!empty($category)) {
+            $statement->bindValue('category', $category, \PDO::PARAM_STR);
+        }
+
+        if ($statement->execute()) {
+            return $statement->fetchAll();
+        }
+    }
     /**
      * @param string $category
      * @param string $search
-     * @return array
+     * @return int
      */
-    public function countArticle(string $category,string $search=''): int
+    public function countArticle(?string $category , ?string $search): int
     {
-        $searching = '';
+        $queryFragments = [];
+
         if (!empty($search)) {
-            $searching = "AND name LIKE '%$search%'";
+            $queryFragments[] = "name LIKE :search";
         }
-        return $this->pdo->query('SELECT COUNT(*) FROM ' . $this->table . " WHERE   category ='$category' $searching")->fetchColumn();
+        if (!empty($category)) {
+            $queryFragments[] = "category =:category";
+        }
+        $statement= $this->pdo->prepare('SELECT COUNT(*) FROM ' . $this->table . " WHERE " . implode(" AND ", $queryFragments));
+        $statement->setFetchMode(\PDO::FETCH_COLUMN, 0);
+        if (!empty($search)) {
+            $statement->bindValue('search', "%$search%", \PDO::PARAM_STR);
+        }
+        if (!empty($category)) {
+            $statement->bindValue('category', $category, \PDO::PARAM_STR);
+        }
+        if ($statement->execute()) {
+            return $statement->fetchColumn();
+        }
     }
     /**
      * @param Article $article
@@ -63,9 +89,26 @@ class ArticleManager extends AbstractManager
         $statement->bindValue('description', $article->getDescription(), \PDO::PARAM_STR);
         $statement->bindValue('review', $article->getReview(), \PDO::PARAM_STR);
         $statement->bindValue('highlight', $article->getHighlight(), \PDO::PARAM_BOOL);
-
         if ($statement->execute()) {
             return $this->pdo->lastInsertId();
         }
     }
+
+    public function selectHighlight()
+    {
+        return $this->pdo->query("SELECT * FROM $this->table WHERE highlight IS NOT NULL ORDER BY category DESC ", \PDO::FETCH_CLASS, $this->className)->fetchAll();
+    }
+    /**
+     * @param int $id
+     * @return void
+     */
+    public function delete(int $id): void
+    {
+        // prepared request
+        $statement = $this->pdo->prepare("DELETE FROM $this->table WHERE id=:id");
+        $statement->bindValue('id', $id, \PDO::PARAM_INT);
+        $statement->execute();
+    }
+
+
 }

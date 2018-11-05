@@ -5,14 +5,14 @@
             <div class="col-6">
                 <h2 class="f_quando formTitle">Ajouter un article :</h2>
                 <div class="form-group">
-                    <label for="name">Nom du produit :</label>
+                    <label for="productName">Nom du produit :</label>
                     {% if errors.name is defined %}
                         <div class="formErrors">{{ errors.name }}</div>
                     {% endif %}
                     <input type="text" name="name" class="form-control" id="productName" value="{{ values.name }}" required>
                 </div>
                 <div class="form-group">
-                    <label for="category">Catégorie :</label>
+                    <label for="categoryName">Catégorie :</label>
                     <select name="category" class="form-control" id="categoryName" required>
                         <option value="manga">Manga</option>
                         <option value="dvd">DVD</option>
@@ -25,7 +25,7 @@
                 <div class="row">
                     <div class="col-6">
                         <div class="form-group">
-                            <label for="price">Prix :</label>
+                            <label for="productPrice">Prix :</label>
                             <input type="number" name="price" class="form-control" id="productPrice" value="{{ values.price }}" required>
                             {% if errors.price is defined %}
                                 <div class="formErrors">{{ errors.price }}</div>
@@ -43,14 +43,14 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="description">Description :</label>
+                    <label for="productDescription">Description :</label>
                     <textarea class="form-control" id="productDescription" name="description" rows="3" required>{{ values.description }}</textarea>
                     {% if errors.description is defined %}
                         <div class="formErrors">{{ errors.description }}</div>
                     {% endif %}
                 </div>
                 <div class="form-group">
-                    <label for="review">Avis de la boutique (optionnel) :</label>
+                    <label for="productCommentary">Avis de la boutique (optionnel) :</label>
                     <textarea class="form-control" id="productCommentary" name="review" rows="3">{{ values.review }}</textarea>
                     {% if errors.review is defined %}
                         <div class="formErrors">{{ errors.review }}</div>
