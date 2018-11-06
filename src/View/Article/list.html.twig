@@ -9,6 +9,8 @@
             <!--Search bar-->
             <div class="row d-flex justify-content-center bd-highlight mb-3  search_product_bar">
                 <nav class="m-b-100 search_bar col-md-12 col-lg-5 col-xs-12 col-sm-12  navbar navbar-light">
+                    <a href="/admin/add" class="add btn btn-success btn-sm" NAME="add" VALUE="add">Ajouter un nouvel article</a>
+
                     <form class="search_bar form-inline" method="get"  action="">
                         <label for="search" >Recherche</label>
                         <input class="search-bar form-control my-lg-0" id="search" type="search" name="search" aria-label="Search" placeholder="Ex: naruto..." label="recherche">
@@ -26,11 +28,11 @@
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 m-b-35 block-article">
                     <div class="block2">
                         <div class="block2-pic hov-img0">
-                            <img src="{{ article.picture }}" alt="IMG-PRODUCT" class="image-article" >
+                            <img src="{{ article.picture }}" alt="image d'{{ article.name }}" class="image-article" >
                         </div>
                         <div class="block2-txt flex-w flex-t p-t-14">
                             <div class="block2-txt-child1 flex-col-l ">
-                                <a href="/article/{{ article.id }}" class=" cl10 hov-cl1 trans-04  p-b-6 bold">
+                                <a href="/article/{{ article.id }}" class=" cl10 hov-cl1 trans-04  p-b-6 bold title">
                                     {{ article.name }}
                                 </a>
                                 <span class=" ">
@@ -39,8 +41,10 @@
                             </div>
                         </div>
                     </div>
-                    <button type="button" class="btn btn-primary btn-sm">Modifier</button>
-                    <button type="button" class="btn btn-danger btn-sm">Supprimer</button>
+
+                    <a href="/admin/edit/{{ article.id }}"  class="update btn btn-primary btn-sm" NAME="update" VALUE="update">Modifier</a>
+                    <a href="/admin/list/{{ article.id }}"  onclick="return confirm('Etes vous sur de vouloir supprimer cet article')" class="delete btn btn-danger btn-sm" NAME="supprimer" VALUE="supprimer">Supprimer</a>
+
                 </div>
             {% endfor %}
         </div>

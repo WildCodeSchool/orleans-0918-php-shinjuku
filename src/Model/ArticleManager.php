@@ -10,6 +10,7 @@ namespace Model;
 class ArticleManager extends AbstractManager
 {
     const TABLE = 'article';
+    const ARTICLE_BY_PAGE=16;
     /**
      * ArticleManager constructor.
      * @param \PDO $pdo
@@ -19,16 +20,59 @@ class ArticleManager extends AbstractManager
     {
         parent::__construct(self::TABLE, $pdo);
     }
-    /**
-     *searching article by category and by name(when searching by the client
-     */
-    public function searchArticle(string $category,string $search=''): array
+    /*
+    *searching article by category and by name(when searching by the client
+    */
+    public function searchArticle(int $currentPage, ?string $category = '', ?string $search = ''): array
     {
-        $searching = '';
+        $queryFragments = [];
+
         if (!empty($search)) {
-            $searching = "AND name LIKE '%$search%'";
+            $queryFragments[] = "name LIKE :search";
         }
-        return $this->pdo->query('SELECT * FROM ' . $this->table . " WHERE   category ='$category' $searching", \PDO::FETCH_CLASS, $this->className)->fetchAll();
+        if (!empty($category)) {
+            $queryFragments[] = "category =:category";
+        }
+        $offset=($currentPage*self::ARTICLE_BY_PAGE)-self::ARTICLE_BY_PAGE;
+        $statement = $this->pdo->prepare('SELECT * FROM ' . $this->table . " WHERE " . implode(" AND ", $queryFragments) . " LIMIT ".self::ARTICLE_BY_PAGE." OFFSET " .$offset);
+        $statement->setFetchMode(\PDO::FETCH_CLASS, $this->className);
+        if (!empty($search)) {
+            $statement->bindValue('search', "%$search%", \PDO::PARAM_STR);
+        }
+        if (!empty($category)) {
+            $statement->bindValue('category', $category, \PDO::PARAM_STR);
+        }
+
+        if ($statement->execute()) {
+            return $statement->fetchAll();
+        }
+    }
+    /**
+     * @param string $category
+     * @param string $search
+     * @return int
+     */
+    public function countArticle(?string $category , ?string $search): int
+    {
+        $queryFragments = [];
+
+        if (!empty($search)) {
+            $queryFragments[] = "name LIKE :search";
+        }
+        if (!empty($category)) {
+            $queryFragments[] = "category =:category";
+        }
+        $statement= $this->pdo->prepare('SELECT COUNT(*) FROM ' . $this->table . " WHERE " . implode(" AND ", $queryFragments));
+        $statement->setFetchMode(\PDO::FETCH_COLUMN, 0);
+        if (!empty($search)) {
+            $statement->bindValue('search', "%$search%", \PDO::PARAM_STR);
+        }
+        if (!empty($category)) {
+            $statement->bindValue('category', $category, \PDO::PARAM_STR);
+        }
+        if ($statement->execute()) {
+            return $statement->fetchColumn();
+        }
     }
     /**
      * @param Article $article
@@ -54,7 +98,10 @@ class ArticleManager extends AbstractManager
     {
         return $this->pdo->query("SELECT * FROM $this->table WHERE highlight IS NOT NULL ORDER BY category DESC ", \PDO::FETCH_CLASS, $this->className)->fetchAll();
     }
-
+    /**
+     * @param int $id
+     * @return void
+     */
     public function delete(int $id): void
     {
         // prepared request

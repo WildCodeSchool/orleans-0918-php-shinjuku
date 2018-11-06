@@ -9,27 +9,24 @@
  * @link     https://github.com/WildCodeSchool/simple-mvc
  */
 
+
 $routes = [
     'Article' => [
         ['index', '/products', 'GET'], // action, url, method
-        ['add', '/article/add', ['GET', 'POST']], // action, url, method
-        ['showAll', '/article/list', ['GET', 'POST']], // action, url, method
-        ['edit', '/article/edit', ['GET', 'POST']], // action, url, method
+        ['add', '/admin/add', ['GET', 'POST']], // action, url, method
+        ['showAll', '/admin/list', ['GET', 'POST']], // action, url, method
+        ['edit', '/admin/edit', ['GET', 'POST']], // action, url, method
         ['show', '/article/{id:\d+}', 'GET'], // action, url, method
-        ['listByCategory', '/article/{category}', 'GET'], // action, url, method
-//        ['delete', '/article/delete/{id:\d+}', 'GET'],
+        ['searchArticle', '/article/search', 'GET'], // action, url, method
+        ['deleteArticle', '/admin/list/{id:\d+}', 'GET'],
     ],
-
     'About' => [ // Controller
         ['index', '/about', 'GET'], //rajout du lien
     ],
     'Home' => [ // Controller
         ['index', '/', 'GET'], // action, url, method
-        ['delete', '/home/delete/{id:\d+}', 'GET'],
-
-   ],
+    ],
     'Contact' => [ // Controller
         ['send', '/contact', ['GET', 'POST']], // action, url, method
     ],
 ];
-
