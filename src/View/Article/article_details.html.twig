@@ -1,8 +1,8 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-<!-- Product Detail -->
-<section class="sec-product-detail bg0 p-t-65 p-b-60 pd-top">
+    <!-- Product Detail -->
+    <section class="sec-product-detail bg0 p-t-65 p-b-60 pd-top">
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-lg-7 p-b-30">
@@ -23,14 +23,14 @@
                 </div>
             </div>
 
-            <div class="col-md-6 col-lg-5 p-b-30">
-                <div class="p-r-50 p-t-5 p-lr-0-lg">
-                    <h1 class="cl2 articleTitle">{{ article.name }}</h1>
 
-                    <h2 class="description">Description :</h2>
+        <div class="col-md-6 col-lg-5 p-b-30">
+            <div class="p-r-50 p-t-5 p-lr-0-lg">
+                <h1 class="cl2 articleTitle">{{ article.name }}</h1>
 
-                    <p class="stext-102 cl3 p-t-23 pdgBottom descriptionContent">{{ article.description }}</p>
+                <h2 class="description">Description :</h2>
 
+                <p class="stext-102 cl3 p-t-23 pdgBottom descriptionContent">{{ article.description }}</p>
                     <div class="d-flex flex-row article-price">
 
                     <div>
@@ -41,8 +41,9 @@
                 </div>
             </div>
         </div>
+    </div>
 
-       {% if article.review is not empty %}
+    {% if article.review is not empty %}
         <!-- optional -->
         <div class="m-t-50 p-t-43 p-b-40">
             <!-- Tab01 -->
@@ -72,7 +73,6 @@
                 </div>
             </div>
         </div>
-    </div>
-</section>
-   {% endif %}
+        </section>
+    {% endif %}
 {% endblock %}
