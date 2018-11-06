@@ -3355,7 +3355,7 @@ footer{
 /*banner*/
 
 .banner{
-    background: linear-gradient(to right, rgba(0,0,0,.3), rgba(0,0,0,.3)),url("../images/test.jpg");
+    background: linear-gradient(to right, rgba(0,0,0,.3), rgba(0,0,0,.3)),url("../images/banner.jpg");
     min-width: 100vw;
     min-height: 100vh;
     background-size: cover;
