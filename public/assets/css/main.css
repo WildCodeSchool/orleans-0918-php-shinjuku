@@ -3658,10 +3658,6 @@ class btn-shinjuku is supposed to be used for the buttons in the whole site ( as
 .checkboxAdd{
     padding-left: 18px;
 }
-.centeredBtn
-{
-    text-align:center;
-}
 .formErrors
 {
     color:red;
