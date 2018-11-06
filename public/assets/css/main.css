@@ -554,10 +554,6 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
     height: 70px;
     background: linear-gradient(180deg, rgba(0, 0, 0, .8), rgba(0, 0, 0, 0) 100%);
     box-shadow: 0 0px 3px 0px rgba(0, 0, 0, 0.2);
-    -moz-box-shadow: 0 0px 3px 0px rgba(0, 0, 0, 0.2);
-    -webkit-box-shadow: 0 0px 3px 0px rgba(0, 0, 0, 0.2);
-    -o-box-shadow: 0 0px 3px 0px rgba(0, 0, 0, 0.2);
-    -ms-box-shadow: 0 0px 3px 0px rgba(0, 0, 0, 0.2);
 }
 
 .header-v2 .fix-menu-desktop.container-menu-desktop {
@@ -2860,6 +2856,7 @@ input.num-product::-webkit-inner-spin-button {
     -o-transition: transform 0.9s ease;
     -moz-transition: transform 0.9s ease;
     transition: transform 0.9s ease;
+    object-fit: contain;
 }
 
 .hov-img0:hover img {
@@ -3355,8 +3352,8 @@ footer{
 /*banner*/
 
 .banner{
-    background-image: url("../images/test.jpg");
-    opacity: 0.8;
+    background: linear-gradient(to right, rgba(0,0,0,.3), rgba(0,0,0,.3)),url("../images/banner.jpg");
+
     min-width: 100vw;
     min-height: 100vh;
     background-size: cover;
@@ -3375,23 +3372,10 @@ footer{
 .slogan-color{
     color: white;
     text-shadow: 8px 8px 8px black, 0 0 8em black, 0 0 1em black;
-    font-size: 4em;
-    padding-top: 35vh;
-    padding-left: 10vw;
-}
-
-.slogan2{
-    padding-top: 5vh;
-    padding-left: 25vw;
-}
-
-.slogan3{
-    padding-top: 5vh;
-    padding-left: 45vw;
 }
 
 .span-shadow{
-    text-shadow: 8px 8px 8px white, 0 0 8em white, 0 0 1em white;
+    text-shadow: 10px 10px 10px white, 0 0 8em white, 0 0 0.5em white;
 
 }
 
@@ -3475,12 +3459,22 @@ footer{
 /*//////////////////////
 article
  */
+.overflow{
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+
+    max-width: 291px;
+
+    overflow: hidden;
+}
 .product{
     min-height: 50vh;
 }
 
 .eventail-category{
     max-width: 100px;
+    max-height: 43px;
 }
 
 .article-price{
@@ -3503,8 +3497,27 @@ article
     background-color: black;
     min-width: 90px;
     margin-left: 6vw;
+    min-height: 28.8px;
+    font-size:0.9em;
 }
-
+.badge-category-admin{
+    background-color: grey;
+    min-width: 90px;
+    margin-left: 6vw;
+    min-height: 28.8px;
+    font-size:0.9em;
+}
+.btn-admin{
+    font-size:0.9em;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.btn-admin1{
+   margin-left: 2vw;
+}
+.badge-admin{
+    background-color:grey;
+}
 .block-article{
 
     padding: 3vh;
@@ -3516,11 +3529,21 @@ article
     max-height: 350px;
 }
 
+.image-article2{
+    overflow: hidden;
+    min-height: 350px;
+    max-height: 350px;
+    max-width: 354px;
+    min-width: 354px;
+}
+
+
 .image-articlebis {
     overflow: hidden;
     min-height: 350px;
     max-height: 680px;
 }
+
 
 /*main*/
 h3 {
@@ -3539,7 +3562,9 @@ h2 {
 
 body {
     font-size: 16pt;
+    background-image: url("../images/background.png");
 }
+
 
 .f_quando {
     font-family: Quando;
@@ -3818,6 +3843,7 @@ h2{
     Font-Weight: bold;
     font-family: Quando;
 }
+
 /* Article details*/
 
 .articleTitle {
@@ -3875,11 +3901,12 @@ h2{
 .add {
     text-decoration: none;
     color: white;
+    font-size: 1.5em;
+    margin-left: 4vw;
+    margin-top: 5vh;
+    border-radius: 5px;
 }
 
-.image-highlight {
-    height: 550px;
-}
 
 .review {
     font-size: 18pt;
@@ -3889,3 +3916,4 @@ h2{
 .bold {
     font-weight: bold;
 }
+
