@@ -105,9 +105,10 @@ class ArticleManager extends AbstractManager
     public function edit(Article $article): int
     {
         // prepared request
-        $statement = $this->pdo->prepare("UPDATE $this->
-        table SET id=:id, name=:name, category=:category, price=:price, picture=:picture, 
-        description=:description, review=:review, highlight=:highlight WHERE id=:id");
+        $statement = $this->pdo->prepare("UPDATE $this->table 
+            SET id=:id,name=:name, category=:category, price=:price, picture=:picture, 
+        description=:description, review=:review, highlight=:highlight 
+            WHERE id=:id");
         $statement->bindValue('id', $article->getId(), \PDO::PARAM_INT);
         $statement->bindValue('name', $article->getName(), \PDO::PARAM_STR);
         $statement->bindValue('category', $article->getCategory(), \PDO::PARAM_STR);
@@ -124,8 +125,8 @@ class ArticleManager extends AbstractManager
 
     public function selectHighlight()
     {
-        return $this->pdo->query("SELECT * FROM $this->
-        table WHERE highlight IS NOT NULL ORDER BY category DESC ", \PDO::FETCH_CLASS, $this->className)->fetchAll();
+        return $this->pdo->query("SELECT * FROM $this->table
+        WHERE highlight IS NOT NULL ORDER BY category DESC ", \PDO::FETCH_CLASS, $this->className)->fetchAll();
     }
     /**
      * @param int $id
