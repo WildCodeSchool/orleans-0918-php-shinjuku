@@ -3922,6 +3922,10 @@ h2{
 }
 
 .present-imag{
-    height: 300px;
-    width: 600px;
+    width: 100%;
+}
+@media (max-width: 576px){
+    .homeTitle, .nameTitle{
+        font-size: 1.7em;
+    }
 }
