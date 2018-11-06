@@ -1,4 +1,5 @@
 {% extends 'layout.html.twig' %}
+{% block banner %}<div class="banner2"></div>{% endblock %}
 {% block title %}{{ parent() }} - Article {% endblock %}
 {% block content %}
     <!-- Product Detail -->
@@ -32,7 +33,7 @@
 
                 <h2 class="description">Description :</h2>
 
-                <p class="stext-102 cl3 p-t-23 pdgBottom descriptionContent">{{ article.description }}</p>
+                <p class="stext-102 cl3 p-t-23 pdgBottom descriptionContent text-capitalize">{{ article.description }}</p>
                     <div class="d-flex flex-row article-price">
 
                     <div>
@@ -57,7 +58,7 @@
                                 <img class='certifiedLogo' src="../../assets/images/icons/logo_certified.png" alt="Certified logo">
                             </div>
                             <div>
-                                <p class="Expertise">Avis de l'expert :</p>
+                                <p class="f-Shojumaru bold cl13">Avis de l'expert :</p>
                             </div>
                         </div>
                     </li>
