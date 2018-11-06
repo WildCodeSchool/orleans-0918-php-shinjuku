@@ -1,6 +1,7 @@
 body, html  {
     background-color: #fdfcff;
     background-image: url('/assets/images/background.png');
+    background-attachment: fixed;
 }
 
 nav {

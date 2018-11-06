@@ -7,6 +7,7 @@
  * Time: 11:30
  */
 namespace Controller;
+
 class AboutController extends AbstractController
 {
 
@@ -20,7 +21,6 @@ class AboutController extends AbstractController
      */
     public function index()
     {
-        return $this->twig->render('Home/about.html.twig');
+        return $this->twig->render('Home/about.html.twig', [ 'active' => 'about']);
     }
-
 }

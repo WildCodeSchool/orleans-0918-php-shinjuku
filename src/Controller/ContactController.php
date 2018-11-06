@@ -33,35 +33,35 @@ class ContactController extends AbstractController
         }
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
             foreach ($_POST as $key => $value) {
                 $cleanPost[$key]=trim($value);
             }
 
-            if($_POST){
-
-                if(empty($cleanPost['lastName'])) {
+            if ($_POST) {
+                if (empty($cleanPost['lastName'])) {
                     $errors['lastName'] = 'Veuillez remplir le champ "Nom';
                 }
-                if(empty($cleanPost['firstName'])) {
+                if (empty($cleanPost['firstName'])) {
                     $errors['firstName'] = 'Veuillez remplir le champ "Prénom"';
                 }
-                if(empty($cleanPost['email'])) {
+                if (empty($cleanPost['email'])) {
                     $errors['email'] = 'Veuillez remplir le champ "E-mail"';
                 }
-                if(empty($cleanPost['message'])) {
+                if (empty($cleanPost['message'])) {
                     $errors['message'] = 'Veuillez remplir le champ "Message"';
                 }
 
-                if (!preg_match("/^[a-zA-Z ]+$/", $cleanPost['lastName'])){
-                    $errors['lastName'] = 'Veuillez remplir le champ "Nom" uniquement avec des caractères alphabétiques';
+                if (!preg_match("/^[a-zA-Z ]+$/", $cleanPost['lastName'])) {
+                    $errors['lastName'] = 'Veuillez remplir le champ "Nom" uniquement 
+                    avec des caractères alphabétiques';
                 }
 
-                if (!preg_match("/^[a-zA-Z ]+$/", $cleanPost['firstName'])){
-                    $errors['firstName'] = 'Veuillez remplir le champ "Prénom" uniquement avec des caractères alphabétiques';
+                if (!preg_match("/^[a-zA-Z ]+$/", $cleanPost['firstName'])) {
+                    $errors['firstName'] = 'Veuillez remplir le champ "Prénom" uniquement avec 
+                    des caractères alphabétiques';
                 }
 
-                if (!preg_match("/^[a-zA-Z0-9.]+\@[a-zA-Z0-9]+\.[a-zA-Z]+/", $cleanPost['email'])){
+                if (!preg_match("/^[a-zA-Z0-9.]+\@[a-zA-Z0-9]+\.[a-zA-Z]+/", $cleanPost['email'])) {
                     $errors['email'] = 'Veuillez remplir le champ "E-mail" avec une adresse électronique valide';
                 }
 
@@ -80,8 +80,7 @@ class ContactController extends AbstractController
                     $errors['message'] = 'Veuillez remplir le champ "Description" avec 5000 caractères maximum';
                 }
 
-                if(empty($errors)) {
-
+                if (empty($errors)) {
                     try {
                         $transport = (new Swift_SmtpTransport(MAIL_TRANSPORT, MAIL_PORT))
                             ->setUsername(MAIL_USER)
@@ -91,20 +90,22 @@ class ContactController extends AbstractController
                         $message = new Swift_Message();
                         $message->setSubject('Message du formulaire de contact du site shinjuku');
                         $message->setFrom([$cleanPost['email'] => 'sender name']);
-                        $message->addTo('shinjuku.projet@gmail.com','recipient name');
-                        $message->setBody("Nouveau message de ".$cleanPost['lastName']." ".$cleanPost['firstName']." ( ".$cleanPost['email']." ) : ".$cleanPost['message']);
+                        $message->addTo('shinjuku.projet@gmail.com', 'recipient name');
+                        $message->setBody("Nouveau message de ".$cleanPost['lastName']." ".$cleanPost['firstName']." 
+                        ( ".$cleanPost['email']." ) : ".$cleanPost['message']);
                         $result = $mailer->send($message);
                         $_SESSION['mailSent'] = 'Message envoyé';
-                        } catch (Exception $e) {
+                    } catch (Exception $e) {
                             $_SESSION['mailNotSent'] = $e->getMessage();
-                        }
+                    }
 
                     header('Location:/contact');
                     exit();
                 }
             }
         }
-        return $this->twig->render('contact.html.twig', ['errors' => $errors, 'values' => $cleanPost, 'mailSent' => $mailSent, 'mailNotSent' => $mailNotSent
+        return $this->twig->render('contact.html.twig', ['errors' => $errors, 'values' => $cleanPost,
+         'mailSent' => $mailSent, 'mailNotSent' => $mailNotSent, 'active' => 'contact',
         ]);
     }
 }
