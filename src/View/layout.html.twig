@@ -9,7 +9,8 @@
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
     <!--===============================================================================================-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+          integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="/assets/css/animate.css">
     <!--===============================================================================================-->
@@ -27,120 +28,112 @@
     <!--===============================================================================================-->
     <link href="https://fonts.googleapis.com/css?family=Quando" rel="stylesheet">
 
-
-
-    <title>{% block title %}Shinjuku-World{% endblock %}</title>
-
     <link rel="stylesheet" href="/assets/css/styles.css">
     {% block stylesheet %}{% endblock %}
 
     <link rel="icon" href="/assets/images/icons/favicon.png">
+
+    <title>{% block title %}Shinjuku-World{% endblock %}</title>
 </head>
 
 <body class="animsition">
-    <header>
+<header>
     {% include 'header.html.twig' %}
     {% block banner %}
-        <div class="banner">
-            <div class="slogan-color bold d-none d-lg-block ">
-            <div>La <span class="cl2 span-shadow">Mangatek</span></div>
-            <div class="slogan2">Pour <span class="cl2 span-shadow">tout </span></div>
-            <div class="slogan3">les <span class="cl2 span-shadow">Otakus!</span></div>
+        <div class="banner d-flex align-items-center">
+            <div class="slogan-color text-center">
+                <div class="slogan">La <span class="span-shadow">Mangatek</span> pour tous les Otakus!</div>
             </div>
         </div>
     {% endblock %}
-        
-    </header>
+</header>
 
-    <main>
-        {% block content %}{% endblock %}
+<main>
+    {% block content %}{% endblock %}
 
-    </main>
+</main>
 
-    <footer>
-        {% include 'footer.html.twig' %}
-    </footer>
+<footer>
+    {% include 'footer.html.twig' %}
+</footer>
 
-</body>
-    <!--===============================================================================================-->
-    <script src="/assets/js/jquery-3.2.1.min.js"></script>
-    <!--===============================================================================================-->
-    <script src="/assets/js/animsition.min.js"></script>
-    <!--===============================================================================================-->
-    <script src="/assets/js/popper.js"></script>
-    <script src="/assets/js/bootstrap.min.js"></script>
-    <!--===============================================================================================-->
-    <script src="/assets/js/slick.min.js"></script>
-    <script src="/assets/js/slick-custom.js"></script>
-    <!--===============================================================================================-->
-    <script src="/assets/js/parallax100.js"></script>
-    <script>
-        $('.parallax100').parallax100();
-    </script>
-    <!--===============================================================================================-->
-    <script src="/assets/js/isotope.pkgd.min.js"></script>
-    <!--===============================================================================================-->
-    <script>
-        $('.js-addwish-b2').on('click', function(e){
-            e.preventDefault();
-        });
-
-        $('.js-addwish-b2').each(function(){
-            var nameProduct = $(this).parent().parent().find('.js-name-b2').html();
-            $(this).on('click', function(){
-                swal(nameProduct, "is added to wishlist !", "success");
-
-                $(this).addClass('js-addedwish-b2');
-                $(this).off('click');
-            });
-        });
-
-        $('.js-addwish-detail').each(function(){
-            var nameProduct = $(this).parent().parent().parent().find('.js-name-detail').html();
-
-            $(this).on('click', function(){
-                swal(nameProduct, "is added to wishlist !", "success");
-
-                $(this).addClass('js-addedwish-detail');
-                $(this).off('click');
-            });
-        });
-
-        /*---------------------------------------------*/
-
-        $('.js-addcart-detail').each(function(){
-            var nameProduct = $(this).parent().parent().parent().parent().find('.js-name-detail').html();
-            $(this).on('click', function(){
-                swal(nameProduct, "is added to cart !", "success");
-            });
-        });
-
-    </script>
-    <!--===============================================================================================-->
-    <script src="/assets/js/perfect-scrollbar.min.js"></script>
-    <script>
-        $('.js-pscroll').each(function(){
-            $(this).css('position','relative');
-            $(this).css('overflow','hidden');
-            var ps = new PerfectScrollbar(this, {
-                wheelSpeed: 1,
-                scrollingThreshold: 1000,
-                wheelPropagation: false,
-            });
-
-            $(window).on('resize', function(){
-                ps.update();
-            })
-        });
-    </script>
-    <!--===============================================================================================-->
-    <script src="/assets/js/uploadPreview.js"></script>
-    <!--===============================================================================================-->
-    <script src="/assets/js/isotope.pkgd.min.js"></script>
-    <!--===============================================================================================-->
-    <script src="/assets/js/jquery.magnific-popup.min.js"></script>
 <!--===============================================================================================-->
-    <script src="/assets/js/main.js"></script>
+<script src="/assets/js/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+<script src="/assets/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+<script src="/assets/js/popper.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+<script src="/assets/js/slick.min.js"></script>
+<script src="/assets/js/slick-custom.js"></script>
+<!--===============================================================================================-->
+<script src="/assets/js/parallax100.js"></script>
+<script>
+    $('.parallax100').parallax100();
+</script>
+<!--===============================================================================================-->
+<script src="/assets/js/isotope.pkgd.min.js"></script>
+<!--===============================================================================================-->
+<script>
+    $('.js-addwish-b2').on('click', function (e) {
+        e.preventDefault();
+    });
+
+    $('.js-addwish-b2').each(function () {
+        var nameProduct = $(this).parent().parent().find('.js-name-b2').html();
+        $(this).on('click', function () {
+            swal(nameProduct, "is added to wishlist !", "success");
+
+            $(this).addClass('js-addedwish-b2');
+            $(this).off('click');
+        });
+    });
+
+    $('.js-addwish-detail').each(function () {
+        var nameProduct = $(this).parent().parent().parent().find('.js-name-detail').html();
+
+        $(this).on('click', function () {
+            swal(nameProduct, "is added to wishlist !", "success");
+
+            $(this).addClass('js-addedwish-detail');
+            $(this).off('click');
+        });
+    });
+
+    /*---------------------------------------------*/
+
+    $('.js-addcart-detail').each(function () {
+        var nameProduct = $(this).parent().parent().parent().parent().find('.js-name-detail').html();
+        $(this).on('click', function () {
+            swal(nameProduct, "is added to cart !", "success");
+        });
+    });
+
+</script>
+<!--===============================================================================================-->
+<script src="/assets/js/perfect-scrollbar.min.js"></script>
+<script>
+    $('.js-pscroll').each(function () {
+        $(this).css('position', 'relative');
+        $(this).css('overflow', 'hidden');
+        var ps = new PerfectScrollbar(this, {
+            wheelSpeed: 1,
+            scrollingThreshold: 1000,
+            wheelPropagation: false,
+        });
+
+        $(window).on('resize', function () {
+            ps.update();
+        })
+    });
+</script>
+<!--===============================================================================================-->
+<script src="/assets/js/isotope.pkgd.min.js"></script>
+<!--===============================================================================================-->
+<script src="/assets/js/jquery.magnific-popup.min.js"></script>
+<!--===============================================================================================-->
+<script src="/assets/js/main.js"></script>
 {% block javascript %}{% endblock %}
 </body>
 </html>

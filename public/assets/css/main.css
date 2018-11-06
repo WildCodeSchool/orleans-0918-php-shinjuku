@@ -212,6 +212,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 /*==================================================================
 [ Menu ]*/
 
+
 .wrap-menu-desktop {
     position: fixed;
     z-index: 1100;
@@ -380,7 +381,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 /*---------------------------------------------*/
 .main-menu > li:hover > a {
 
-text-decoration: none;
+    text-decoration: none;
     color: red;
     text-shadow: 2px 2px 3px white, 0 0 2em white, 0 0 0.5em white;
 }
@@ -554,10 +555,6 @@ text-decoration: none;
     height: 70px;
     background: linear-gradient(180deg, rgba(0, 0, 0, .8), rgba(0, 0, 0, 0) 100%);
     box-shadow: 0 0px 3px 0px rgba(0, 0, 0, 0.2);
-    -moz-box-shadow: 0 0px 3px 0px rgba(0, 0, 0, 0.2);
-    -webkit-box-shadow: 0 0px 3px 0px rgba(0, 0, 0, 0.2);
-    -o-box-shadow: 0 0px 3px 0px rgba(0, 0, 0, 0.2);
-    -ms-box-shadow: 0 0px 3px 0px rgba(0, 0, 0, 0.2);
 }
 
 .header-v2 .fix-menu-desktop.container-menu-desktop {
@@ -585,8 +582,9 @@ header {
 }
 
 .wrap-header-mobile {
-  
-display: -webkit-box;
+
+
+    display: -webkit-box;
     display: -webkit-flex;
     display: -moz-box;
     display: -ms-flexbox;
@@ -617,22 +615,22 @@ display: -webkit-box;
 }
 
 
-             /*------------------------------------------------------------------
-             [ btn show menu ]*/
-         .hamburger {
-             display: -webkit-box;
-             display: -webkit-flex;
-             display: -moz-box;
-             display: -ms-flexbox;
-             display: flex;
-             align-items: center;
-             padding: 0;
-             -webkit-transform: scale(0.7);
-             -moz-transform: scale(0.7);
-             -ms-transform: scale(0.7);
-             -o-transform: scale(0.7);
-             transform: scale(0.7);
-         }
+/*------------------------------------------------------------------
+[ btn show menu ]*/
+.hamburger {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    -webkit-transform: scale(0.7);
+    -moz-transform: scale(0.7);
+    -ms-transform: scale(0.7);
+    -o-transform: scale(0.7);
+    transform: scale(0.7);
+}
 
 .hamburger:hover {
     opacity: 1;
@@ -2859,6 +2857,7 @@ input.num-product::-webkit-inner-spin-button {
     -o-transition: transform 0.9s ease;
     -moz-transition: transform 0.9s ease;
     transition: transform 0.9s ease;
+    object-fit: contain;
 }
 
 .hov-img0:hover img {
@@ -3354,9 +3353,8 @@ footer{
 /*banner*/
 
 .banner{
-    background-image: url("../images/test.jpg");
-    opacity: 0.8;
-    min-width: 100vw;
+    background: linear-gradient(to right, rgba(0,0,0,.3), rgba(0,0,0,.3)),url("../images/banner.jpg");
+    min-width: 98vw;
     min-height: 100vh;
     background-size: cover;
 }
@@ -3374,23 +3372,10 @@ footer{
 .slogan-color{
     color: white;
     text-shadow: 8px 8px 8px black, 0 0 8em black, 0 0 1em black;
-    font-size: 4em;
-    padding-top: 35vh;
-    padding-left: 10vw;
-}
-
-.slogan2{
-    padding-top: 5vh;
-    padding-left: 25vw;
-}
-
-.slogan3{
-    padding-top: 5vh;
-    padding-left: 45vw;
 }
 
 .span-shadow{
-    text-shadow: 8px 8px 8px white, 0 0 8em white, 0 0 1em white;
+    text-shadow: 10px 10px 10px white, 0 0 8em white, 0 0 0.5em white;
 
 }
 
@@ -3419,7 +3404,7 @@ footer{
     margin-top: 5vh;
 }
 
-success:focus {
+.success:focus {
     box-shadow: 0 0 0 3px rgba(255,0,0,.5);
 }
 
@@ -3429,8 +3414,8 @@ success:focus {
     border-color: red;
     border-radius: 0em 1em 1em 0em;
     background-color: red;
-    min-height: 41px;
     min-height: 75px;
+    max-height: 75px;
 }
 
 .btn-outline-success:hover {
@@ -3474,13 +3459,24 @@ success:focus {
 /*//////////////////////
 article
  */
+.overflow{
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+
+    max-width: 291px;
+
+    overflow: hidden;
+}
 .product{
     min-height: 50vh;
 }
 
 .eventail-category{
     max-width: 100px;
+    max-height: 43px;
 }
+
 .article-price{
     min-width: 291px;
 }
@@ -3491,37 +3487,123 @@ article
     min-width: 90px;
 }
 
+.badge-price2{
+    background-color: red;
+    font-size: 16pt;
+    min-width: 90px;
+}
 
 .badge-category{
     background-color: black;
     min-width: 90px;
     margin-left: 6vw;
+    min-height: 28.8px;
+    font-size:0.9em;
 }
-
+.badge-category-admin{
+    background-color: grey;
+    min-width: 90px;
+    margin-left: 6vw;
+    min-height: 28.8px;
+    font-size:0.9em;
+}
+.btn-admin{
+    font-size:0.9em;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.btn-admin1{
+   margin-left: 2vw;
+}
+.badge-admin{
+    background-color:grey;
+}
 .block-article{
 
     padding: 3vh;
 }
-.image-article{
+
+.image-article {
     overflow: hidden;
     min-height: 350px;
     max-height: 350px;
 }
 
+.image-article2{
+    overflow: hidden;
+    min-height: 350px;
+    max-height: 350px;
+    max-width: 354px;
+    min-width: 354px;
+}
+
+
+.image-articlebis {
+    overflow: hidden;
+    min-height: 350px;
+    max-height: 680px;
+}
+
+
 /*main*/
 h3 {
+    font-family: Shojumaru;
+}
+.highLight {
     font-family: Quando;
+    text-align: center;
+    Font-Weight: bold;
+    padding-bottom: 50px;
+}
+h2 {
+    font-family: Shojumaru;
+    Font-Weight: bold;
 }
 
 body {
     font-size: 16pt;
+    background-image: url("../images/background.png");
 }
+
 
 .f_quando {
     font-family: Quando;
 }
 
+
+.homePresentation{
+
+    font-family: Quando;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    font-size: 16pt;
+    Line-Height: 33pt;
+}
+
+@media (max-width: 576px) {
+    .homePresentation {
+        margin: 6vh;
+        font-size: 14pt;
+    }
+    .homeTitle{
+        margin-top: 5vh;
+    }
+}
+
+.homeTitle{
+    font-size: 2.5em;
+    justify-content: center;
+
+}
+.home-container{
+    margin-top: 15vh;
+    margin-bottom: 5vh;
+}
+
+
+
 /*add product in database
+
 class btn-shinjuku is supposed to be used for the buttons in the whole site ( as the client asked )
 */
 .btn-shinjuku
@@ -3539,22 +3621,40 @@ class btn-shinjuku is supposed to be used for the buttons in the whole site ( as
     font-weight:bold;
 }
 
-#uploader
+.formTitle
+{
+    text-align:center;
+    margin-bottom:50px;
+    color:red;
+}
+.productPicture
 {
     font-size:12px;
+}
+.uploader
+{
     overflow:auto;
 }
 
+.highlightBlock
+{
+    padding:16px;
+}
+.checkboxAdd{
+    padding-left: 18px;
+}
+.centeredBtn
+{
+    text-align:center;
+}
 .formErrors
 {
     color:red;
 }
 
-.preview
-{
-    max-width:600px;
-}
-
+/*////////////////////////////////////
+lien
+*/
 .lien{
     color: #FEFEFE;
 }
@@ -3573,10 +3673,6 @@ footer{
 
 .fa_size {
     font-size: 1.5em;
-}
-
-.bold {
-    font-weight: bold;
 }
 
 /*about*/
@@ -3600,10 +3696,14 @@ small {
     font-size: 12px;
 }
 
-.card-text {
+.card-text, .card-title {
     font-size: 16pt;
 }
-
+@media (max-width: 576px) {
+    .card-text, .card-title {
+        font-size: 14pt;
+    }
+}
 .mapmodal{
     width: 100%;
     height: 85vh;
@@ -3628,6 +3728,7 @@ small {
 }
 
 .logo:hover{
+
     font-family: Shojumaru;
     color: white;
     text-shadow: 1px 1px 2px white, 0 0 1em red, 0 0 0.2em white;
@@ -3666,11 +3767,14 @@ small {
 }
 
 .logo-pres {
+
     font-family: Shojumaru;
     color: red;
     text-shadow: 3px 3px 3px white, 0 0 1em white, 0 0 0.2em white;
-    font-size: 2vw;
+    font-size: 28pt;
 }
+/*icon FB*/
+
 
 /*icon FB*/
 .fa_size {
@@ -3721,14 +3825,14 @@ small {
 
 /*home articles*/
 .card-body{
-  height: 15vh;
+    height: 15vh;
 }
 
 .card{
-  margin-bottom: 5vh;
-  margin-top: 5vh;
-  padding: 30px;
-  max-width: 100vw;
+    margin-bottom: 5vh;
+    margin-top: 5vh;
+    padding: 30px;
+    max-width: 100vw;
     border: none;
 }
 
@@ -3737,15 +3841,23 @@ small {
 
 }
 
+/* Artcile review */
 h2{
     text-align: center;
     Font-Weight: bold;
     font-family: Quando;
 }
+
 /* Article details*/
 
 .articleTitle {
     float: left;
+    text-transform: capitalize;
+    font-weight: bold;
+}
+
+.title {
+    text-transform: capitalize;
 }
 
 .description {
@@ -3754,6 +3866,7 @@ h2{
     text-align: left;
     color: red;
     font-style: bold;
+    font-size: 25pt;
 }
 
 /* Article details review */
@@ -3777,6 +3890,7 @@ h2{
     height: 100px;
 }
 
+
 /*delete button*/
 .delete {
     text-decoration: none;
@@ -3791,4 +3905,23 @@ h2{
 .add {
     text-decoration: none;
     color: white;
+    font-size: 1.5em;
+    margin-left: 4vw;
+    margin-top: 5vh;
+    border-radius: 5px;
+}
+
+
+.review {
+    font-size: 18pt;
+    font-weight: bold;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.present-imag{
+    height: 300px;
+    width: 600px;
 }
