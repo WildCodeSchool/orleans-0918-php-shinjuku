@@ -3615,7 +3615,9 @@ class btn-shinjuku is supposed to be used for the buttons in the whole site ( as
 {
     padding:16px;
 }
-
+.checkboxAdd{
+    padding-left: 18px;
+}
 .centeredBtn
 {
     text-align:center;
@@ -3811,7 +3813,6 @@ small {
 }
 
 /* Artcile review */
-=======
 h2{
     text-align: center;
     Font-Weight: bold;
