@@ -21,6 +21,6 @@ class AboutController extends AbstractController
      */
     public function index()
     {
-        return $this->twig->render('Home/about.html.twig');
+        return $this->twig->render('Home/about.html.twig',[ 'active' => 'about']);
     }
 }

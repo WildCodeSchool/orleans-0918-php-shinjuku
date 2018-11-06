@@ -19,12 +19,12 @@
                     <div class="block2-txt flex-w flex-t p-t-14">
                         <div class="block2-txt-child1 flex-col-l ">
                             <a href="/article/{{ article.id }}"
-                               class=" cl10 hov-cl1 trans-04  p-b-6 bold overflow">
+                               class=" cl10 hov-cl1 trans-04  p-b-6 bold overflow text-capitalize">
                                 {{ article.name }}
                             </a>
                             <div class="d-flex flex-row article-price">
                                 <div>
-                                    <span class="badge badge-primary badge-price bold">Prix:{{ article.price }}€</span>
+                                    <span class="badge badge-primary badge-price bold">{{ article.price }}€</span>
                                 </div>
                                 {% if category is empty %}
                                     <div class="ml-auto">

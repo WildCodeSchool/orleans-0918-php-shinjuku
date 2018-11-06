@@ -105,7 +105,7 @@ class ContactController extends AbstractController
             }
         }
         return $this->twig->render('contact.html.twig', ['errors' => $errors, 'values' => $cleanPost,
-            'mailSent' => $mailSent, 'mailNotSent' => $mailNotSent
+         'mailSent' => $mailSent, 'mailNotSent' => $mailNotSent, 'active' => 'contact',
         ]);
     }
 }

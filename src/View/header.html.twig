@@ -12,23 +12,22 @@
                     <ul class="main-menu">
 
                         <li class=" ">
-                            <a href="/about">Boutique</a>
+                            <a href="/about" class="{% if active == 'about' %} active-nav {% endif %}">Boutique</a>
                         </li>
 
                         <li class="">
-                            <a href="/article/search?category=manga">Manga</a>
+                            <a href="/article/search?category=manga" class={% if active == "manga" %} "active-nav" {% endif %}>Manga</a>
+                        </li>
+                        <li class="">
+                            <a href="/article/search?category=dvd" class={% if active == "dvd" %} "active-nav" {% endif %}>DVD / Blu-Ray</a>
                         </li>
 
                         <li class="">
-                            <a href="/article/search?category=dvd">DVD / Blu-Ray</a>
+                            <a href="/article/search?category=goodies" class={% if active == "goodies" %} "active-nav" {% endif %}>Goodies</a>
                         </li>
 
                         <li class="">
-                            <a href="/article/search?category=goodies">Goodies</a>
-                        </li>
-
-                        <li class="">
-                            <a href="/contact">Contact</a>
+                            <a href="/contact" class={% if active == "contact" %} "active-nav" {% endif %}>Contact</a>
                         </li>
                     </ul>
                     <!-- Icon header -->

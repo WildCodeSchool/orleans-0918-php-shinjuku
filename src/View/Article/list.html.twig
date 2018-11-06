@@ -1,6 +1,6 @@
 {% extends 'layout.html.twig' %}
 {%block title %}{{ parent() }} - ADMIN Article{% endblock %}
-{% block banner %} <div class="banner2"></div>{% endblock %}
+{% block banner %} <div class="banner-admin"></div>{% endblock %}
 {% block content %}
 <section class="product">
     <!-- Product -->
@@ -8,11 +8,7 @@
         <div class="container">
             <!--Search bar-->
             <div class="row d-flex justify-content-center bd-highlight mb-3  search_product_bar">
-
-                <nav class="m-b-50 search_bar col-md-12 col-lg-5 col-xs-12 col-sm-12  navbar navbar-light">
-                    <a href="/admin/add" class="add btn btn-success btn-sm" name="add" value="add"><i class="fas fa-plus"></i> Ajouter un nouvel article</a>
-
-                </nav>
+                    <a href="/article/add" class="add btn btn-success btn-sm m-t-75 f-Shojumaru" name="add" value="add"><i class="fas fa-plus"></i> Ajouter un nouvel article</a>
             </div>
         </div>
     </div>
@@ -32,12 +28,12 @@
                         </div>
                         <div class="block2-txt flex-w flex-t p-t-14">
                             <div class="block2-txt-child1 flex-col-l ">
-                                <a href="/article/{{ article.id }}" class=" cl10 hov-cl1 trans-04  p-b-6 bold title overflow">
+                                <a href="/article/{{ article.id }}" class=" cl10 hov-cl1 trans-04  p-b-6 bold title overflow text-capitalize">
                                     {{ article.name }}
                                 </a>
                                 <div class="d-flex flex-row article-price">
                                     <div>
-                                        <span class="badge badge-primary badge-price bold badge-admin">Prix:{{ article.price }}€</span>
+                                        <span class="badge badge-primary badge-price bold badge-admin">{{ article.price }}€</span>
                                     </div>
                                     <div class="ml-auto">
                                         <span class="badge badge-primary badge-category-admin">{{ article.category }}</span>
@@ -48,8 +44,8 @@
                     </div>
 
 
-                    <a href="/admin/edit/{{ article.id }}"  class="update btn btn-primary btn-sm btn-admin btn-admin1" name="update" value="update"><i class="fas fa-pen"></i> Modifier</a>
-                    <a href="/admin/list/{{ article.id }}"  onclick="return confirm('Etes vous sur de vouloir supprimer cet article')" class="delete btn btn-danger btn-sm btn-admin" NAME="supprimer" VALUE="supprimer"><i class="fas fa-trash-alt"></i>  Supprimer</a>
+                    <a href="/admin/edit/{{ article.id }}"  class="update btn btn-primary btn-sm btn-admin mr-auto" name="update" value="update"><i class="fas fa-pen"></i> Modifier</a>
+                    <a href="/admin/list/{{ article.id }}"  onclick="return confirm('Etes vous sur de vouloir supprimer cet article')" class="delete btn btn-danger btn-sm btn-admin btn-G-admin " NAME="supprimer" VALUE="supprimer"><i class="fas fa-trash-alt"></i>  Supprimer</a>
 
 
 
