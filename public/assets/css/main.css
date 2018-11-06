@@ -554,10 +554,6 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
     height: 70px;
     background: linear-gradient(180deg, rgba(0, 0, 0, .8), rgba(0, 0, 0, 0) 100%);
     box-shadow: 0 0px 3px 0px rgba(0, 0, 0, 0.2);
-    -moz-box-shadow: 0 0px 3px 0px rgba(0, 0, 0, 0.2);
-    -webkit-box-shadow: 0 0px 3px 0px rgba(0, 0, 0, 0.2);
-    -o-box-shadow: 0 0px 3px 0px rgba(0, 0, 0, 0.2);
-    -ms-box-shadow: 0 0px 3px 0px rgba(0, 0, 0, 0.2);
 }
 
 .header-v2 .fix-menu-desktop.container-menu-desktop {
@@ -3357,6 +3353,7 @@ footer{
 
 .banner{
     background: linear-gradient(to right, rgba(0,0,0,.3), rgba(0,0,0,.3)),url("../images/banner.jpg");
+
     min-width: 100vw;
     min-height: 100vh;
     background-size: cover;
@@ -3375,28 +3372,6 @@ footer{
 .slogan-color{
     color: white;
     text-shadow: 8px 8px 8px black, 0 0 8em black, 0 0 1em black;
-    font-size: 4em;
-    padding-top: 35vh;
-    padding-left: 10vw;
-}
-
-.slogan-color2{
-    color: white;
-    text-shadow: 8px 8px 8px black, 0 0 8em black, 0 0 1em black;
-    font-size: 2em;
-    padding-top: 35vh;
-    padding-left: 10vw;
-}
-
-
-.slogan2{
-    padding-top: 5vh;
-    padding-left: 25vw;
-}
-
-.slogan3{
-    padding-top: 5vh;
-    padding-left: 45vw;
 }
 
 .span-shadow{
@@ -3587,7 +3562,9 @@ h2 {
 
 body {
     font-size: 16pt;
+    background-image: url("../images/background.png");
 }
+
 
 .f_quando {
     font-family: Quando;
@@ -3859,12 +3836,13 @@ small {
 }
 
 /* Artcile review */
-=======
+
 h2{
     text-align: center;
     Font-Weight: bold;
     font-family: Quando;
 }
+
 /* Article details*/
 
 .articleTitle {
