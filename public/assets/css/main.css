@@ -212,6 +212,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 /*==================================================================
 [ Menu ]*/
 
+
 .wrap-menu-desktop {
     position: fixed;
     z-index: 1100;
@@ -3353,8 +3354,7 @@ footer{
 
 .banner{
     background: linear-gradient(to right, rgba(0,0,0,.3), rgba(0,0,0,.3)),url("../images/banner.jpg");
-
-    min-width: 100vw;
+    min-width: 98vw;
     min-height: 100vh;
     background-size: cover;
 }
@@ -3547,7 +3547,7 @@ article
 
 /*main*/
 h3 {
-    font-family: Quando;
+    font-family: Shojumaru;
 }
 .highLight {
     font-family: Quando;
@@ -3556,7 +3556,7 @@ h3 {
     padding-bottom: 50px;
 }
 h2 {
-    font-family: Quando;
+    font-family: Shojumaru;
     Font-Weight: bold;
 }
 
@@ -3696,10 +3696,14 @@ small {
     font-size: 12px;
 }
 
-.card-text {
+.card-text, .card-title {
     font-size: 16pt;
 }
-
+@media (max-width: 576px) {
+    .card-text, .card-title {
+        font-size: 14pt;
+    }
+}
 .mapmodal{
     width: 100%;
     height: 85vh;
@@ -3917,3 +3921,7 @@ h2{
     font-weight: bold;
 }
 
+.present-imag{
+    height: 300px;
+    width: 600px;
+}
