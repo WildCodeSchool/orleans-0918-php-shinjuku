@@ -3350,7 +3350,7 @@ footer{
 /*banner*/
 
 .banner{
-    background-image: url("../images/test.jpg");
+    background-image: url("../images/banner.jpg");
     opacity: 0.8;
     min-width: 100vw;
     min-height: 100vh;
@@ -3511,7 +3511,9 @@ h3 {
 
 body {
     font-size: 16pt;
+    background-image: url("../images/background.png");
 }
+
 
 .f_quando {
     font-family: Quando;
