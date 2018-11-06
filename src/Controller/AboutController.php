@@ -7,6 +7,7 @@
  * Time: 11:30
  */
 namespace Controller;
+
 class AboutController extends AbstractController
 {
 
@@ -22,5 +23,4 @@ class AboutController extends AbstractController
     {
         return $this->twig->render('Home/about.html.twig',[ 'active' => 'about']);
     }
-
 }

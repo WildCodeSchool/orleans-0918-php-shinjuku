@@ -3430,7 +3430,7 @@ footer{
     border-color: red;
     border-radius: 0em 1em 1em 0em;
     background-color: red;
-    min-height: 41px;
+    min-height: 75px;
     max-height: 75px;
 }
 
@@ -3564,7 +3564,7 @@ article
 
 /*main*/
 h3 {
-    font-family: Quando;
+    font-family: Shojumaru;
 }
 .highLight {
     font-family: Quando;
@@ -3573,7 +3573,7 @@ h3 {
     padding-bottom: 50px;
 }
 h2 {
-    font-family: Quando;
+    font-family: Shojumaru;
     Font-Weight: bold;
 }
 
@@ -3660,7 +3660,9 @@ class btn-shinjuku is supposed to be used for the buttons in the whole site ( as
 {
     padding:16px;
 }
-
+.checkboxAdd{
+    padding-left: 18px;
+}
 .centeredBtn
 {
     text-align:center;
@@ -3714,10 +3716,14 @@ small {
     font-size: 12px;
 }
 
-.card-text {
+.card-text, .card-title {
     font-size: 16pt;
 }
-
+@media (max-width: 576px) {
+    .card-text, .card-title {
+        font-size: 14pt;
+    }
+}
 .mapmodal{
     width: 100%;
     height: 85vh;
@@ -3856,7 +3862,6 @@ small {
 }
 
 /* Artcile review */
-
 h2{
     text-align: center;
     Font-Weight: bold;
@@ -3881,10 +3886,10 @@ h2{
     text-align: left;
     color: red;
     font-style: bold;
+    font-size: 25pt;
 }
 
 /* Article details review */
-
 
 .pd-top {
     padding-top: 15vh;

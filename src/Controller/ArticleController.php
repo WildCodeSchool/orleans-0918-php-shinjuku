@@ -69,12 +69,13 @@ class ArticleController extends AbstractController
         if (!empty($_FILES['picture']['name'])) {
             $extension = pathinfo($_FILES['picture']['name'], PATHINFO_EXTENSION);
             if (!in_array($extension, self::ALLOWED_EXTENSIONS)) {
-                $errors['picture'] = 'Veuillez télécharger une image au format ' . implode(', ', self::ALLOWED_EXTENSIONS) . ' uniquement';
+                $errors['picture'] = 'Veuillez télécharger une image au format ' .
+                    implode(', ', self::ALLOWED_EXTENSIONS) . ' uniquement';
             }
         }
         return $errors;
     }
-    
+
     public function searchArticle()
     {
         $category = $_GET['category'] ?? null;
@@ -126,7 +127,6 @@ class ArticleController extends AbstractController
                 $errors = $this->validate($cleanPost);
 
                 if (empty($errors)) {
-
                     $articleManager = new ArticleManager($this->getPdo());
                     $article->setName($cleanPost['name']);
                     $article->setCategory($cleanPost['category']);
