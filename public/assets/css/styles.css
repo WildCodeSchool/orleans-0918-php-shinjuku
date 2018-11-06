@@ -1,6 +1,7 @@
 body, html  {
     background-color: #fdfcff;
     background-image: url('/assets/images/background.png');
+    background-attachment: fixed;
 }
 
 nav {
@@ -15,7 +16,7 @@ nav {
 h2 {
     font-family: Shojumaru;
     color:red;
-    font-size:2em;
+    font-size:1em;
 }
 
 .slogan {
