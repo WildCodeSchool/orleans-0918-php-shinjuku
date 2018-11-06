@@ -3597,9 +3597,9 @@ body {
         margin: 6vh;
         font-size: 14pt;
     }
-    /*.homeTitle{*/
-        /*margin-top: 5vh;*/
-    /*}*/
+    .homeTitle{
+        margin-top: 5vh;
+    }
 }
 
 .homeTitle{
