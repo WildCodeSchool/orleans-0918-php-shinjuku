@@ -3414,7 +3414,7 @@ footer{
     border-color: red;
     border-radius: 0em 1em 1em 0em;
     background-color: red;
-    min-height: 41px;
+    min-height: 75px;
     max-height: 75px;
 }
 
@@ -3640,7 +3640,9 @@ class btn-shinjuku is supposed to be used for the buttons in the whole site ( as
 {
     padding:16px;
 }
-
+.checkboxAdd{
+    padding-left: 18px;
+}
 .centeredBtn
 {
     text-align:center;
@@ -3836,7 +3838,6 @@ small {
 }
 
 /* Artcile review */
-
 h2{
     text-align: center;
     Font-Weight: bold;
@@ -3861,10 +3862,10 @@ h2{
     text-align: left;
     color: red;
     font-style: bold;
+    font-size: 25pt;
 }
 
 /* Article details review */
-
 
 .pd-top {
     padding-top: 15vh;
