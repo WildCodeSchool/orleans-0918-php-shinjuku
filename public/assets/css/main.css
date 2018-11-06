@@ -380,7 +380,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 /*---------------------------------------------*/
 .main-menu > li:hover > a {
 
-text-decoration: none;
+    text-decoration: none;
     color: red;
     text-shadow: 2px 2px 3px white, 0 0 2em white, 0 0 0.5em white;
 }
@@ -585,8 +585,8 @@ header {
 }
 
 .wrap-header-mobile {
-  
-display: -webkit-box;
+
+    display: -webkit-box;
     display: -webkit-flex;
     display: -moz-box;
     display: -ms-flexbox;
@@ -617,22 +617,22 @@ display: -webkit-box;
 }
 
 
-             /*------------------------------------------------------------------
-             [ btn show menu ]*/
-         .hamburger {
-             display: -webkit-box;
-             display: -webkit-flex;
-             display: -moz-box;
-             display: -ms-flexbox;
-             display: flex;
-             align-items: center;
-             padding: 0;
-             -webkit-transform: scale(0.7);
-             -moz-transform: scale(0.7);
-             -ms-transform: scale(0.7);
-             -o-transform: scale(0.7);
-             transform: scale(0.7);
-         }
+/*------------------------------------------------------------------
+[ btn show menu ]*/
+.hamburger {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    -webkit-transform: scale(0.7);
+    -moz-transform: scale(0.7);
+    -ms-transform: scale(0.7);
+    -o-transform: scale(0.7);
+    transform: scale(0.7);
+}
 
 .hamburger:hover {
     opacity: 1;
@@ -3419,7 +3419,7 @@ footer{
     margin-top: 5vh;
 }
 
-success:focus {
+.success:focus {
     box-shadow: 0 0 0 3px rgba(255,0,0,.5);
 }
 
@@ -3430,7 +3430,7 @@ success:focus {
     border-radius: 0em 1em 1em 0em;
     background-color: red;
     min-height: 41px;
-    min-height: 75px;
+    max-height: 75px;
 }
 
 .btn-outline-success:hover {
@@ -3481,6 +3481,7 @@ article
 .eventail-category{
     max-width: 100px;
 }
+
 .article-price{
     min-width: 291px;
 }
@@ -3491,6 +3492,11 @@ article
     min-width: 90px;
 }
 
+.badge-price2{
+    background-color: red;
+    font-size: 16pt;
+    min-width: 90px;
+}
 
 .badge-category{
     background-color: black;
@@ -3502,10 +3508,17 @@ article
 
     padding: 3vh;
 }
-.image-article{
+
+.image-article {
     overflow: hidden;
     min-height: 350px;
     max-height: 350px;
+}
+
+.image-articlebis {
+    overflow: hidden;
+    min-height: 350px;
+    max-height: 680px;
 }
 
 /*main*/
@@ -3589,10 +3602,6 @@ footer{
 
 .fa_size {
     font-size: 1.5em;
-}
-
-.bold {
-    font-weight: bold;
 }
 
 /*about*/
@@ -3737,14 +3746,14 @@ small {
 
 /*home articles*/
 .card-body{
-  height: 15vh;
+    height: 15vh;
 }
 
 .card{
-  margin-bottom: 5vh;
-  margin-top: 5vh;
-  padding: 30px;
-  max-width: 100vw;
+    margin-bottom: 5vh;
+    margin-top: 5vh;
+    padding: 30px;
+    max-width: 100vw;
     border: none;
 }
 
@@ -3762,6 +3771,12 @@ h2{
 
 .articleTitle {
     float: left;
+    text-transform: capitalize;
+    font-weight: bold;
+}
+
+.title {
+    text-transform: capitalize;
 }
 
 .description {
@@ -3807,4 +3822,17 @@ h2{
 .add {
     text-decoration: none;
     color: white;
+}
+
+.image-highlight {
+    height: 550px;
+}
+
+.review {
+    font-size: 18pt;
+    font-weight: bold;
+}
+
+.bold {
+    font-weight: bold;
 }
