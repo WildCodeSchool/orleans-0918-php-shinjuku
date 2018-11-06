@@ -586,6 +586,7 @@ header {
 
 .wrap-header-mobile {
 
+
     display: -webkit-box;
     display: -webkit-flex;
     display: -moz-box;
@@ -3573,6 +3574,16 @@ article
 h3 {
     font-family: Quando;
 }
+.highLight {
+    font-family: Quando;
+    text-align: center;
+    Font-Weight: bold;
+    padding-bottom: 50px;
+}
+h2 {
+    font-family: Quando;
+    Font-Weight: bold;
+}
 
 body {
     font-size: 16pt;
@@ -3582,7 +3593,40 @@ body {
     font-family: Quando;
 }
 
+
+.homePresentation{
+
+    font-family: Quando;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    font-size: 16pt;
+    Line-Height: 33pt;
+}
+
+@media (max-width: 576px) {
+    .homePresentation {
+        margin: 6vh;
+        font-size: 14pt;
+    }
+    .homeTitle{
+        margin-top: 5vh;
+    }
+}
+
+.homeTitle{
+    font-size: 2.5em;
+    justify-content: center;
+
+}
+.home-container{
+    margin-top: 15vh;
+    margin-bottom: 5vh;
+}
+
+
+
 /*add product in database
+
 class btn-shinjuku is supposed to be used for the buttons in the whole site ( as the client asked )
 */
 .btn-shinjuku
@@ -3701,6 +3745,7 @@ small {
 }
 
 .logo:hover{
+
     font-family: Shojumaru;
     color: white;
     text-shadow: 1px 1px 2px white, 0 0 1em red, 0 0 0.2em white;
@@ -3739,11 +3784,14 @@ small {
 }
 
 .logo-pres {
+
     font-family: Shojumaru;
     color: red;
     text-shadow: 3px 3px 3px white, 0 0 1em white, 0 0 0.2em white;
-    font-size: 2vw;
+    font-size: 28pt;
 }
+/*icon FB*/
+
 
 /*icon FB*/
 .fa_size {
@@ -3810,6 +3858,8 @@ small {
 
 }
 
+/* Artcile review */
+=======
 h2{
     text-align: center;
     Font-Weight: bold;
@@ -3837,6 +3887,7 @@ h2{
 
 /* Article details review */
 
+
 .pd-top {
     padding-top: 15vh;
     font-size: 2em;
@@ -3855,6 +3906,7 @@ h2{
 .certifiedLogo {
     height: 100px;
 }
+
 
 /*delete button*/
 .delete {

@@ -1,5 +1,4 @@
 <div class="container p-tb-150 p-b-150">
-
     <form method="post" action="" enctype="multipart/form-data">
         <div class="row justify-content-center">
             <div class="col-6">
@@ -9,14 +8,14 @@
                     {% if errors.name is defined %}
                         <div class="formErrors">{{ errors.name }}</div>
                     {% endif %}
-                    <input type="text" name="name" class="form-control" id="productName" value="{{ values.name }}" required>
+                    <input type="text" name="name" class="form-control" id="productName" value="{{ article.name }}" required>
                 </div>
                 <div class="form-group">
                     <label for="categoryName">Catégorie :</label>
                     <select name="category" class="form-control" id="categoryName" required>
-                        <option value="manga">Manga</option>
-                        <option value="dvd">DVD</option>
-                        <option value="goodies">Goodies</option>
+                        <option value="manga" {% if article.category == "manga" %}selected{% endif %}>Manga</option>
+                        <option value="dvd" {% if article.category == "dvd" %}selected{% endif %}>DVD</option>
+                        <option value="goodies" {% if article.category == "goodies" %}selected{% endif %}>Goodies</option>
                     </select>
                     {% if errors.category is defined %}
                         <div class="formErrors">{{ errors.category }}</div>
@@ -26,7 +25,7 @@
                     <div class="col-6">
                         <div class="form-group">
                             <label for="productPrice">Prix :</label>
-                            <input type="number" name="price" class="form-control" id="productPrice" value="{{ values.price }}" required>
+                            <input type="number" name="price" class="form-control" id="productPrice" value="{{ article.price }}" required>
                             {% if errors.price is defined %}
                                 <div class="formErrors">{{ errors.price }}</div>
                             {% endif %}
@@ -34,8 +33,8 @@
                     </div>
                     <div class="col-6 uploader">
                         <div class="form-group">
-                            <label for="picture">Image :</label>
-                            <input type="file" class="form-control-file productPicture" name="picture">
+                            <label for="picture">Image : {{ article.picture }}</label>
+                            <input type="file" class="form-control-file" id="productPicture" name="picture">
                             {% if errors.picture is defined %}
                                 <div class="formErrors">{{ errors.picture }}</div>
                             {% endif %}
@@ -44,20 +43,23 @@
                 </div>
                 <div class="form-group">
                     <label for="productDescription">Description :</label>
-                    <textarea class="form-control" id="productDescription" name="description" rows="3" required>{{ values.description }}</textarea>
+                    <textarea class="form-control" id="productDescription" name="description" rows="3" required>{{ article.description }}</textarea>
                     {% if errors.description is defined %}
                         <div class="formErrors">{{ errors.description }}</div>
                     {% endif %}
                 </div>
                 <div class="form-group">
                     <label for="productCommentary">Avis de la boutique (optionnel) :</label>
-                    <textarea class="form-control" id="productCommentary" name="review" rows="3">{{ values.review }}</textarea>
+                    <textarea class="form-control" id="productCommentary" name="review" rows="3">{{ article.review }}</textarea>
                     {% if errors.review is defined %}
                         <div class="formErrors">{{ errors.review }}</div>
                     {% endif %}
                 </div>
-                <div class="form-group form-check highlightBlock">
-                    <input type="checkbox" class="form-check-input" id="highlight" name="highlight" value="1" {% if values.highlight is defined and values.highlight == 1 %}checked{% endif %}>
+            </div>
+            <div class="col-6">
+                <img src="https://via.placeholder.com/600x300" border='0' class="preview" alt="product preview">
+                <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" id="highlight" name="highlight" value="1" {% if (article.highlight is defined and article.highlight == 1) or article.highlight == 1 %}checked{% endif %}>
                     <label class="form-check-label" for="highlight">Je souhaite que cet article soit mis en avant dans l'onglet nouveautés.</label>
                     {% if errors.review is defined %}
                         <div class="formErrors">{{ errors.review }}</div>
@@ -69,5 +71,4 @@
             </div>
         </div>
     </form>
-
 </div>
