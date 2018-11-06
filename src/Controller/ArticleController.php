@@ -22,19 +22,6 @@ class ArticleController extends AbstractController
     const ALLOWED_EXTENSIONS = ['png', 'jpg', 'jpeg'];
     const ARTICLE_BY_PAGE = 16;
 
-    public function listByCategory($category)
-    {
-        $errors = [];
-        $articleManager = new ArticleManager($this->getPdo());
-        $articles = $articleManager->searchArticle($category, $_GET['search'] ?? '');
-        if (!in_array($category, self::ALLOWED_CATEGORY)) {
-            $errors['category'] = "Catégorie inexistante!";
-        }
-        if (strlen($_GET['search'] ?? '') > 45) {
-            $errors['toomuch'] = "La recherche doit contenir 45 caractères maximum!";
-        }
-        return $this->twig->render('Product/article.html.twig', ['article' => $articles, 'category' => $category, 'error' => $errors]);
-    }
 
     private function validate(array $cleanPost): array
     {
@@ -115,7 +102,6 @@ class ArticleController extends AbstractController
             $articles = $articleManager->searchArticle($currentPage, $category, $search);
             $nbPages = ceil($count / self::ARTICLE_BY_PAGE);
         }
-
         return $this->twig->render('Article/article.html.twig', [
             'article' => $articles,
             'category' => $category,
@@ -123,6 +109,7 @@ class ArticleController extends AbstractController
             'nbPages' => $nbPages,
             'currentPage' => $currentPage,
             'search' => $search,
+            'active' => $category,
         ]);
     }
 

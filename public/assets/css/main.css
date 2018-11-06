@@ -169,6 +169,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
     height: 124px;
 }
 
+
 /*==================================================================
 [ Top bar ]*/
 .top-bar {
@@ -653,6 +654,8 @@ header {
 
 /*==================================================================
 [ Menu mobile ]*/
+
+
 .menu-mobile {
     width: 100%;
     background-color: white;
@@ -3351,7 +3354,20 @@ footer{
 }
 
 /*banner*/
+.banner-admin{
+    background-image: url("../images/banner-admin.jpg");
+    min-width: 50vw;
+    min-height: 50vh;
+    background-size: cover;
 
+}
+.banner-contact{
+    background-image: url("../images/banner-contact.jpg");
+    min-width: 50vw;
+    min-height: 50vh;
+    background-size: cover;
+
+}
 .banner{
     background: linear-gradient(to right, rgba(0,0,0,.3), rgba(0,0,0,.3)),url("../images/banner.jpg");
     min-width: 98vw;
@@ -3512,8 +3528,9 @@ article
     border-radius: 5px;
     margin-top: 10px;
 }
-.btn-admin1{
-   margin-left: 2vw;
+.btn-G-admin{
+    margin-left: 40px;
+    background-color: red;
 }
 .badge-admin{
     background-color:grey;
@@ -3612,6 +3629,9 @@ class btn-shinjuku is supposed to be used for the buttons in the whole site ( as
     border:0px;
     color:white;
     font-weight:bold;
+    margin-left: 15vw;
+    font-size: 1em;
+
 }
 
 .btn-shinjuku:hover
@@ -3896,16 +3916,32 @@ h2{
 .btn-success {
     margin-right: 5vw;
 }
+.update{
+    color:white;
+    background-color: black;
+    border-color: black;
+    box-shadow: 0 0 0 3px rgba(0,0,0,.1);
+}
+.update:hover , .update:active , .update:focus{
+    color:white;
+    background-color: black;
+    border-color: black;
+    box-shadow: 0 0 0 3px rgba(0,0,0,.5);
+}
 
 .add {
     text-decoration: none;
     color: white;
     font-size: 1.5em;
-    margin-left: 4vw;
-    margin-top: 5vh;
     border-radius: 5px;
+    background-color: black;
+    border-color: black;
 }
-
+.add:hover , .add:active , .add:focus{
+    background-color: #464646;
+    border-color: #464646;
+    box-shadow: 0 0 0 3px rgba(0,0,0,.5);
+}
 
 .review {
     font-size: 18pt;
@@ -3919,4 +3955,12 @@ h2{
 .present-imag{
     height: 300px;
     width: 600px;
+}
+.f-Shojumaru{
+    font-family: Shojumaru;
+
+}
+
+.active-nav  {
+    color: red!important;
 }
