@@ -2,29 +2,32 @@
 
 {% block content %}
 
-    <!-- Title page -->
-    <section class=" bg-img1 txt-center p-lr-15 p-tb-92">
-        <h2 class=" m-t-70 ltext-105 cl0 txt-center">
-            Accueil
-        </h2>
-    </section>
+
 
     <!-- Content page -->
-    <section class="bg0 p-t-75 p-b-120">
-        <div class="container">
-            <div class="row">
-                <div class="order-md-2 col-md-7 col-lg-8 p-b-30">
-                    <div class="p-t-7 p-l-85 p-l-15-lg p-l-0-md">
-                        <h3 class="mtext-111 cl2 p-b-16">LA boutique Orléanaise de manga !</strong></h3>
-                        <p class="stext-113  p-b-26">
-                            Toutes l'equipe vous accueillent avec passion pour vous accompagner à la decouverte de nos nombreuses references (Manga, DVD, Goodies) : Classiques, Nouveautés, Occasions.
+    <section class="bg0 m-t-50">
+        <div class="container home-container">
+            <div class="row ">
+                <div class="col-lg-6 col-sm-12">
+                    {% include 'Home/facebook_api.html.twig' %}
+                </div>
+                <div class="order-md-4 col-md-12 col-lg-6 p-b-30 ">
+                    <div class="p-t-7 p-l-85 p-l-15-lg p-l-0-md ">
+                        <div><h2 class="mtext-111 col-lg-12 cl2 p-b-16 homeTitle text-center">La boutique Orléanaise de Manga !</h2></div>
+                        <p class="homePresentation stext-113  p-b-16">
+                            Cette boutique de référence de la culture japonaise est remplie du sol au plafond de mangas,
+                            de revues portant sur les mangas et le japon, de DVD d'animés, de maquettes, et de
+                            goodies.... de mangas !
+                            Toutes l'equipe vous accueillent avec passion pour vous accompagner à la decouverte de nos nombreuses references.
                             Venez nous rencontrer lors des événements, des ateliers ou des soirées et conquerir le SHINJUKU WORLD !!!
                         </p>
+
                     </div>
+
                 </div>
-
-
             </div>
+        </div>
+    </section>
 
             {% include 'Home/facebook_api.html.twig' %}
 
@@ -40,14 +43,17 @@
                                 <div class="card-text cl13" class="text bold"> {{ value.price}} €</div>
                             </div>
 
-                        </div>
+            <div class="col-lg-4 col-md-8 col-sm-12 col-xs-12">
+                <div class="card block2-pic hov-img0">
+                    <img class="card-img-top image-article" src="{{ value.picture}}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5><a href= "article/{{value.id}}" class="card-title cl10 hov-cl1 trans-04  p-b-6 bold"> {{ value.name}}</h5>
+                        <div class="card-text cl13" class="text bold"> {{ value.price}} €</div>
                     </div>
-                {% endfor %}
 
+                </div>
             </div>
-        </div>
-    </div>
-</section>
+        {% endfor %}
 
 {% endblock %}
 

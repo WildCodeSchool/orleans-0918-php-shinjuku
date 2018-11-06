@@ -7,5 +7,16 @@
     margin:0;
     height:75vh;
     width:70vw;
-    padding-bottom: 9vh;
+
 }
+.iframe{
+    padding-right: 10vh;
+    padding-left: 10vh;
+}
+
+@media (max-width: 768px) {
+    .iframe {
+        padding: 6vh;
+    }
+}
+
