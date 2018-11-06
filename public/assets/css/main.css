@@ -2860,6 +2860,7 @@ input.num-product::-webkit-inner-spin-button {
     -o-transition: transform 0.9s ease;
     -moz-transition: transform 0.9s ease;
     transition: transform 0.9s ease;
+    object-fit: contain;
 }
 
 .hov-img0:hover img {
@@ -3355,8 +3356,7 @@ footer{
 /*banner*/
 
 .banner{
-    background-image: url("../images/test.jpg");
-    opacity: 0.8;
+    background: linear-gradient(to right, rgba(0,0,0,.3), rgba(0,0,0,.3)),url("../images/banner.jpg");
     min-width: 100vw;
     min-height: 100vh;
     background-size: cover;
@@ -3380,6 +3380,15 @@ footer{
     padding-left: 10vw;
 }
 
+.slogan-color2{
+    color: white;
+    text-shadow: 8px 8px 8px black, 0 0 8em black, 0 0 1em black;
+    font-size: 2em;
+    padding-top: 35vh;
+    padding-left: 10vw;
+}
+
+
 .slogan2{
     padding-top: 5vh;
     padding-left: 25vw;
@@ -3391,7 +3400,7 @@ footer{
 }
 
 .span-shadow{
-    text-shadow: 8px 8px 8px white, 0 0 8em white, 0 0 1em white;
+    text-shadow: 10px 10px 10px white, 0 0 8em white, 0 0 0.5em white;
 
 }
 
@@ -3475,12 +3484,22 @@ footer{
 /*//////////////////////
 article
  */
+.overflow{
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+
+    max-width: 291px;
+
+    overflow: hidden;
+}
 .product{
     min-height: 50vh;
 }
 
 .eventail-category{
     max-width: 100px;
+    max-height: 43px;
 }
 
 .article-price{
@@ -3503,8 +3522,27 @@ article
     background-color: black;
     min-width: 90px;
     margin-left: 6vw;
+    min-height: 28.8px;
+    font-size:0.9em;
 }
-
+.badge-category-admin{
+    background-color: grey;
+    min-width: 90px;
+    margin-left: 6vw;
+    min-height: 28.8px;
+    font-size:0.9em;
+}
+.btn-admin{
+    font-size:0.9em;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.btn-admin1{
+   margin-left: 2vw;
+}
+.badge-admin{
+    background-color:grey;
+}
 .block-article{
 
     padding: 3vh;
@@ -3516,11 +3554,21 @@ article
     max-height: 350px;
 }
 
+.image-article2{
+    overflow: hidden;
+    min-height: 350px;
+    max-height: 350px;
+    max-width: 354px;
+    min-width: 354px;
+}
+
+
 .image-articlebis {
     overflow: hidden;
     min-height: 350px;
     max-height: 680px;
 }
+
 
 /*main*/
 h3 {
@@ -3874,11 +3922,12 @@ h2{
 .add {
     text-decoration: none;
     color: white;
+    font-size: 1.5em;
+    margin-left: 4vw;
+    margin-top: 5vh;
+    border-radius: 5px;
 }
 
-.image-highlight {
-    height: 550px;
-}
 
 .review {
     font-size: 18pt;
@@ -3888,3 +3937,4 @@ h2{
 .bold {
     font-weight: bold;
 }
+
