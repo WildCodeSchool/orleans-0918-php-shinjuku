@@ -89,25 +89,20 @@ class ArticleController extends AbstractController
 
     public function add()
     {
-        $errors = array();
-
+        $errors = [];
+        $article = new Article();
+        $cleanPost = [];
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $cleanPost = [];
             foreach ($_POST as $key => $value) {
                 $cleanPost[$key] = trim($value);
             }
-
             if (!empty($_POST)) {
                 $errors = $this->validate($cleanPost);
-                if ($cleanPost['price'] <= 0 )
-                if (!empty($errors)) {
+                if (empty($errors)) {
                     $articleManager = new ArticleManager($this->getPdo());
-
-                    $article = new Article();
                     $article->setName($cleanPost['name']);
                     $article->setCategory($cleanPost['category']);
                     $article->setPrice($cleanPost['price']);
-
                     if (!empty($_FILES['picture']['name'])) {
                         $extension = pathinfo($_FILES['picture']['name'], PATHINFO_EXTENSION);
                         $filename = uniqid() . '.' . $extension;
@@ -116,14 +111,11 @@ class ArticleController extends AbstractController
                         move_uploaded_file($_FILES['picture']['tmp_name'], $uploadFile);
                         $article->setPicture($uploadFile);
                     }
-
                     $article->setDescription($cleanPost['description']);
                     $article->setReview($cleanPost['review']);
-
                     if (!empty($cleanPost['highlight'])) {
                         $article->setHighlight($cleanPost['highlight']);
                     }
-
                     $id = $articleManager->insert($article);
                     header('Location:/article/' . $id);
                     exit();
@@ -131,52 +123,47 @@ class ArticleController extends AbstractController
             }
         }
 
-        return $this->twig->render('Article/add.html.twig', ['errors' => $errors, 'values' => $_POST
+        return $this->twig->render('Article/add.html.twig', ['errors' => $errors, 'article' => $cleanPost,
         ]);
     }
 
     public function edit(int $id)
     {
-        $errors = array();
-        $currentValues = [];
+        $errors = [];
+        $articleManager = new ArticleManager($this->getPdo());
+        $article = $articleManager->selectOneById($id);
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $cleanPost = [];
             foreach ($_POST as $key => $value) {
                 $cleanPost[$key] = trim($value);
             }
-            if (!empty($_POST)) {
-                $errors = $this->validate($cleanPost);
-
-                if (!empty($errors)) {
-                    $articleManager = new ArticleManager($this->getPdo());
-                    $article = new Article();
-                    $article->setId($id);
-                    $article->setName($cleanPost['name']);
-                    $article->setCategory($cleanPost['category']);
-                    $article->setPrice($cleanPost['price']);
-                    if (!empty($_FILES['picture']['name'])) {
-                        $extension = pathinfo($_FILES['picture']['name'], PATHINFO_EXTENSION);
-                        $filename = uniqid() . '.' . $extension;
-                        $uploadDir = __DIR__ . '/../../public/assets/images/upload/';
-                        $uploadFile = $uploadDir . $filename;
-                        move_uploaded_file($_FILES['picture']['tmp_name'], $uploadFile);
-                        $article->setPicture($filename);
-                    }
-                    $article->setDescription($cleanPost['description']);
-                    $article->setReview($cleanPost['review']);
-                    if (!empty($cleanPost['highlight'])) {
-                        $article->setHighlight($cleanPost['highlight']);
-                    }
-                    $articleManager->edit($article);
-                    header('Location:/article/list');
-                    exit();
+            $errors = $this->validate($cleanPost);
+            if (empty($errors)) {
+                $article->setId($id);
+                $article->setName($cleanPost['name']);
+                $article->setCategory($cleanPost['category']);
+                $article->setPrice($cleanPost['price']);
+                if (!empty($_FILES['picture']['name'])) {
+                    $extension = pathinfo($_FILES['picture']['name'], PATHINFO_EXTENSION);
+                    $filename = uniqid() . '.' . $extension;
+                    $uploadDir = __DIR__ . '/../../public/assets/images/upload/';
+                    $uploadFile = $uploadDir . $filename;
+                    move_uploaded_file($_FILES['picture']['tmp_name'], $uploadFile);
+                    $article->setPicture($filename);
                 }
+                $article->setDescription($cleanPost['description']);
+                $article->setReview($cleanPost['review']);
+                if (!empty($cleanPost['highlight'])) {
+                    $article->setHighlight($cleanPost['highlight']);
+                }
+                $articleManager->edit($article);
+                header('Location:/article/' . $id);
+                exit();
+            } else {
+                $article = $cleanPost;
             }
-        } else {
-            $articleManager = new ArticleManager($this->getPdo());
-            $currentValues = $articleManager->selectOneById($id);
         }
-        return $this->twig->render('Article/edit.html.twig', ['errors' => $errors, 'values' => $_POST, 'currentValues' => $currentValues
+        return $this->twig->render('Article/edit.html.twig', ['errors' => $errors, 'article' => $article
         ]);
     }
 
@@ -184,7 +171,6 @@ class ArticleController extends AbstractController
     {
         $articleManager = new ArticleManager($this->pdo);
         $article = $articleManager->selectOneById($id);
-
         return $this->twig->render('Article/article_details.html.twig', ['Article' => $article]);
     }
 
