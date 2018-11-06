@@ -7,6 +7,7 @@
  * PHP version 7
  */
 namespace Model;
+
 class ArticleManager extends AbstractManager
 {
     const TABLE = 'article';
@@ -34,7 +35,8 @@ class ArticleManager extends AbstractManager
             $queryFragments[] = "category =:category";
         }
         $offset=($currentPage*self::ARTICLE_BY_PAGE)-self::ARTICLE_BY_PAGE;
-        $statement = $this->pdo->prepare('SELECT * FROM ' . $this->table . " WHERE " . implode(" AND ", $queryFragments) . " LIMIT ".self::ARTICLE_BY_PAGE." OFFSET " .$offset);
+        $statement = $this->pdo->prepare('SELECT * FROM ' . $this->table . " WHERE " .
+            implode(" AND ", $queryFragments) . " LIMIT ".self::ARTICLE_BY_PAGE." OFFSET " .$offset);
         $statement->setFetchMode(\PDO::FETCH_CLASS, $this->className);
         if (!empty($search)) {
             $statement->bindValue('search', "%$search%", \PDO::PARAM_STR);
@@ -52,7 +54,7 @@ class ArticleManager extends AbstractManager
      * @param string $search
      * @return int
      */
-    public function countArticle(?string $category , ?string $search): int
+    public function countArticle(?string $category, ?string $search): int
     {
         $queryFragments = [];
 
@@ -62,7 +64,8 @@ class ArticleManager extends AbstractManager
         if (!empty($category)) {
             $queryFragments[] = "category =:category";
         }
-        $statement= $this->pdo->prepare('SELECT COUNT(*) FROM ' . $this->table . " WHERE " . implode(" AND ", $queryFragments));
+        $statement= $this->pdo->prepare('SELECT COUNT(*) FROM ' . $this->table . " WHERE " .
+            implode(" AND ", $queryFragments));
         $statement->setFetchMode(\PDO::FETCH_COLUMN, 0);
         if (!empty($search)) {
             $statement->bindValue('search', "%$search%", \PDO::PARAM_STR);
@@ -81,7 +84,9 @@ class ArticleManager extends AbstractManager
     public function insert(Article $article): int
     {
         // prepared request
-        $statement = $this->pdo->prepare("INSERT INTO $this->table (name, category, price, picture, description, review, highlight) VALUES (:name, :category, :price, :picture, :description, :review, :highlight )");
+        $statement = $this->pdo->prepare("INSERT INTO $this->table 
+        (name, category, price, picture, description, review, highlight) 
+        VALUES (:name, :category, :price, :picture, :description, :review, :highlight )");
         $statement->bindValue('name', $article->getName(), \PDO::PARAM_STR);
         $statement->bindValue('category', $article->getCategory(), \PDO::PARAM_STR);
         $statement->bindValue('price', $article->getPrice(), \PDO::PARAM_STR);
@@ -100,7 +105,10 @@ class ArticleManager extends AbstractManager
     public function edit(Article $article): int
     {
         // prepared request
-        $statement = $this->pdo->prepare("UPDATE $this->table SET id=:id, name=:name, category=:category, price=:price, picture=:picture, description=:description, review=:review, highlight=:highlight WHERE id=:id");
+        $statement = $this->pdo->prepare("UPDATE $this->table 
+            SET id=:id,name=:name, category=:category, price=:price, picture=:picture, 
+        description=:description, review=:review, highlight=:highlight 
+            WHERE id=:id");
         $statement->bindValue('id', $article->getId(), \PDO::PARAM_INT);
         $statement->bindValue('name', $article->getName(), \PDO::PARAM_STR);
         $statement->bindValue('category', $article->getCategory(), \PDO::PARAM_STR);
@@ -117,7 +125,8 @@ class ArticleManager extends AbstractManager
 
     public function selectHighlight()
     {
-        return $this->pdo->query("SELECT * FROM $this->table WHERE highlight IS NOT NULL ORDER BY category DESC ", \PDO::FETCH_CLASS, $this->className)->fetchAll();
+        return $this->pdo->query("SELECT * FROM $this->table
+        WHERE highlight IS NOT NULL ORDER BY category DESC ", \PDO::FETCH_CLASS, $this->className)->fetchAll();
     }
     /**
      * @param int $id

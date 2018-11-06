@@ -151,6 +151,5 @@ class Article
     public function setHighlight($highlight): void
     {
         $this->highlight = $highlight;
-
     }
 }
