@@ -1,7 +1,8 @@
 <div class="container p-tb-150 p-b-150">
     <form method="post" action="" enctype="multipart/form-data">
-        <div class="row">
+        <div class="row justify-content-center">
             <div class="col-6">
+                <h2 class="f_quando formTitle">Ajouter un article :</h2>
                 <div class="form-group">
                     <label for="productName">Nom du produit :</label>
                     {% if errors.name is defined %}
@@ -16,7 +17,6 @@
                         <option value="dvd" {% if article.category == "dvd" %}selected{% endif %}>DVD</option>
                         <option value="goodies" {% if article.category == "goodies" %}selected{% endif %}>Goodies</option>
                     </select>
-
                     {% if errors.category is defined %}
                         <div class="formErrors">{{ errors.category }}</div>
                     {% endif %}
@@ -31,7 +31,7 @@
                             {% endif %}
                         </div>
                     </div>
-                    <div class="col-6" class="uploader">
+                    <div class="col-6 uploader">
                         <div class="form-group">
                             <label for="picture">Image : {{ article.picture }}</label>
                             <input type="file" class="form-control-file" id="productPicture" name="picture">
@@ -65,11 +65,9 @@
                         <div class="formErrors">{{ errors.review }}</div>
                     {% endif %}
                 </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12">
-                <button type="submit" class="btn btn-shinjuku">Valider</button>
+                <div class="form-group centeredBtn">
+                    <button type="submit" class="btn btn-shinjuku">Valider</button>
+                </div>
             </div>
         </div>
     </form>

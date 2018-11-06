@@ -20,6 +20,7 @@ class ArticleController extends AbstractController
 
     const ALLOWED_CATEGORY = ['manga', 'goodies', 'dvd'];
     const ALLOWED_EXTENSIONS = ['png', 'jpg', 'jpeg'];
+    const ARTICLE_BY_PAGE = 16;
 
     public function listByCategory($category)
     {
@@ -85,6 +86,42 @@ class ArticleController extends AbstractController
             }
         }
         return $errors;
+    
+    public function searchArticle()
+    {
+        $category = $_GET['category'] ?? null;
+        $search = $_GET['search'] ?? null;
+        $errors = [];
+        $articles = [];
+        $nbPages = 1;
+
+        $currentPage = $_GET['currentPage'] ?? 1;
+
+        if (!empty($category) && !in_array($category, self::ALLOWED_CATEGORY)) {
+            $errors['category'] = "Catégorie inexistante!";
+        }
+        if (!empty($search) && mb_strlen($search) > 255) {
+            $errors['tooMuch'] = "La recherche doit contenir 255 caractères maximum !";
+        }
+        if (!empty($search) && mb_strlen($search) < 3) {
+            $errors['notEnough'] = "La recherche doit contenir 3 caractères minimum !";
+        }
+
+        if (empty($errors)) {
+            $articleManager = new ArticleManager($this->getPdo());
+            $count = $articleManager->countArticle($category, $search);
+            $articles = $articleManager->searchArticle($currentPage, $category, $search);
+            $nbPages = ceil($count / self::ARTICLE_BY_PAGE);
+        }
+
+        return $this->twig->render('Article/article.html.twig', [
+            'article' => $articles,
+            'category' => $category,
+            'errors' => $errors,
+            'nbPages' => $nbPages,
+            'currentPage' => $currentPage,
+            'search' => $search,
+        ]);
     }
 
     public function add()
@@ -98,7 +135,9 @@ class ArticleController extends AbstractController
             }
             if (!empty($_POST)) {
                 $errors = $this->validate($cleanPost);
+
                 if (empty($errors)) {
+
                     $articleManager = new ArticleManager($this->getPdo());
                     $article->setName($cleanPost['name']);
                     $article->setCategory($cleanPost['category']);
@@ -109,7 +148,7 @@ class ArticleController extends AbstractController
                         $uploadDir = __DIR__ . '/../../public/assets/images/upload/';
                         $uploadFile = $uploadDir . $filename;
                         move_uploaded_file($_FILES['picture']['tmp_name'], $uploadFile);
-                        $article->setPicture($uploadFile);
+                        $article->setPicture($filename);
                     }
                     $article->setDescription($cleanPost['description']);
                     $article->setReview($cleanPost['review']);
@@ -171,8 +210,24 @@ class ArticleController extends AbstractController
     {
         $articleManager = new ArticleManager($this->pdo);
         $article = $articleManager->selectOneById($id);
-        return $this->twig->render('Article/article_details.html.twig', ['Article' => $article]);
+
+        return $this->twig->render('Article/article_details.html.twig', ['article' => $article]);
     }
 
-}
 
+    public function showAll()
+    {
+        $articleManager = new ArticleManager($this->pdo);
+        $articles = $articleManager->selectAll();
+
+        return $this->twig->render('Article/list.html.twig', ['articles' => $articles]);
+    }
+
+    public function deleteArticle(int $id)
+    {
+        $articleManager = new ArticleManager($this->getPdo());
+        $articleManager->delete($id);
+        header('Location:/article/list');
+        exit();
+    }
+}
