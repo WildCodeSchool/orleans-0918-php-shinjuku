@@ -3862,10 +3862,10 @@ h2{
     text-align: left;
     color: red;
     font-style: bold;
+    font-size: 25pt;
 }
 
 /* Article details review */
-
 
 .pd-top {
     padding-top: 15vh;
