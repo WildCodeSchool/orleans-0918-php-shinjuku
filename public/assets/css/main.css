@@ -212,6 +212,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 /*==================================================================
 [ Menu ]*/
 
+
 .wrap-menu-desktop {
     position: fixed;
     z-index: 1100;
@@ -3353,8 +3354,7 @@ footer{
 
 .banner{
     background: linear-gradient(to right, rgba(0,0,0,.3), rgba(0,0,0,.3)),url("../images/banner.jpg");
-
-    min-width: 100vw;
+    min-width: 98vw;
     min-height: 100vh;
     background-size: cover;
 }
@@ -3917,3 +3917,7 @@ h2{
     font-weight: bold;
 }
 
+.present-imag{
+    height: 300px;
+    width: 600px;
+}
