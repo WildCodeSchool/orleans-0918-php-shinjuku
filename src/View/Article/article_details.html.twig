@@ -1,8 +1,8 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-<!-- Product Detail -->
-<section class="sec-product-detail bg0 p-t-65 p-b-60 pd-top">
+    <!-- Product Detail -->
+    <section class="sec-product-detail bg0 p-t-65 p-b-60 pd-top">
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-lg-7 p-b-30">
@@ -12,9 +12,9 @@
                             <div class="item-slick3" data-thumb="https://via.placeholder.com/513x634">
                                 <div class="wrap-pic-w pos-relative">
                                     {% if article.picture is not empty %}
-                                        <img src="{{ article.picture }}" alt="Image de l'article {{ article.name }}" class="image-article" >
+                                        <img src="{{ article.picture }}" alt="Image de l'article {{ article.name }}" class="image-articlebis" >
                                     {% else %}
-                                        <img src="/assets/images/manga.png" alt="image par defaut" class="image-article" >
+                                        <img src="/assets/images/manga.png" alt="image par defaut" class="image-articlebis" >
                                     {% endif %}
                                 </div>
                             </div>
@@ -22,23 +22,30 @@
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div class="col-md-6 col-lg-5 p-b-30">
-                <div class="p-r-50 p-t-5 p-lr-0-lg">
-                    <h1 class="cl2 articleTitle">{{ article.name }}</h1>
+        <div class="col-md-6 col-lg-5 p-b-30">
+            <div class="p-r-50 p-t-5 p-lr-0-lg">
+                <h1 class="cl2 articleTitle">{{ article.name }}</h1>
 
-                    <h2 class="description">Description :</h2>
+                <h2 class="description">Description :</h2>
 
-                    <p class="stext-102 cl3 p-t-23 pdgBottom descriptionContent">{{ article.description }}</p>
+                <p class="stext-102 cl3 p-t-23 pdgBottom descriptionContent">{{ article.description }}</p>
+                    <div class="d-flex flex-row article-price">
 
-                    <span class="mtext-106 cl2">{{ article.price }} €</span>
+                    <div>
+                        <span class="badge badge-primary badge-price2 bold">Prix:{{ article.price }}€</span>
+                    </div>
+
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
 
-       {% if article.review is not empty %}
+    {% if article.review is not empty %}
         <!-- optional -->
-        <div class="bor10 m-t-50 p-t-43 p-b-40">
+        <div class="m-t-50 p-t-43 p-b-40">
             <!-- Tab01 -->
             <div class="tab01">
                 <ul class="nav nav-tabs" role="tablist">
@@ -58,7 +65,7 @@
                 <div class="tab-content p-t-43">
                     <div class="tab-pane fade show active" id="description" role="tabpanel">
                         <div class="how-pos2 p-lr-15-md">
-                            <p class="stext-102 cl6">
+                            <p class="stext-102 cl6 review">
                                 {{ article.review }}
                             </p>
                         </div>
@@ -66,7 +73,7 @@
                 </div>
             </div>
         </div>
-    </div>
-</section>
-   {% endif %}
+        </div>
+        </section>
+    {% endif %}
 {% endblock %}
