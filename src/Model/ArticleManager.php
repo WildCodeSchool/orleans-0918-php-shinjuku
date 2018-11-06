@@ -84,9 +84,9 @@ class ArticleManager extends AbstractManager
     public function insert(Article $article): int
     {
         // prepared request
-        $statement = $this->pdo->prepare("INSERT INTO $this->
-        table (name, category, price, picture, description, review, highlight) VALUES 
-        (:name, :category, :price, :picture, :description, :review, :highlight )");
+        $statement = $this->pdo->prepare("INSERT INTO $this->table 
+        (name, category, price, picture, description, review, highlight) 
+        VALUES (:name, :category, :price, :picture, :description, :review, :highlight )");
         $statement->bindValue('name', $article->getName(), \PDO::PARAM_STR);
         $statement->bindValue('category', $article->getCategory(), \PDO::PARAM_STR);
         $statement->bindValue('price', $article->getPrice(), \PDO::PARAM_STR);
