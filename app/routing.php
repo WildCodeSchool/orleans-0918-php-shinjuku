@@ -9,6 +9,7 @@
  * @link     https://github.com/WildCodeSchool/simple-mvc
  */
 
+
 $routes = [
     'Article' => [
         ['index', '/products', 'GET'], // action, url, method
