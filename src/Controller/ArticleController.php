@@ -33,7 +33,8 @@ class ArticleController extends AbstractController
         if (strlen($_GET['search'] ?? '') > 45) {
             $errors['toomuch'] = "La recherche doit contenir 45 caractères maximum!";
         }
-        return $this->twig->render('Product/article.html.twig', ['article' => $articles, 'category' => $category, 'error' => $errors]);
+        return $this->twig->render('Product/article.html.twig', ['article' => $articles,
+            'category' => $category, 'error' => $errors]);
     }
 
     private function validate(array $cleanPost): array
@@ -82,7 +83,8 @@ class ArticleController extends AbstractController
         if (!empty($_FILES['picture']['name'])) {
             $extension = pathinfo($_FILES['picture']['name'], PATHINFO_EXTENSION);
             if (!in_array($extension, self::ALLOWED_EXTENSIONS)) {
-                $errors['picture'] = 'Veuillez télécharger une image au format ' . implode(', ', self::ALLOWED_EXTENSIONS) . ' uniquement';
+                $errors['picture'] = 'Veuillez télécharger une image au format ' .
+                    implode(', ', self::ALLOWED_EXTENSIONS) . ' uniquement';
             }
         }
         return $errors;
@@ -139,7 +141,6 @@ class ArticleController extends AbstractController
                 $errors = $this->validate($cleanPost);
 
                 if (empty($errors)) {
-
                     $articleManager = new ArticleManager($this->getPdo());
                     $article->setName($cleanPost['name']);
                     $article->setCategory($cleanPost['category']);
