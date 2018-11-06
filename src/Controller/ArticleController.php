@@ -86,6 +86,7 @@ class ArticleController extends AbstractController
             }
         }
         return $errors;
+    }
     
     public function searchArticle()
     {
