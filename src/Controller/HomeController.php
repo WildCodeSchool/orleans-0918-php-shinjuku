@@ -6,9 +6,11 @@
  * Time: 09:36
  */
 namespace Controller;
+
 use Model\Home;
 use Model\HomeManager;
 use Model\ArticleManager;
+
 class HomeController extends AbstractController
 {
 

@@ -1,15 +1,18 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-
-
     <!-- Title page -->
-    <section class="container mt-5 pt-3">
-        <h2 class="homeTitle mb-5 pb-3 text-center">
-            Présentation
-        </h2>
-
+    <div class="container-fluid">
+        <div class="row">
+            <div class="homeTitle col-lg-12 d-flex justify-content-center title-category m-t-100">
+                <img class="eventail-category" src="../assets/images/hire-japanese-culture.png" alt="éventail">
+                <h2>Présentation</h2>
+                <img class="eventail-category" src="../assets/images/hire-japanese-culture.png" alt="éventail">
+            </div>
+        </div>
+    </div>
         <!-- Content page -->
+    <section class="container mt-5 pt-3">
         <div class="row">
             <div class=" col-sm-4 ">
                 {% include 'Home/facebook_api.html.twig' %}
@@ -27,13 +30,15 @@
             </div>
         </div>
     </section>
-
-
-
-                <h2 class=" homeTitle col-lg-12 m-t-50">Nos Nouveautés</h2>
-                {% include 'Article/cardArticle.html.twig' %}
-
-
-
+    <div class="container-fluid m-t-100">
+        <div class="row">
+            <div class="homeTitle col-lg-12 d-flex justify-content-center title-category m-t-100">
+                <img class="eventail-category" src="../assets/images/hire-japanese-culture.png" alt="éventail">
+                <h2>Nos Nouveautés</h2>
+                <img class="eventail-category" src="../assets/images/hire-japanese-culture.png" alt="éventail">
+            </div>
+        </div>
+    </div>
+    {% include 'Article/cardArticle.html.twig' %}
 {% endblock %}
 
