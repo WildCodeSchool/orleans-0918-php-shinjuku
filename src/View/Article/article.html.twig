@@ -15,7 +15,6 @@
                 {% if category is not empty %}
                     <div class="container searchbar-container">
                         <div class="row d-flex justify-content-center bd-highlight mb-3 ">
-                            <nav class="m-b-30 search_bar col-md-12 col-lg-5 col-xs-12 col-sm-12  navbar navbar-light m-t-30">
                                 <form class="search_bar form-inline" method="get" action="">
                                     <label for="search">Recherche</label>
                                     <input type="hidden" name="category" value="{{ category }}"/>
@@ -25,7 +24,6 @@
                                     <button class="btn btn-outline-success my-2 my-lg-0" type="submit"><i
                                                 class="far fa-search fas"></i></button>
                                 </form>
-                            </nav>
                         </div>
                     </div>
                 {% endif %}
