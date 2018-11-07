@@ -1,9 +1,11 @@
 {% extends 'layout.html.twig' %}
-{% block title %}{{ parent() }} - ADMIN Editer {% endblock %}
+{% block title %}{{ parent() }} - ADMIN Edition {% endblock %}
 {% block banner %} <div class="banner-admin"></div>{% endblock %}
 {% block content %}
-    <div class=" mx-auto m-t-100 cl13 bold">
-        <h2 class="f_quando">Editer un article :</h2>
+    <div class=" d-flex flex-nowrap justify-content-center m-t-100 cl13 bold">
+        <img class="eventail-category" src="/assets/images/hire-japanese-culture.png" alt="éventail">
+        <h2>Editer un article :</h2>
+        <img class="eventail-category" src="/assets/images/hire-japanese-culture.png" alt="éventail">
     </div>
     {% include 'Article/_form.html.twig' %}
 {% endblock %}
